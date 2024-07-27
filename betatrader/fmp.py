@@ -21,8 +21,8 @@ class FMP:
         response = requests.get(url, headers=self.headers)
         return response.json()
     
-    def get_chart_intraday(self, symbol: str, interval: str, from_date: str, to_date: str):
-        url = self.construct_url(['historical-chart', interval, symbol],  [f'from={from_date}', f'to={to_date}'])
+    def get_chart_intraday(self, symbol: str, interval: str, from_date: str, to_date: str, extended: bool = False):
+        url = self.construct_url(['historical-chart', interval, symbol],  [f'from={from_date}', f'to={to_date}', f'extended={"true" if extended else "false"}'])
         response = requests.get(url, headers=self.headers)
         return response.json()
     

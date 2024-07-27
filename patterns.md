@@ -2,9 +2,9 @@
 Patterns:
 - close_price < open_price
 - volume < max(Volumes since the trend)
-- duration <= 2 candles
+- duration <= 2-3 candles
 - close_price > max(open_price of green candles since the trend)
-- close_price > close_price of previous green - 0.1
+- drop_amount / up_amount < 0.7
 When to buy:
 - price > max(open of red candles)
 Set stop limit:
