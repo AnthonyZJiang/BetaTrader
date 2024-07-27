@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 from betatrader import TrendAnalyser
 
-with open('data/AZTR_1min_2024-07-23_2024-07-23_extended.json', 'r') as f:
+with open('data/BBLG_1min_2024-07-24_extended.json', 'r') as f:
     data = json.load(f)
 data = data[::-1]
 df = DataFrame(data)
