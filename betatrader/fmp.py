@@ -1,6 +1,4 @@
-import json
 import requests
-# https://financialmodelingprep.com/api/v3/technical_indicator/1day/AAPL?type=ema&period=26&apikey=KQ6mApbASvNcJoXu8ITWcih4sPuURH9a
 
 
 class FMP:
@@ -20,6 +18,11 @@ class FMP:
     
     def get_emas(self, timeframe: str, symbol: str, period: int):
         url = self.construct_url(['technical_indicator', timeframe, symbol],  ['type=ema', f'period={period}'])
+        response = requests.get(url, headers=self.headers)
+        return response.json()
+    
+    def get_chart_intraday(self, symbol: str, interval: str, from_date: str, to_date: str):
+        url = self.construct_url(['historical-chart', interval, symbol],  [f'from={from_date}', f'to={to_date}'])
         response = requests.get(url, headers=self.headers)
         return response.json()
     
