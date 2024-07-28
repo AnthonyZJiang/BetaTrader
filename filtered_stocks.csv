@@ -1,0 +1,564 @@
+symbol,companyName,marketCap,sector,industry,beta,price,lastAnnualDividend,volume,exchange,exchangeShortName,country,isEtf,isFund,isActivelyTrading
+FAETX,American Funds 2030 Target Date Retirement Fd Cl F-1,47688855542,Financial Services,Asset Management,0.96,17.13,0.314,0,NASDAQ,NASDAQ,,False,True,True
+RFETX,American Funds 2030 Target Date Retirement Fund,47688855538,Financial Services,Asset Management,0.96,17.4,0.373,0,NASDAQ,NASDAQ,,False,True,True
+BAGIX,Baird Aggregate Bond Fund Institutional Class,46387408894,Financial Services,Asset Management - Bonds,1.01,9.77,0.246,0,NASDAQ,NASDAQ,,False,True,True
+BAGSX,Baird Aggregate Bond Fd Investor Class,46387408886,Financial Services,Asset Management - Bonds,1.02,10.16,0.22999999999999998,0,NASDAQ,NASDAQ,,False,True,True
+AAFTX,American Funds 2035 Target Date Retirement Fund,45943230456,Financial Services,Asset Management,1.07,19.02,0.302,0,NASDAQ,NASDAQ,,False,True,True
+RFFTX,American Funds 2035 Trgt Date Retire R6,45943230451,Financial Services,Asset Management,1.08,19.16,0.357,0,Nasdaq,NASDAQ,,False,True,True
+FAQTX,American Funds 2035 Target Date Retirement Fd Cl F-1,45943230446,Financial Services,Asset Management,1.08,18.88,0.298,0,NASDAQ,NASDAQ,,False,True,True
+JCBZX,JPMorgan Core Bond Fund Class R2,45724676096,Financial Services,Asset Management - Bonds,0.91,10.24,0.21799999999999997,0,NASDAQ,NASDAQ,,False,True,True
+JCBUX,JPMorgan Core Bond Fund,45724676093,,,0.92,10.27,0.3360000000000001,0,Nasdaq,NASDAQ,,False,True,True
+WOBDX,JPMorgan Core Bond Fund,45724676092,Financial Services,Asset Management - Bonds,0.92,10.25,0.257,0,NASDAQ,NASDAQ,US,False,True,True
+MWTRX,Metropolitan West Total Return Bond Fund,45690601469,Financial Services,Asset Management - Bonds,1.14,9.04,0.3404170000000001,0,NASDAQ,NASDAQ,US,False,True,True
+MWTIX,Metropolitan West Total Return Bond Fd Cl I,45690601469,Financial Services,Asset Management - Bonds,1.13,9.04,0.32600000000000007,0,NASDAQ,NASDAQ,,False,True,True
+MWTSX,Metropolitan West Total Return Bond Fund Plan Class,45690601468,Financial Services,Asset Management - Bonds,1.13,8.48,0.3377880000000001,0,NASDAQ,NASDAQ,US,False,True,True
+LLDYX,Lord Abbett Short Duration Income I,42134478847,Financial Services,Asset Management - Income,0.29,3.86,0.17870800000000003,0,Nasdaq,NASDAQ,,False,True,True
+LDLVX,Lord Abbett Short Duration Income Fund,42134478847,Financial Services,Asset Management - Income,0.3,3.86,0.17872700000000002,0,NASDAQ,NASDAQ,US,False,True,True
+LOLDX,Lord Abbett Short Duration Income F3,42134478846,,,0.29,3.87,0.16300000000000003,0,Nasdaq,NASDAQ,,False,True,True
+VBILX,Vanguard Intermediate-Term Bond Index Fund Admiral Shares,39136264184,Financial Services,Asset Management - Bonds,1.05,10.27,0.29700000000000004,0,NASDAQ,NASDAQ,,False,True,True
+FUSIX,Strategic Advisers Fidelity International Fund,37806870520,Financial Services,Asset Management,1.04,12.55,0.29800000000000004,0,Nasdaq,NASDAQ,US,False,True,True
+FTBFX,Fidelity Total Bond,37128679419,Financial Services,Asset Management - Bonds,0.98,9.51,0.3450000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+VTINX,Vanguard Target Retirement Income Fund,35659190267,Financial Services,Asset Management - Income,0.67,13.4,0.41209100000000004,0,NASDAQ,NASDAQ,,False,True,True
+VSIGX,Vanguard Intermediate-Term Treasury Index Fund Admiral Shares,35072188407,Financial Services,Asset Management,0.79,19.9,0.5854,0,NASDAQ,NASDAQ,,False,True,True
+BBCPX,Bridge Builder Core Plus Bond,34289987582,,,1.02,8.8,0.39500000000000013,0,Nasdaq,NASDAQ,,False,True,True
+VFIDX,Vanguard Intermediate-Term Investment Grade Fund Admiral Shrs,33333807095,Financial Services,Asset Management,1.17,8.63,0.30600000000000005,0,NASDAQ,NASDAQ,,False,True,True
+VFICX,Vanguard Intermediate-Term Investment Grade Fund Investor Shrs,33333807095,Financial Services,Asset Management,1.18,8.63,0.30200000000000005,0,NASDAQ,NASDAQ,,False,True,True
+FFFEX,Fidelity Freedom 2030 Fund,33280141304,Financial Services,Asset Management,1.05,17.7,0.331,0,NASDAQ,NASDAQ,US,False,True,True
+FAPTX,American Funds 2025 Target Retirement Fd Cl F-1,33144145916,Financial Services,Asset Management,0.86,15.34,0.339,0,NASDAQ,NASDAQ,,False,True,True
+CCDTX,American Funds 2025 Target Date Retirement Fund Class C,33144145905,Financial Services,Asset Management,0.86,15.1,0.233,0,NASDAQ,NASDAQ,,False,True,True
+RBHEX,American Funds 2050 Target Date Retirement Fund,31566907380,Financial Services,Asset Management,1.23,20.0,0.166,0,NASDAQ,NASDAQ,,False,True,True
+DFIEX,DFA International Core Equity Portfolio,31243397105,,,1.06,16.07,0.29500000000000004,0,NASDAQ,NASDAQ,,False,True,True
+BCOSX,Baird Core Plus Bond Fund Investor Class,30370740218,Financial Services,Asset Management - Bonds,0.99,10.61,0.243,0,NASDAQ,NASDAQ,,False,True,True
+BCOIX,Baird Core Plus Bond Fund Institutional Class,30370740218,Financial Services,Asset Management - Bonds,0.99,10.1,0.26,0,NASDAQ,NASDAQ,,False,True,True
+DBLTX,DoubleLine Total Return Bond Fund Class I,29757214714,Financial Services,Asset Management - Bonds,0.89,8.8,0.3480000000000001,0,NASDAQ,NASDAQ,,False,True,True
+DLTNX,DoubleLine Total Return Bond Fund Class N,29757214713,Financial Services,Asset Management - Bonds,0.88,8.79,0.33000000000000007,0,NASDAQ,NASDAQ,,False,True,True
+VMLUX,Vanguard Limited-Term Tax-Exempt Fund Admiral Shares,29394718713,Financial Services,Asset Management,0.42,10.83,0.23699999999999996,0,NASDAQ,NASDAQ,US,False,True,True
+VMLTX,Vanguard Limited Term Tax-Exempt Fund,29394718713,Financial Services,Asset Management,0.42,10.83,0.22799999999999995,0,NASDAQ,NASDAQ,,False,True,True
+FSNVX,Fidelity Freedom 2040 K,29258067965,,,1.27,11.53,0.152,0,Nasdaq,NASDAQ,,False,True,True
+FFFFX,Fidelity Freedom 2040,29258067963,,,1.28,11.52,0.138,0,NASDAQ,NASDAQ,US,False,True,True
+FFTHX,Fidelity Freedom 2035 Fund,28492097521,Financial Services,Asset Management,1.16,15.72,0.24300000000000002,0,NASDAQ,NASDAQ,US,False,True,True
+PTRQX,PGIM Total Return Bond Fund -Class R6,27631306751,Financial Services,Asset Management - Bonds,1.03,11.96,0.5373089999999999,0,NASDAQ,NASDAQ,US,False,True,True
+PDBZX,PGIM Total Return Bond Fund Class Z,27608203257,Financial Services,Asset Management - Bonds,1.03,11.95,0.4809999999999999,0,NASDAQ,NASDAQ,,False,True,True
+VIPSX,Vanguard Inflation Protected Securities Fund,27034687488,Financial Services,Asset Management,0.83,11.78,0.35700000000000004,0,NASDAQ,NASDAQ,,False,True,True
+JBFRX,John Hancock Bond Fund Class R4,24514979839,Financial Services,Asset Management - Bonds,1.06,13.51,0.4629999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+JHNBX,John Hancock Bond Fund Class A,24514979827,Financial Services,Asset Management - Bonds,1.06,13.49,0.4439999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+JHBIX,John Hancock Bond Fund Class I,24514979827,Financial Services,Asset Management - Bonds,1.06,13.49,0.4789999999999999,0,NASDAQ,NASDAQ,,False,True,True
+VWEHX,Vanguard High Yield Corporate Fund,24350242815,Financial Services,Asset Management,0.88,5.42,0.267,0,NASDAQ,NASDAQ,,False,True,True
+VWEAX,Vanguard High-Yield Corporate Fund Admiral Shares,24350242815,Financial Services,Asset Management,0.88,5.42,0.272,0,NASDAQ,NASDAQ,,False,True,True
+IBFFX,American Funds Int Bond Fd of America Cl F-1 Shs,24310560768,Financial Services,Asset Management - Bonds,0.61,12.49,0.387,0,NASDAQ,NASDAQ,,False,True,True
+VSBSX,Vanguard Short-Term Treasury Index Fund Admiral Shares,24199120893,Financial Services,Asset Management - Leveraged,0.25,19.45,0.6270000000000001,0,NASDAQ,NASDAQ,,False,True,True
+AFTFX,"American Fds, The Tax-Exempt  Bond Fund of America, Class F-1 Shs",23433859069,Financial Services,Asset Management - Bonds,0.95,12.44,0.28800000000000003,0,NASDAQ,NASDAQ,,False,True,True
+FMAGX,Fidelity Magellan,23419375614,,,1.12,14.33,0.045,0,NASDAQ,NASDAQ,US,False,True,True
+OWLSX,Old Westbury Large Cap Strategies,23349166937,,,1.02,19.64,0.0,0,Nasdaq,NASDAQ,,False,True,
+TROSX,T. Rowe Price Overseas Stock Fund,23150335999,Financial Services,Asset Management,1.05,13.19,0.284,0,NASDAQ,NASDAQ,,False,True,True
+NHMCX,Nuveen High Yield Municipal Bond Fund Class C2,22624468986,Financial Services,Asset Management - Bonds,2.11,18.34,0.0,0,NASDAQ,NASDAQ,US,False,True,False
+BHYIX,BlackRock High Yield Bond Instl,22387589119,,,0.86,7.1,0.4528429999999999,0,Nasdaq,NASDAQ,,False,True,True
+BRHYX,BlackRock High Yield Bond K,22387589115,,,0.85,7.11,0.4589999999999999,0,Nasdaq,NASDAQ,,False,True,True
+GQGPX,GQG PARTNERS EMERGING MARKETS EQUITY FUND Investor Shares,22348781563,,,0.76,17.97,0.399,0,NASDAQ,NASDAQ,,False,True,True
+LCEFX,Invesco Diversified Dividend Fund,21982091260,Financial Services,Asset Management,0.73,19.13,0.28900000000000003,0,NASDAQ,NASDAQ,,False,True,True
+FZROX,Fidelity ZERO Total Market Index Fund,21765464064,Financial Services,Asset Management,1.01,19.04,0.226,0,NASDAQ,NASDAQ,US,False,True,True
+VGSNX,Vanguard Real Estate Index Institutional,21613035511,,,1.19,19.65,0.6224,0,Nasdaq,NASDAQ,,False,True,True
+UGSFX,American Funds U.S. Govt Securities Cl F-1 Shs,21317320701,Financial Services,Asset Management,0.92,11.94,0.39999999999999997,0,NASDAQ,NASDAQ,,False,True,True
+RGVGX,American Funds U.S. Government Securities Fund Class R-6,21317320698,Financial Services,Asset Management,0.92,11.95,0.48648799999999986,0,NASDAQ,NASDAQ,,False,True,True
+AMUSX,American Funds U.S. Government Securities Fund Class A,21317320698,Financial Services,Asset Management,0.92,11.95,0.44149199999999994,0,NASDAQ,NASDAQ,US,False,True,True
+LBNVX,Lord Abbett Bond Debenture Fund,21094100989,Financial Services,Asset Management - Bonds,0.8,7.08,0.3450000000000001,0,NASDAQ,NASDAQ,,False,True,True
+LBNOX,Lord Abbett Bond Debenture F3,21094100989,,,0.79,7.08,0.3800000000000001,0,Nasdaq,NASDAQ,,False,True,True
+BBVLX,Bridge Builder Large Cap Value Fund,21007249408,,,0.81,17.8,0.33652,0,Nasdaq,NASDAQ,,False,True,True
+FJTKX,Fidelity Freedom 2045 K6,20932790269,,,1.29,13.32,0.185,0,Nasdaq,NASDAQ,US,False,True,True
+FFFGX,Fidelity  Freedom 2045 Fund,20932790263,Financial Services,Asset Management,1.3,13.37,0.152,0,NASDAQ,NASDAQ,US,False,True,True
+RITGX,American Funds American High-Inc R6,20247175165,,,0.82,9.68,0.555,0,Nasdaq,NASDAQ,,False,True,True
+AHTFX,American Funds High-Income Trust Cl F-1 Shs,20247175165,Financial Services,Asset Management - Income,0.82,9.68,0.524,0,NASDAQ,NASDAQ,,False,True,True
+JCPUX,JPMorgan Core Plus Bond Fund,20107278329,,,0.96,7.24,0.30099000000000004,0,Nasdaq,NASDAQ,,False,True,True
+VPGDX,Vanguard Managed Allocation Fund Investor Shs,19653918710,Financial Services,Asset Management,0.93,15.6,0.0,0,NASDAQ,NASDAQ,,False,True,False
+PARJX,T. Rowe Price Retirement 2025 Fund Advisor Class,19625058297,Financial Services,Asset Management,0.92,16.68,0.32,0,NASDAQ,NASDAQ,US,False,True,True
+TRRHX,T. Rowe Price Retirement 2025 Fund,19625058289,Financial Services,Asset Management,0.92,16.83,0.361,0,NASDAQ,NASDAQ,US,False,True,True
+RRTNX,T. Rowe Price Retirement 2025 Fund Class R,19625058288,Financial Services,Asset Management,0.92,16.36,0.286,0,NASDAQ,NASDAQ,US,False,True,True
+ANBEX,American Funds Strategic Bond Fund Class F-1,19239278587,Financial Services,Asset Management - Bonds,1.02,9.13,0.28600000000000003,0,NASDAQ,NASDAQ,,False,True,True
+FFFHX,Fidelity Freedom 2050 Fund,18968573948,Financial Services,Asset Management,1.29,13.54,0.155,0,NASDAQ,NASDAQ,US,False,True,True
+FZTKX,Fidelity Freedom 2050 K6,18968573939,,,1.3,13.52,0.189,0,Nasdaq,NASDAQ,US,False,True,True
+VMBSX,Vanguard Mortgage-Backed Securities Idx Fd Admiral Shs,18947203070,,,1.08,18.36,0.6147000000000001,0,NASDAQ,NASDAQ,,False,True,True
+WAPSX,Western Asset Core Plus Bond Fund Class IS,18885414911,Financial Services,Asset Management - Bonds,1.42,9.28,0.39312800000000003,0,NASDAQ,NASDAQ,,False,True,True
+WACPX,Western Asset Core Plus Bond Fund Class I,18885414909,Financial Services,Asset Management - Bonds,1.42,9.29,0.355,0,NASDAQ,NASDAQ,US,False,True,True
+PHYZX,PGIM High Yield Fund Class Z,18668431359,Financial Services,Asset Management,0.88,4.77,0.29200000000000004,0,NASDAQ,NASDAQ,,False,True,True
+PHYQX,PGIM High Yield Fund- Class R6,18668431358,Financial Services,Asset Management,0.88,4.76,0.31986600000000004,0,NASDAQ,NASDAQ,,False,True,True
+MPHQX,BlackRock Total Return Fund Class K Shares,18363357184,Financial Services,Asset Management,1.06,9.9,0.373,0,NASDAQ,NASDAQ,,False,True,True
+BBIEX,Bridge Builder International Equity Fund,18227853308,,,1.08,13.21,0.302,0,Nasdaq,NASDAQ,,False,True,True
+GAIFX,American Funds Growth and Income Portfolio Class F-1,17554528239,Financial Services,Asset Management - Income,1.13,18.97,0.215,0,NASDAQ,NASDAQ,,False,True,True
+VWLUX,Vanguard Long Term Tax Exempt Fund,17503094782,Financial Services,Asset Management,1.18,10.91,0.30100000000000005,0,NASDAQ,NASDAQ,US,False,True,True
+VWLTX,Vanguard Long-Term Tax-Exempt Fund,17503094782,Financial Services,Asset Management,1.18,10.91,0.29400000000000004,0,NASDAQ,NASDAQ,,False,True,True
+VLGSX,Vanguard Long-Term Treasury Index Fund Admiral Shares,17464520703,Financial Services,Asset Management,2.05,19.64,0.6867000000000001,0,NASDAQ,NASDAQ,,False,True,True
+MKLOX,BlackRock Global Allocation K,17340862456,,,0.96,18.95,0.215,0,Nasdaq,NASDAQ,,False,True,True
+VTXVX,Vanguard Target Retirement 2015 Fund,17340102644,Financial Services,Asset Management,0.62,12.52,0.0,0,NASDAQ,NASDAQ,,False,True,False
+PRXEX,T. Rowe Price New Income Fund I Class,16843615232,Financial Services,Asset Management - Income,0.98,7.97,0.28600000000000003,0,NASDAQ,NASDAQ,,False,True,True
+PRCIX,T. Rowe Price New Income Fund,16843615232,Financial Services,Asset Management - Income,0.98,7.97,0.281,0,NASDAQ,NASDAQ,,False,True,True
+FGOMX,Strategic Advisers Fidelity Em Mkts,16681283582,,,1.0,12.4,0.269,0,Nasdaq,NASDAQ,US,False,True,True
+NHMFX,Nuveen High Yield Municipal Bond Fund Class R6,16323287038,Financial Services,Asset Management - Bonds,1.59,15.33,0.6699999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+NHMRX,Nuveen High Yield Municipal Bond Fund Class I,16323287037,Financial Services,Asset Management - Bonds,1.59,15.32,0.6680000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+NHMAX,Nuveen High Yield Municipal Bond Fund,16323287037,Financial Services,Asset Management - Bonds,1.59,15.31,0.7030000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+FUTBX,Fidelity SAI U.S. Treasury Bond Index Fund,16140467195,Financial Services,Asset Management - Bonds,0.85,8.74,0.17300000000000004,0,Nasdaq,NASDAQ,US,False,True,True
+FAOTX,American Funds 2020 Target Date Retirement Fd Cl F-1,15766524927,Financial Services,Asset Management,0.8,13.64,0.344,0,NASDAQ,NASDAQ,,False,True,True
+VWALX,Vanguard High-Yield Tax-Exempt Fund Admiral Shares,15663395831,Financial Services,Asset Management,1.2,10.74,0.33000000000000007,0,NASDAQ,NASDAQ,,False,True,True
+VWAHX,Vanguard High-Yield Tax-Exempt Fund,15663395831,Financial Services,Asset Management,1.2,10.74,0.32500000000000007,0,NASDAQ,NASDAQ,,False,True,True
+TRRMX,T. Rowe Price Retirement 2050 Fund,15610644469,Financial Services,Asset Management,1.26,18.75,0.222,0,NASDAQ,NASDAQ,US,False,True,True
+VCAIX,Vanguard California Intermediate-Term Tax-Exempt Fund Investor Shares,15385726969,Financial Services,Asset Management,0.84,11.37,0.251,0,NASDAQ,NASDAQ,,False,True,True
+VCADX,Vanguard California Intermediate-Term Tax-Exempt Fund Admiral Shares,15385726969,Financial Services,Asset Management,0.84,11.37,0.257,0,NASDAQ,NASDAQ,US,False,True,True
+VWESX,Vanguard Long-Term Investment Grade Fund Investor Shrs,15363364862,Financial Services,Asset Management,2.08,7.77,0.31400000000000006,0,NASDAQ,NASDAQ,,False,True,True
+MLAAX,MainStay Large Cap Growth Fund Class A,15108810746,Financial Services,Asset Management,1.18,10.4,0.0,0,NASDAQ,NASDAQ,,False,True,True
+TRRBX,T. Rowe Price Retirement 2020 Fund,14863462394,Financial Services,Asset Management,0.85,18.96,0.45,0,NASDAQ,NASDAQ,US,False,True,True
+RRTBX,T. Rowe Price Retirement 2020 Fund Class R,14863462382,Financial Services,Asset Management,0.85,18.41,0.358,0,NASDAQ,NASDAQ,US,False,True,True
+VWSTX,Vanguard Short-Term Tax-Exempt Fund,14841867253,Financial Services,Asset Management - Leveraged,0.2,15.76,0.3770000000000001,0,NASDAQ,NASDAQ,,False,True,True
+MIAWX,American Funds Multi-Sector Income Fund Class F-1,14831710202,Financial Services,Asset Management - Income,0.93,9.37,0.4739999999999999,0,NASDAQ,NASDAQ,,False,True,True
+FFFDX,Fidelity Freedom 2020 Fund,14810953719,Financial Services,Asset Management,0.93,14.65,0.34199999999999997,0,NASDAQ,NASDAQ,US,False,True,True
+VFIJX,Vanguard GNMA Fd Admiral Shs,14699672572,,,1.03,9.22,0.269,0,NASDAQ,NASDAQ,,False,True,True
+VFIIX,Vanguard GNMA Fund,14699672572,Financial Services,Asset Management,1.03,9.22,0.263,0,NASDAQ,NASDAQ,,False,True,True
+PFORX,PIMCO International Bond Fund (U.S. Dollar-Hedged) Class INSTL,14610140155,Financial Services,Asset Management - Bonds,0.58,9.88,0.292,0,NASDAQ,NASDAQ,,False,True,True
+PFOAX,PIMCO International Bond Fund (U.S. Dollar-Hedged) Class A,14610140155,Financial Services,Asset Management - Bonds,0.58,9.88,0.259,0,NASDAQ,NASDAQ,,False,True,True
+PFBPX,PIMCO International Bond Fund (U.S. Dollar-Hedged),14610140155,Financial Services,Asset Management - Bonds,0.58,9.88,0.30296100000000004,0,NASDAQ,NASDAQ,,False,True,True
+CVSIX,Calamos Market Neutral Fund Class A,14579402751,Financial Services,Asset Management,0.21,14.85,0.304,0,NASDAQ,NASDAQ,,False,True,True
+FFRHX,Fidelity Floating Rate High Income,14540196860,Financial Services,Asset Management - Income,0.2,9.25,0.6599999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+RRITX,T. Rowe Price International Stock Fund Class R,14416116721,Financial Services,Asset Management,1.01,19.64,0.118,0,NASDAQ,NASDAQ,US,False,True,True
+LGRCX,Loomis Sayles Growth Fund Class C,14323520499,Financial Services,Asset Management,1.19,19.81,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+FQIFX,Fidelity Freedom Index 2025 Fund - Investor Class,14231747580,Financial Services,Asset Management,0.99,18.77,0.42600000000000005,0,NASDAQ,NASDAQ,US,False,True,True
+FTRBX,Federated Hermes Total Return Bond Fund - Institutional Shares,14133004285,Financial Services,Asset Management - Bonds,0.96,9.45,0.3567870000000001,0,NASDAQ,NASDAQ,,False,True,True
+BLPFX,American Funds Moderate Growth and Income Portfolio - Class F-1,13871548406,Financial Services,Asset Management - Income,1.0,17.98,0.3403,0,NASDAQ,NASDAQ,,False,True,True
+FADMX,Fidelity Advisor Strategic Income Fund,13564904440,Financial Services,Asset Management - Income,0.88,11.52,0.43099999999999994,0,NASDAQ,NASDAQ,US,False,True,True
+BFIFX,American Funds Inflation Linked Bond Fund - Class F-1,13274959867,Financial Services,Asset Management - Bonds,0.82,9.28,0.065,0,NASDAQ,NASDAQ,,False,True,True
+AANTX,American Funds 2060 Target Date Retirement Fund,13004118011,Financial Services,Asset Management,1.25,17.46,0.182,0,NASDAQ,NASDAQ,,False,True,True
+FAWTX,American Funds 2060 Target Date Retirement Fund Class F-1,13004118009,Financial Services,Asset Management,1.25,17.47,0.173,0,NASDAQ,NASDAQ,,False,True,True
+RFUTX,American Funds 2060 Trgt Date Retire R6,13004118004,,,1.25,17.65,0.229,0,Nasdaq,NASDAQ,,False,True,True
+FAGIX,Fidelity Capital and Income Fund,12909083643,Financial Services,Asset Management - Income,0.9,9.95,0.43699999999999994,0,NASDAQ,NASDAQ,US,False,True,True
+FTIHX,Fidelity Total International Index Fund,12872466421,Financial Services,Asset Management,1.04,14.02,0.366,0,NASDAQ,NASDAQ,US,False,True,True
+VBLTX,Vanguard Long-Term Bond Index Fund Investor Shares,12759517173,Financial Services,Asset Management - Bonds,2.58,15.03,0.0,0,NASDAQ,NASDAQ,,False,True,False
+VUBFX,Vanguard Ultra-Short-Term Bond Fund Investor,12614867967,Financial Services,Asset Management - Bonds,0.1,10.02,0.4419999999999999,0,NASDAQ,NASDAQ,,False,True,True
+HBLRX,The Hartford Balanced Income Fund Class R3,12280432638,Financial Services,Asset Management - Income,0.87,14.8,0.226,0,NASDAQ,NASDAQ,US,False,True,True
+HBLVX,The Hartford Balanced Income Fund Class R6,12280432635,Financial Services,Asset Management - Income,0.86,14.93,0.275,0,NASDAQ,NASDAQ,US,False,True,True
+HBLTX,The Hartford Balanced Income Fund Class R5,12280432629,Financial Services,Asset Management - Income,0.86,14.83,0.39322999999999997,0,NASDAQ,NASDAQ,US,False,True,True
+HBLFX,Hartford Balanced Income F,12280432625,,,0.87,14.73,0.54692,0,Nasdaq,NASDAQ,,False,True,True
+TRPCX,Retirement I 2030 Fund - I Class,12217449458,Financial Services,Asset Management,1.03,14.71,0.29,0,NASDAQ,NASDAQ,,False,True,False
+ACEIX,Invesco Equity and  Income Fund Class A,12150168570,Financial Services,Asset Management - Income,0.94,10.82,0.155,0,NASDAQ,NASDAQ,,False,True,True
+LZOEX,Lazard Emerging Markets Equity Portfolio,11876139004,,,0.96,19.24,0.603,0,NASDAQ,NASDAQ,US,False,True,True
+TRIGX,T. Rowe Price International Value Equity Fund,11874550781,Financial Services,Asset Management,1.0,17.84,0.43,0,NASDAQ,NASDAQ,,False,True,True
+ASBFX,"American Fd, Short-Term Fund of America, Class F-1 Shs",11586353145,Financial Services,Asset Management - Leveraged,0.25,9.51,0.29800000000000004,0,NASDAQ,NASDAQ,US,False,True,True
+FCTKX,Fidelity Freedom 2055 K6,11532145663,,,1.29,15.66,0.216,0,Nasdaq,NASDAQ,US,False,True,True
+FDEEX,Fidelity Freedom 2055 Fund,11532145655,Financial Services,Asset Management,1.29,15.67,0.177,0,NASDAQ,NASDAQ,US,False,True,True
+RLEMX,Lazard Emerging Markets Equity Portfolio R6 Shares,11505781742,,,0.95,18.64,0.646,0,NASDAQ,NASDAQ,US,False,True,True
+FIQZX,Fidelity Advisor Interm Muni Inc Z,11488875515,,,0.75,10.12,0.21899999999999994,0,Nasdaq,NASDAQ,,False,True,True
+FLTMX,Fidelity Intermediate Municipal Income Fund,11488875513,Financial Services,Asset Management - Income,0.75,10.1,0.21599999999999994,0,NASDAQ,NASDAQ,US,False,True,True
+VCORX,Vanguard Core Bond Fund Investor Shares,11485535229,Financial Services,Asset Management - Bonds,1.01,9.0,0.32900000000000007,0,NASDAQ,NASDAQ,,False,True,True
+VCOBX,Vanguard Core Bond Admiral,11485535220,Financial Services,Asset Management - Bonds,1.0,18.0,0.7399000000000002,0,NASDAQ,NASDAQ,,False,True,True
+HIMFX,American High-Income Municipal Bond F3,11326502907,,,1.12,15.32,0.532,0,Nasdaq,NASDAQ,,False,True,True
+ABHFX,"American Fds,  American Income Municipal Bond Fund Class F-1 Shs",11326502907,Financial Services,Asset Management - Income,1.12,15.32,0.48499999999999993,0,NASDAQ,NASDAQ,,False,True,True
+DFAPX,DFA Investment Grade Portfolio,11059910651,,,0.98,10.05,0.34815,0,NASDAQ,NASDAQ,,False,True,True
+MFAEX,American Funds Mortgage Fund Class F-1,10511427582,Financial Services,Asset Management,0.98,8.77,0.31800000000000006,0,NASDAQ,NASDAQ,,False,True,True
+DDVIX,Delaware Value Fd Cl I,10373371887,,,0.72,17.84,0.238919,0,NASDAQ,NASDAQ,,False,True,True
+DDVAX,Delaware Value Fund,10373371887,Financial Services,Asset Management,0.72,17.84,0.16,0,NASDAQ,NASDAQ,,False,True,True
+TRPDX,Retirement I 2040 Fund - I Class,10351724535,Financial Services,Asset Management,1.2,16.27,0.252,0,NASDAQ,NASDAQ,,False,True,False
+BSBSX,Baird Short-Term Bond Fd Inv Cl,10347723770,Financial Services,Asset Management - Bonds,0.27,9.44,0.22699999999999998,0,NASDAQ,NASDAQ,,False,True,True
+BSBIX,Baird Short-Term Bond Fund,10347723770,Financial Services,Asset Management - Bonds,0.27,9.44,0.276085,0,NASDAQ,NASDAQ,,False,True,True
+PRAFX,"T. Rowe Price Real Assets Fund, Inc.",10320023540,Financial Services,Asset Management,1.07,14.84,0.216,0,NASDAQ,NASDAQ,US,False,True,True
+FSGGX,Fidelity Global ex U.S. Index Fund,10297042930,Financial Services,Asset Management - Global,1.04,15.05,0.416,0,NASDAQ,NASDAQ,US,False,True,True
+CBTAX,Six Circles Tax Aware Bond,10195212280,,,0.88,9.83,0.21999999999999997,0,Nasdaq,NASDAQ,,False,True,True
+LUBAX,Lord Abbett Ultra Short Bond Fund - Class A,10165808120,Financial Services,Asset Management - Bonds,0.07,10.0,0.40399999999999997,0,NASDAQ,NASDAQ,,False,True,True
+PFIIX,PIMCO Low Duration Income Fund Institutional Class,10108107772,Financial Services,Asset Management - Income,0.47,8.06,0.33000000000000007,0,NASDAQ,NASDAQ,,False,True,True
+PFIAX,PIMCO Low Duration Income Fund Class A,10108107772,Financial Services,Asset Management - Income,0.47,8.06,0.30000000000000004,0,NASDAQ,NASDAQ,,False,True,True
+MDIIX,iShares MSCI EAFE International Index Fund - Class A,10073536501,Financial Services,Asset Management,1.06,16.09,0.418,0,NASDAQ,NASDAQ,,False,True,True
+BTMKX,iShares MSCI EAFE International Index Fund,10073536499,Financial Services,Asset Management,1.07,16.26,0.46,0,NASDAQ,NASDAQ,US,False,True,True
+TRRNX,T. Rowe Price Retirement 2055 Fund,9962603519,Financial Services,Asset Management,1.26,19.67,0.226,0,NASDAQ,NASDAQ,US,False,True,True
+PAROX,T. Rowe Price Retirement 2055 Fund Advisor Class,9962603504,Financial Services,Asset Management,1.26,19.43,0.193,0,NASDAQ,NASDAQ,US,False,True,True
+RCWAX,American Funds Capital World Bond Fund Class R-1,9956337656,Financial Services,Asset Management - Bonds,1.28,15.92,0.35,0,NASDAQ,NASDAQ,,False,True,True
+WBFFX,"Capital World Bond Fund,  Cl F-1 Shares",9956337653,Financial Services,Asset Management - Bonds,1.28,16.07,0.435,0,NASDAQ,NASDAQ,,False,True,True
+FNILX,Fidelity ZERO Large Cap Index Fund,9943037941,Financial Services,Asset Management,1.01,19.42,0.226,0,NASDAQ,NASDAQ,US,False,True,True
+FBNDX,Fidelity Investment Grade Bond Fund,9940272126,Financial Services,Asset Management - Bonds,1.01,7.17,0.23099999999999996,0,NASDAQ,NASDAQ,US,False,True,True
+FIKQX,Fidelity Advisor Investment Grade Bond Fund Class Z,9940272123,Financial Services,Asset Management - Bonds,1.0,7.19,0.23599999999999996,0,NASDAQ,NASDAQ,US,False,True,True
+BIMSX,Baird Intermediate Bond Fd Investor Cl,9843534845,Financial Services,Asset Management - Bonds,0.63,10.87,0.25896,0,NASDAQ,NASDAQ,,False,True,True
+PTSHX,PIMCO Funds Short Term Fund Institutional Shares,9815229432,Financial Services,Asset Management - Leveraged,-0.01,9.64,0.4129999999999999,0,NASDAQ,NASDAQ,,False,True,True
+JSOAX,JP Morgan Strategic Income Opportunities Fd Cl A,9766163455,Financial Services,Asset Management - Income,-0.04,11.46,0.41606999999999994,0,NASDAQ,NASDAQ,,False,True,True
+LIJIX,BlackRock LifePath Index 2035 Instl,9564309500,,,1.12,18.8,0.22524899999999998,0,Nasdaq,NASDAQ,,False,True,True
+LIJKX,BlackRock LifePath Index 2035 Fund,9564309493,Financial Services,Asset Management,1.12,18.79,0.22799999999999998,0,NASDAQ,NASDAQ,,False,True,True
+VFS,VinFast Auto Ltd.,9503372844,Consumer Cyclical,Auto - Manufacturers,1.204,4.13,0.0,450329,NASDAQ Global Select,NASDAQ,VN,False,False,True
+FIPDX,Fidelity Inflation-Protected Bond Index Fund,9167125504,Financial Services,Asset Management - Bonds,0.83,9.1,0.333,0,NASDAQ,NASDAQ,US,False,True,True
+MMHEX,MainStay MacKay High Yield Muncpl Bd R6,9070347261,,,1.41,12.01,0.4659999999999999,0,Nasdaq,NASDAQ,,False,True,True
+FDVLX,Fidelity Value Fund,9069730816,Financial Services,Asset Management,1.08,15.6,0.149,0,NASDAQ,NASDAQ,US,False,True,True
+OWSMX,Old Westbury Small & Mid Cap Strategies,8795393040,,,1.04,16.41,0.0,0,Nasdaq,NASDAQ,,False,True,
+TSIIX,Thornburg Strategic Income Fund Class I Shs,8613180409,Financial Services,Asset Management - Income,0.54,11.42,0.4419999999999999,0,NASDAQ,NASDAQ,,False,True,True
+APDFX,Artisan High Income Fund,8585210875,,,0.72,8.99,0.6258630000000002,0,Nasdaq,NASDAQ,,False,True,True
+FUAMX,Fidelity Intermediate Treasury Bond Index Fund,8572484087,Financial Services,Asset Management - Bonds,0.97,9.67,0.20699999999999996,0,NASDAQ,NASDAQ,US,False,True,True
+TRBFX,Limited Duration Inflation Focused Bond Fund,8540915195,Financial Services,Asset Management - Bonds,0.36,4.76,0.180287,0,NASDAQ,NASDAQ,,False,True,True
+IIBAX,Voya Intermediate Bond Fund,8392744957,Financial Services,Asset Management - Bonds,1.01,8.72,0.29400000000000004,0,NASDAQ,NASDAQ,,False,True,True
+IICIX,Voya Intermediate Bond Fund Class I,8392744953,Financial Services,Asset Management - Bonds,1.01,8.73,0.32000000000000006,0,NASDAQ,NASDAQ,US,False,True,True
+IIBZX,Voya Intermediate Bond Fund,8392744953,Financial Services,Asset Management - Bonds,1.0,8.73,0.32500000000000007,0,NASDAQ,NASDAQ,,False,True,True
+GLIFX,Lazard Global Listed Infrastructure Portfolio Institutional Shares,8388461561,Financial Services,Asset Management - Global,0.65,16.04,0.36173,0,NASDAQ,NASDAQ,US,False,True,True
+GLFOX,Lazard Global Listed Infrastructure Portfolio Open Shares,8388461559,Financial Services,Asset Management - Global,0.65,16.05,0.211,0,NASDAQ,NASDAQ,US,False,True,True
+VBLAX,Vanguard Long-Term Bond Index Fund Admiral Shares,8351200252,Financial Services,Asset Management - Bonds,2.07,10.79,0.39599999999999996,0,NASDAQ,NASDAQ,,False,True,True
+BBGSX,Bridge Builder Small/Mid Cap Growth,8331662836,,,1.04,15.13,0.045,0,Nasdaq,NASDAQ,,False,True,True
+AVUAX,American Century Mid Cap Value Fund,8270243838,Financial Services,Asset Management,0.77,16.59,0.29300000000000004,0,NASDAQ,NASDAQ,US,False,True,True
+QYLD,Global X NASDAQ 100 Covered Call ETF,8204793358,Financial Services,Asset Management - Global,0.65,17.33,2.0536399999999997,7092735,NASDAQ Global Market,NASDAQ,US,True,False,True
+PHIYX,PIMCO High Yield Fund,8018341374,Financial Services,Asset Management,0.9,8.01,0.392,0,NASDAQ,NASDAQ,,False,True,True
+FLCOX,Fidelity Large Cap Value Index Fund,7944342514,Financial Services,Asset Management,0.86,17.93,0.24,0,NASDAQ,NASDAQ,US,False,True,True
+TRPKX,Retirement I 2045 Fund - I Class,7785335288,Financial Services,Asset Management,1.24,16.79,0.26,0,NASDAQ,NASDAQ,US,False,True,False
+FPADX,Fidelity Emerging Markets Index Fund,7635698688,Financial Services,Asset Management,0.98,10.71,0.269,0,NASDAQ,NASDAQ,US,False,True,True
+SVAIX,Federated Hermes Strategic Value Dividend Fund,7547330560,Financial Services,Asset Management,0.59,5.97,0.182,0,NASDAQ,NASDAQ,,False,True,True
+FZOLX,Fidelity SAI Low Duration Income Fund,7546315774,Financial Services,Asset Management - Income,0.04,10.13,0.3760000000000001,0,Nasdaq,NASDAQ,US,False,True,True
+AEUDX,American Century Equity Income Fund R6 Class,7539652093,Financial Services,Asset Management - Income,0.62,9.08,0.255,0,NASDAQ,NASDAQ,,False,True,True
+TWEIX,American Century Equity Income Investor Class,7539652088,Financial Services,Asset Management - Income,0.62,9.05,0.22399999999999998,0,NASDAQ,NASDAQ,,False,True,True
+CPXAX,Cohen & Steers Preferred Securities and Income Funds Inc. Class A,7533096957,Financial Services,Asset Management - Income,0.74,12.14,0.5936,0,NASDAQ,NASDAQ,,False,True,True
+CPXIX,Cohen & Steers Preferred Sec & Inc I,7533096948,,,0.74,12.18,0.6265000000000002,0,Nasdaq,NASDAQ,,False,True,True
+TRPMX,Retirement I 2050 Fund - I Class,7514089982,Financial Services,Asset Management,1.25,16.83,0.264,0,NASDAQ,NASDAQ,,False,True,False
+INPFX,American Funds Conservative Growth and Income Portfolio - Class F-1,7497780733,Financial Services,Asset Management - Income,0.79,13.23,0.3978,0,NASDAQ,NASDAQ,,False,True,True
+FIHBX,Federated Hermes Institutional High Yield Bond Fund Institutional Shares,7493349371,Financial Services,Asset Management - Bonds,0.87,8.84,0.4379999999999999,0,NASDAQ,NASDAQ,,False,True,True
+PTIAX,Trust for Professional Managers - Performance Trust Strategic Bond Fund,7387562991,Financial Services,Asset Management - Bonds,0.85,19.73,0.7709999999999999,0,NASDAQ Capital Market,NASDAQ,US,False,True,True
+BBBMX,BBH  Limited Duration Fund Class N,7370464248,Financial Services,Asset Management,0.14,10.36,0.396717,0,NASDAQ,NASDAQ,,False,True,True
+BBBIX,BBH Limited Duration Fund Class I,7370464248,Financial Services,Asset Management,0.14,10.36,0.40310099999999993,0,NASDAQ,NASDAQ,,False,True,True
+PHYS,Sprott Physical Gold Trust,7355100120,Financial Services,Asset Management,0.14229383,18.49,0.0,1487141,New York Stock Exchange,NYSE,CA,False,True,True
+FFLEX,Fidelity Freedom Index 2060 Fund,7177230334,Financial Services,Asset Management,1.28,17.79,0.319,0,NASDAQ,NASDAQ,US,False,True,True
+FDKLX,Fidelity Freedom Index 2060 Fund - Investor Class,7177230334,Financial Services,Asset Management,1.28,17.79,0.312,0,NASDAQ,NASDAQ,US,False,True,True
+FPIFX,Fidelity Freedom Index 2020 Fund - Investor Class,7086860287,Financial Services,Asset Management,0.92,16.11,0.412,0,NASDAQ,NASDAQ,US,False,True,True
+DFGEX,DFA Global Real Estate Securities Ptf,7066523646,Financial Services,Asset Management - Global,1.12,10.52,0.345,0,NASDAQ,NASDAQ,,False,True,True
+LBTYB,Liberty Global plc,7016571871,Communication Services,Telecommunications Services,1.161,18.83,0.0,131,NASDAQ Global Select,NASDAQ,GB,False,False,True
+NLSIX,Neuberger Berman Long Short Instl,6994927601,,,0.33,17.92,0.113,0,Nasdaq,NASDAQ,,False,True,True
+PRHYX,T. Rowe Price High Yield Fund,6755320828,Financial Services,Asset Management,0.89,5.91,0.31800000000000006,0,NASDAQ,NASDAQ,,False,True,True
+BUBSX,Baird Ultra Short Bond Fund Investor Cl,6639940598,Financial Services,Asset Management - Bonds,0.04,10.14,0.38369299999999995,0,NASDAQ,NASDAQ,,False,True,True
+BAMBX,BlackRock Systematic Multi-Strategy Fund Class A,6620921855,Financial Services,Asset Management,0.18,10.26,0.389,0,NASDAQ,NASDAQ,,False,True,True
+BIMBX,BlackRock Systematic Multi-Strategy Fund Institutional Shares,6620921853,Financial Services,Asset Management,0.18,10.28,0.424,0,NASDAQ,NASDAQ,,False,True,True
+STYAX,Allspring Core Plus Bond Fund Class A,6620328442,Financial Services,Asset Management - Bonds,1.01,11.21,0.41596999999999995,0,NASDAQ,NASDAQ,,False,True,True
+WIPIX,Allspring Core Plus Bond Fund,6620328440,Financial Services,Asset Management - Bonds,1.01,11.22,0.39227999999999996,0,NASDAQ,NASDAQ,,False,True,True
+DLFNX,DoubleLine Core Fixed Income Fund Class N,6468466170,Financial Services,Asset Management - Income,0.92,9.25,0.399085,0,NASDAQ,NASDAQ,,False,True,True
+TRGIX,TIAA-CREF Growth & Income Fund,6456203261,Financial Services,Asset Management - Income,1.0,16.11,0.12349,0,NASDAQ,NASDAQ,US,False,True,True
+TNIBX,T. Rowe Price International Bond Fund (USD Hedged) - Investor Class,6449428984,Financial Services,Asset Management - Bonds,0.7,8.43,0.186,0,NASDAQ,NASDAQ,,False,True,True
+TNBMX,T. Rowe Price Intl Bd (USD Hdgd) I,6449428984,,,0.69,8.43,0.20199999999999996,0,NASDAQ,NASDAQ,,False,True,True
+APSG,Apollo Strategic Growth Capital,6330643685,Financial Services,Shell Companies,0.0,7.39,0.0,1080801,New York Stock Exchange,NYSE,US,False,False,False
+TSBPX,TIAA-CREF Core Impact Bond Fund Premier Class,6316003839,Financial Services,Asset Management - Bonds,0.99,8.95,0.29400000000000004,0,NASDAQ,NASDAQ,,False,True,True
+TSBIX,TIAA-CREF Core Impact Bond Fund Institutional Class,6316003839,Financial Services,Asset Management - Bonds,0.98,8.95,0.30800000000000005,0,NASDAQ,NASDAQ,,False,True,True
+TSBBX,TIAA-CREF Core Impact Bond Fund,6316003839,Financial Services,Asset Management - Bonds,0.98,8.95,0.28900000000000003,0,NASDAQ,NASDAQ,,False,True,True
+HHHCX,Hartford Schroders Emerging Markets Equity Fund Class C,6256295416,Financial Services,Asset Management,1.0,16.7,0.05,0,NASDAQ,NASDAQ,US,False,True,True
+SEMVX,Hartford Schroders Emerging Markets Equity Fund,6256295411,Financial Services,Asset Management,1.0,16.92,0.206,0,NASDAQ,NASDAQ,US,False,True,True
+HHHSX,Hartford Schroders Emerging Markets Equity Fund Class R4,6256295411,Financial Services,Asset Management,1.0,16.92,0.176,0,NASDAQ,NASDAQ,US,False,True,True
+MMACX,MFS Moderate Allocation Fund Class C,6245736945,Financial Services,Asset Management,0.98,19.52,0.236,0,NASDAQ,NASDAQ,US,False,True,True
+HSWYX,Hartford Schroders International Stock Fund Class Y,6230551034,Financial Services,Asset Management,1.07,18.29,0.205,0,NASDAQ,NASDAQ,,False,True,True
+HSWFX,Hartford Schroders International Stk F,6230551023,,,1.07,18.26,0.226,0,Nasdaq,NASDAQ,,False,True,True
+JEPIX,JPMorgan Equity Premium Income I,6215954421,,,0.59,14.14,0.9313639999999999,0,Nasdaq,NASDAQ,,False,True,True
+JEPAX,JPMorgan Equity Premium Income A,6215954421,Financial Services,Asset Management - Income,0.59,14.14,0.9004629999999998,0,NASDAQ,NASDAQ,,False,True,True
+FCONX,Fidelity Conservative Income Bond Fd,6200151037,Financial Services,Asset Management - Income,0.05,10.01,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+FCNYX,Fidelity Advisor Cnsv Inc Bd Z,6130548219,,,0.02,10.07,0.134,0,Nasdaq,NASDAQ,US,False,True,True
+FCNVX,Fidelity Conservative Income Bond,6130548216,,,0.02,10.06,0.48299999999999993,0,Nasdaq,NASDAQ,,False,True,True
+VFITX,Vanguard Intermediate-Term Treasury Fund,6106088956,Financial Services,Asset Management,0.8,9.88,0.31900000000000006,0,NASDAQ,NASDAQ,,False,True,True
+ADFIX,American Century Diversified Bond Investor Class,6096900094,Financial Services,Asset Management - Bonds,1.01,9.18,0.31600000000000006,0,NASDAQ,NASDAQ,,False,True,True
+OBDC,Blue Owl Capital Corporation,6036964046,Financial Services,Financial - Credit Services,0.915,15.49,1.68,1298053,New York Stock Exchange,NYSE,US,False,False,True
+RPSIX,T. Rowe Price Spectrum Income Fund,5872815615,Financial Services,Asset Management - Income,0.9,11.29,0.4717599999999999,0,NASDAQ,NASDAQ,,False,True,True
+FNSFX,Fidelity Freedom 2060 K,5869803508,,,1.3,14.36,0.182,0,Nasdaq,NASDAQ,,False,True,True
+FDKVX,Fidelity Freedom 2060 Fund,5869803508,Financial Services,Asset Management,1.3,14.36,0.162,0,NASDAQ,NASDAQ,US,False,True,True
+MIPTX,Matthews Pacific Tiger Fund,5854690300,Financial Services,Asset Management,0.98,19.17,0.578,0,NASDAQ,NASDAQ,US,False,True,True
+MAPTX,Matthews Pacific Tiger Fund Investor Class,5854690300,Financial Services,Asset Management,0.98,19.17,0.545,0,NASDAQ,NASDAQ,US,False,True,True
+HMDCX,The Hartford MidCap Fund,5797874680,Financial Services,Asset Management,1.06,12.75,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+VFISX,Vanguard Short-Term Treasury Fund,5728644091,Financial Services,Asset Management - Leveraged,0.31,9.83,0.3600000000000001,0,NASDAQ,NASDAQ,,False,True,True
+DFIGX,DFA Intermediate Government Fixed Income Portfolio,5626864636,Financial Services,Asset Management - Income,0.93,10.99,0.21200000000000002,0,NASDAQ,NASDAQ,,False,True,True
+DBLSX,DoubleLine Low Duration Bond Fund Class I,5592826877,Financial Services,Asset Management - Bonds,0.21,9.65,0.38399999999999995,0,NASDAQ,NASDAQ,,False,True,True
+DLSNX,DoubleLine Low Duration Bond Fund Class N,5592826875,Financial Services,Asset Management - Bonds,0.21,9.64,0.403261,0,NASDAQ,NASDAQ,,False,True,True
+HFQRX,Janus Henderson Global Equity Income Fund - N Shares,5573665791,Financial Services,Asset Management - Income,0.85,6.29,0.318,0,NASDAQ,NASDAQ,,False,True,True
+HFQAX,Janus Henderson Global Equity Income Fund,5573665788,Financial Services,Asset Management - Income,0.85,6.26,0.298,0,NASDAQ,NASDAQ,,False,True,True
+HFQTX,Janus Henderson Global Equity Income Fund - T Shares,5573665787,Financial Services,Asset Management - Income,0.84,6.24,0.49129999999999996,0,NASDAQ,NASDAQ,,False,True,True
+PTLDX,PIMCO Low Duration Fund,5565960699,Financial Services,Asset Management,0.29,9.22,0.3432240000000001,0,NASDAQ,NASDAQ,US,False,True,True
+ASVIX,American Century Small Cap Value Fund Investor Class,5545581050,Financial Services,Asset Management,1.0,11.29,0.109,0,NASDAQ,NASDAQ,,False,True,True
+ESIIX,Eaton Vance Short Duration Strategic Income Fund,5502910460,Financial Services,Asset Management - Income,0.38,6.68,0.36,0,NASDAQ,NASDAQ,,False,True,True
+LTXFX,American Funds Ltd Term Tax-Ex Bond Fd of America Cl F-1 Shs,5444519926,Financial Services,Asset Management - Bonds,0.56,15.29,0.27199999999999996,0,NASDAQ,NASDAQ,,False,True,True
+TRRGX,T . Rowe Price Retirement 2015 Fund,5443805172,Financial Services,Asset Management,0.81,12.78,0.316,0,NASDAQ,NASDAQ,,False,True,True
+VCLAX,Vanguard California Long-Term Tax-Exempt Fund Admiral Shares,5388797947,Financial Services,Asset Management,1.19,11.49,0.31100000000000005,0,NASDAQ,NASDAQ,,False,True,True
+VCITX,Vanguard California Long-Term Tax-Exempt Fund Investor Shares,5388797947,Financial Services,Asset Management,1.19,11.49,0.30100000000000005,0,NASDAQ,NASDAQ,,False,True,True
+JSM,Navient Corporation SR NT 6% 121543,5383402481,Financial Services,Financial - Credit Services,0.95770156,19.64,1.5,9852,NASDAQ Global Select,NASDAQ,US,False,False,True
+FASIX,Fidelity Asset Manager 20%,5353544192,,,0.53,13.57,0.4139999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+TRBRX,Retirement I 2020 Fund - I Class,5350544378,Financial Services,Asset Management,0.85,12.73,0.327,0,NASDAQ,NASDAQ,,False,True,False
+PRTMX,T. Rowe Price Summit Municipal Intrm I,5324241405,,,0.8,11.35,0.259,0,Nasdaq,NASDAQ,,False,True,True
+VGAVX,Vanguard Emerging Markets Government Bond Index Fd Admiral Shs,5288286202,Financial Services,Asset Management - Bonds,1.26,16.01,0.8356999999999998,0,NASDAQ,NASDAQ,,False,True,True
+FPE,First Trust Preferred Securities and Income ETF,5245095975,Financial Services,Asset Management,0.79,17.5,0.9924,763333,New York Stock Exchange Arca,AMEX,US,True,False,True
+MPMNX,MFS Municipal Income R6,5230282236,,,1.09,8.23,0.278,0,Nasdaq,NASDAQ,,False,True,True
+FCSDX,Fidelity Advisor Strategic Dividend & Income Fund Class C,5168828928,Financial Services,Asset Management - Income,0.98,16.78,0.28900000000000003,0,NASDAQ,NASDAQ,US,False,True,True
+FASDX,Fidelity Advisor Strategic Dividend & Income Fund Class A,5168828927,Financial Services,Asset Management - Income,0.98,16.83,0.41600000000000004,0,NASDAQ,NASDAQ,US,False,True,True
+FTSDX,Fidelity Advisor Strategic Dividend & Income Fund Class M,5168828925,Financial Services,Asset Management - Income,0.98,16.82,0.279,0,NASDAQ,NASDAQ,US,False,True,True
+FSIDX,Fidelity Strategic Dividend & Income Fund,5168828924,Financial Services,Asset Management - Income,0.98,16.92,0.33899999999999997,0,NASDAQ,NASDAQ,US,False,True,True
+PDBC,Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF,5109065633,Financial Services,Asset Management,0.95,13.44,0.56012,8321767,NASDAQ Global Market,NASDAQ,US,True,False,True
+DIPSX,DFA Inflation-Protected Securities Portfolio,5102946805,,,0.9,10.92,0.248,0,NASDAQ,NASDAQ,,False,True,True
+RMUNX,Invesco Rochester New York Municipals Fund Class A,5059419135,Financial Services,Asset Management,1.58,15.31,0.5514,0,NASDAQ,NASDAQ,,False,True,True
+SVFC,SVF Investment Corp. 3,5055223128,Financial Services,Shell Companies,0.0,9.1,0.0,137339,NASDAQ Capital Market,NASDAQ,US,False,False,False
+EIBRX,Eaton Vance Income Fund of Boston R6,5041680891,,,0.83,5.19,0.28900000000000003,0,Nasdaq,NASDAQ,,False,True,True
+TRRLX,T. Rowe Price Retirement 2060 Fund,5039041530,Financial Services,Asset Management,1.26,16.39,0.191,0,NASDAQ,NASDAQ,US,False,True,True
+HILDX,Hartford International Value F,4992287218,,,0.94,18.91,0.494,0,Nasdaq,NASDAQ,,False,True,True
+FAKTX,American Funds 2015 Target Date Retirement Fd Cl F-1,4963854327,Financial Services,Asset Management,0.75,12.47,0.323,0,NASDAQ,NASDAQ,,False,True,True
+PRULX,T. Rowe Price U.S. Treasury Long-Term Index Fund,4949257725,Financial Services,Asset Management,2.03,7.45,0.22599999999999998,0,NASDAQ,NASDAQ,,False,True,True
+BALPX,"BlackRock Large Cap Srs Fds, BlackRock Event Driven Equity Fd A Shs",4948620795,,,0.13,9.63,0.184,0,NASDAQ,NASDAQ,,False,True,True
+TAIFX,American Funds Tax-Aware Conservative Growth and Income Portfolio Class F-1,4922483700,Financial Services,Asset Management - Income,0.83,15.96,0.2669,0,NASDAQ,NASDAQ,,False,True,True
+AIDYX,AB Intermediate Diversified Muni Adv,4895182335,,,0.62,13.9,0.3690000000000001,0,Nasdaq,NASDAQ,,False,True,True
+FFVFX,Fidelity Freedom 2015,4888811509,,,0.82,11.6,0.299,0,NASDAQ,NASDAQ,US,False,True,True
+PCRIX,Pimco CommodityRealReturn Strategy Fund Institutional Class,4855014400,Financial Services,Asset Management,1.1,12.8,0.9339999999999999,0,NASDAQ,NASDAQ,,False,True,True
+PCRAX,PIMCO CommodityRealReturn Strategy Fund Class A,4855014388,Financial Services,Asset Management,1.09,12.06,0.8480000000000001,0,NASDAQ,NASDAQ,,False,True,True
+VNYTX,Vanguard New York Long-Term Tax-Exempt Fund Investor Shares,4813360120,Financial Services,Asset Management,1.21,10.91,0.29400000000000004,0,NASDAQ,NASDAQ,,False,True,True
+SWAGX,Schwab U.S. Aggregate Bond Index Fund,4810627579,Financial Services,Asset Management - Bonds,1.0,8.88,0.26499999999999996,0,NASDAQ,NASDAQ,US,False,True,True
+TCLNX,TIAA-CREF Lifecycle 2030 Fund Retirement Class,4785929204,Financial Services,Asset Management,0.95,15.19,0.261,0,NASDAQ,NASDAQ,,False,True,True
+PRGTX,T. Rowe Price Global Technology Fund,4756166652,Financial Services,Asset Management - Global,1.26,18.91,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+TRPNX,Retirement I 2055 Fund - I Class,4740247036,Financial Services,Asset Management,1.26,17.05,0.262,0,NASDAQ,NASDAQ,,False,True,False
+PRWBX,T. Rowe Price Short Term Bond Fund,4695477244,Financial Services,Asset Management - Bonds,0.28,4.58,0.138,0,NASDAQ,NASDAQ,,False,True,True
+EIBLX,Eaton Vance Floating Rate Fund,4660324860,Financial Services,Asset Management,0.25,8.38,0.635,0,NASDAQ,NASDAQ,,False,True,True
+FRIFX,Fidelity Real Estate Income,4658621436,Financial Services,Asset Management - Income,0.74,11.92,0.415,0,NASDAQ,NASDAQ,US,False,True,True
+PCLIX,PIMCO CommoditiesPLUS Strategy Fund,4632103934,Financial Services,Asset Management,0.99,6.77,0.324,0,NASDAQ,NASDAQ,,False,True,True
+FHIGX,Fidelity Municipal Income Fund,4610082805,Financial Services,Asset Management - Income,1.07,12.27,0.30100000000000005,0,NASDAQ,NASDAQ,US,False,True,True
+VSGDX,Vanguard Short-Term Federal Fd Admiral Shs,4592163319,Financial Services,Asset Management - Leveraged,0.34,10.12,0.30600000000000005,0,NASDAQ,NASDAQ,,False,True,True
+VSGBX,Vanguard Short-Term Federal Fund,4592163319,Financial Services,Asset Management - Leveraged,0.34,10.12,0.29900000000000004,0,NASDAQ,NASDAQ,,False,True,True
+NPSFX,Nuveen Preferred Securities & Income Fund,4587631614,Financial Services,Asset Management - Income,0.64,15.46,0.7579999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+PYMPX,PIMCO High Yield Municipal Bond Fund,4557662714,Financial Services,Asset Management - Bonds,1.16,8.56,0.32700000000000007,0,NASDAQ,NASDAQ,,False,True,True
+PHMIX,"PIMCO Fds, High Yield Municipal Bond Fund Insti Class",4557662714,Financial Services,Asset Management - Bonds,1.16,8.56,0.3350000000000001,0,NASDAQ,NASDAQ,,False,True,True
+PICYX,Pioneer Bond Fund Class Y,4546028025,Financial Services,Asset Management - Bonds,0.99,8.25,0.27,0,NASDAQ,NASDAQ,,False,True,True
+NSTLX,Neuberger Berman Strategic Income Fund Institutional Class,4473523195,Financial Services,Asset Management - Income,0.97,9.84,0.4770109999999999,0,NASDAQ,NASDAQ,US,False,True,True
+PRIJX,T. Rowe Price Emerging Markets Discovery Stock Fund Investor Class,4455054842,Financial Services,Asset Management,0.89,13.95,0.397,0,NASDAQ,NASDAQ,,False,True,True
+JSEAX,JPMorgan International Equity A,4441156080,,,1.07,19.64,0.375,0,NASDAQ,NASDAQ,,False,True,True
+BFRKX,BlackRock Floating Rate Income Fund,4365942783,Financial Services,Asset Management - Income,0.22,9.67,0.712,0,NASDAQ,NASDAQ,US,False,True,True
+LSBRX,Loomis Sayles Funds - Bond Fund Retail Class (Trust I),4364276220,Financial Services,Asset Management - Bonds,0.98,11.5,0.521,0,NASDAQ,NASDAQ,US,False,True,True
+PGX,Invesco Preferred ETF,4293390538,Financial Services,Asset Management,1.49,11.66,0.70506,2213386,New York Stock Exchange Arca,AMEX,US,True,False,True
+PLFDX,Pacific Funds Floating Rate Income - Advisor Class,4265549823,Financial Services,Asset Management - Income,0.21,9.54,0.7899439999999999,0,NASDAQ,NASDAQ,,False,True,True
+PLFRX,Pacific Funds Floating Rate Income - Class I,4265549821,Financial Services,Asset Management - Income,0.21,9.52,0.7299999999999999,0,NASDAQ,NASDAQ,,False,True,True
+PLFLX,Pacific Funds Floating Rate Income - Class A,4265549819,Financial Services,Asset Management - Income,0.21,9.51,0.766827,0,NASDAQ,NASDAQ,,False,True,True
+FZILX,Fidelity International Index Fund,4237108213,Financial Services,Asset Management,1.05,11.82,0.33,0,NASDAQ,NASDAQ,US,False,True,True
+GSRTX,Goldman Sachs Absolute Return Tracker Fund,4200507903,Financial Services,Asset Management,0.39,9.73,0.25,0,NASDAQ,NASDAQ,,False,True,True
+FSANX,Fidelity Asset Manager 60%,4184480243,,,1.0,15.6,0.282,0,NASDAQ,NASDAQ,US,False,True,True
+FNBGX,Fidelity Long-Term Treasury Bond Index Fund,4139421949,Financial Services,Asset Management - Bonds,2.04,9.63,0.28,0,NASDAQ,NASDAQ,US,False,True,True
+JMUTX,Janus Henderson Multi-Sector Income Fund - T Shares,4108237048,Financial Services,Asset Management - Income,0.78,8.61,0.49099999999999994,0,NASDAQ,NASDAQ,,False,True,True
+JMUCX,Janus Henderson Multi-Sector Income Fund,4108237048,Financial Services,Asset Management - Income,0.78,8.61,0.4289999999999999,0,NASDAQ,NASDAQ,,False,True,True
+OWMBX,Old Westbury Municipal Bond,4104462079,,,0.7,11.5,0.27,0,Nasdaq,NASDAQ,,False,True,True
+FNMIX,Fidelity Advisor New Markets Income Fund,4061438709,Financial Services,Asset Management - Income,1.1,12.72,0.561,0,NASDAQ,NASDAQ,US,False,True,True
+PREMX,T. Rowe Price Emerging Markets Bond Fund,4060910330,Financial Services,Asset Management - Bonds,1.19,9.19,0.4089999999999999,0,NASDAQ,NASDAQ,US,False,True,True
+BEXIX,Baron Emerging Markets Fd Inst Shs,4049230841,,,0.92,15.04,0.096,0,NASDAQ,NASDAQ,,False,True,True
+BEXFX,Baron Emerging Markets Fd Retail Shs,4049230841,,,0.92,14.92,0.057999999999999996,0,NASDAQ,NASDAQ,,False,True,True
+FZOMX,Fidelity Salem Street Trust - Fidelity SAI Short-Term Bond Fund,4016755196,Financial Services,Asset Management - Bonds,0.26,9.67,0.31900000000000006,0,Nasdaq,NASDAQ,US,False,True,True
+DSENX,DoubleLine Shiller Enhanced CAPE,3948646395,,,1.09,14.7,0.6013930000000001,0,NASDAQ,NASDAQ,US,False,True,True
+DSEEX,DoubleLine Shiller Enhanced CAPE Class I,3948646388,,,1.09,14.72,0.6404910000000001,0,NASDAQ,NASDAQ,US,False,True,True
+VASIX,Vanguard LifeStrategy Income Fund Investor Shares,3947248116,Financial Services,Asset Management - Income,0.63,15.38,0.5054299999999999,0,NASDAQ,NASDAQ,US,False,True,True
+SEFCX,SEI Institutional International Trust International Equity Fund,3907228919,Financial Services,Asset Management,1.05,12.56,0.266,0,NASDAQ,NASDAQ,,False,True,True
+FAATX,American Funds 2010 Target Date Retirement Fd Cl F-1,3903113979,Financial Services,Asset Management,0.7,11.83,0.314,0,NASDAQ,NASDAQ,,False,True,True
+RPIEX,T. Rowe Price Dynamic Global Bond Fund,3896221439,Financial Services,Asset Management - Bonds,-0.39,7.73,0.303686,0,NASDAQ,NASDAQ,,False,True,True
+JMVIX,Janus Henderson Mid Cap Value Fund Class S,3829553906,Financial Services,Asset Management,0.87,17.19,0.122,0,NASDAQ,NASDAQ,,False,True,True
+JDPAX,Janus Henderson Mid Cap Value Fund Class A,3827326195,Financial Services,Asset Management,0.87,17.18,0.141,0,NASDAQ,NASDAQ,,False,True,True
+TGINX,TCW Emerging Markets Income Fund N Class,3763541497,Financial Services,Asset Management - Income,1.21,8.44,0.36300000000000004,0,NASDAQ,NASDAQ,,False,True,True
+JMCVX,Janus Henderson Mid Cap Value Fund - T Shares,3758265079,Financial Services,Asset Management,0.87,16.87,0.17,0,NASDAQ,NASDAQ,,False,True,True
+JSDHX,JPMorgan Short Duration Core Plus Fund Class A,3744866552,Financial Services,Asset Management - Leveraged,0.44,9.25,0.20399999999999996,0,NASDAQ,NASDAQ,,False,True,True
+RLITX,Lazard International Strategic Equity Portfolio R6,3724598005,,,0.99,16.1,0.226,0,NASDAQ,NASDAQ,US,False,True,True
+LISIX,Lazard International Strategic Equity Portfolio Institutional Shares,3724598002,,,0.99,16.08,0.226,0,NASDAQ,NASDAQ,US,False,True,True
+LISOX,Lazard International Strategic Equity Ptf Open Shares,3724598000,,,0.99,16.22,0.186,0,NASDAQ,NASDAQ,,False,True,True
+BXMYX,Blackstone Alternative Multi-Strategy Y,3705506810,,,0.14,10.91,0.372,0,Nasdaq,NASDAQ,,False,True,True
+TWTIX,American Century Intermediate-Term Tax Free Bond Investor Class,3681506550,Financial Services,Asset Management - Bonds,0.82,10.78,0.276,0,NASDAQ,NASDAQ,,False,True,True
+ATBYX,American Century IntermTrm Tx-Fr Bd Y,3681506550,,,0.82,10.78,0.32900000000000007,0,Nasdaq,NASDAQ,,False,True,True
+JMIVX,Janus Henderson Mid Cap Value Fund,3678064896,Financial Services,Asset Management,0.87,16.51,0.179,0,NASDAQ,NASDAQ,,False,True,False
+IHOSX,The Hartford International Opportunities Fund,3671749880,Financial Services,Asset Management,1.02,19.29,0.227,0,NASDAQ,NASDAQ,US,False,True,True
+IHOIX,The Hartford International Opportunities Fund Class I,3671749877,Financial Services,Asset Management,1.02,18.37,0.28,0,NASDAQ,NASDAQ,US,False,True,True
+IHOAX,The Hartford International Opportunities Fund Class A,3671749876,Financial Services,Asset Management,1.02,18.49,0.238,0,NASDAQ,NASDAQ,US,False,True,True
+IHOTX,The Hartford International Opportunities Fund Class R5,3671749872,Financial Services,Asset Management,1.02,19.47,0.289,0,NASDAQ,NASDAQ,US,False,True,True
+IHORX,The Hartford International Opportunities Fund Class R3,3671749870,Financial Services,Asset Management,1.02,18.88,0.176,0,NASDAQ,NASDAQ,US,False,True,True
+PRFRX,"T. Rowe Price Floating Rate Fund, Inc.",3652756476,Financial Services,Asset Management,0.21,9.29,0.6679999999999999,0,NASDAQ,NASDAQ,,False,True,True
+VPAIX,Vanguard Pennsylvania Long-Term Tax-Exempt Fund Investor Shares,3633189626,Financial Services,Asset Management,1.14,10.83,0.30300000000000005,0,NASDAQ,NASDAQ,,False,True,True
+PGSGX,JPMorgan Small Cap Growth Fund A,3629847801,Financial Services,Asset Management,1.12,17.81,0.0,0,NASDAQ,NASDAQ,,False,True,True
+FTHRX,Fidelity Intermediate Bond Fund,3621680379,Financial Services,Asset Management - Bonds,0.62,10.11,0.281,0,NASDAQ,NASDAQ,US,False,True,True
+LHYVX,Lord Abbett High Yield Fund,3613008891,Financial Services,Asset Management,0.87,6.38,0.37599999999999995,0,NASDAQ,NASDAQ,,False,True,True
+TRLVX,SEI Institutional Managed Trust Core Fixed Income Fund,3553471485,Financial Services,Asset Management - Income,1.11,9.5,0.3394000000000001,0,NASDAQ,NASDAQ,,False,True,True
+CRATX,Community Reinvestment Act Qualified Investment Fund Retail Class,3495198204,Financial Services,Asset Management,0.75,9.42,0.22399999999999998,0,NASDAQ,NASDAQ,,False,True,True
+CRANX,CCM Community Impact Bond Institutional,3495198202,,,0.74,9.43,0.274519,0,Nasdaq,NASDAQ,,False,True,True
+TRRAX,T. Rowe Price Retirement 2010 Fund,3471249148,Financial Services,Asset Management,0.79,15.44,0.392,0,NASDAQ,NASDAQ,US,False,True,True
+RRTAX,T. Rowe Price Retirement 2010 Fund Class R,3471249145,Financial Services,Asset Management,0.79,15.16,0.315,0,NASDAQ,NASDAQ,US,False,True,True
+MISAX,Victory Trivalent International Small-Cap CL A,3460839160,,,1.15,15.38,0.222,0,NASDAQ,NASDAQ,US,False,True,True
+HABYX,The Hartford Total Return Bond Fund Class Y,3459914488,Financial Services,Asset Management - Bonds,1.03,9.18,0.30100000000000005,0,NASDAQ,NASDAQ,,False,True,True
+FBLAX,Franklin Managed Income A,3458647796,,,0.86,12.65,0.37399999999999994,0,Nasdaq,NASDAQ,,False,True,True
+AHLIX,American Beacon AHL Mgd Futs Strat R5,3458225402,,,-0.22,10.41,0.109,0,Nasdaq,NASDAQ,,False,True,True
+AHLPX,American Beacon AHL Managed Futures Strategy Fund - Investor Class,3458225401,Financial Services,Asset Management,-0.22,10.19,0.061,0,NASDAQ,NASDAQ,,False,True,True
+BMNSX,Baird Core Intermediate Municipal Bond Fund - Investor Class,3457559286,Financial Services,Asset Management - Bonds,0.72,10.27,0.22779199999999997,0,NASDAQ,NASDAQ,,False,True,True
+ISBC,"Investors Bancorp, Inc.",3455835385,Financial Services,Banks - Regional,0.0,13.87,3.0272559999999995,133025189,NASDAQ Global Select,NASDAQ,US,False,False,False
+HWDVX,The Hartford World Bond Fund,3452800251,Financial Services,Asset Management - Bonds,0.52,10.07,0.27034600000000003,0,NASDAQ,NASDAQ,,False,True,True
+FFFCX,Fidelity Freedom 2010 Fund,3442035958,Financial Services,Asset Management,0.7,14.12,0.385,0,NASDAQ,NASDAQ,US,False,True,True
+BDSIX,BlackRock Advantage Small Cap Core Fund Institutional Shares,3435179774,Financial Services,Asset Management,1.05,18.65,0.119,0,NASDAQ,NASDAQ,US,False,True,True
+BDSAX,BlackRock Advantage Small Cap Core Fund - Class A,3435179774,Financial Services,Asset Management,1.04,18.52,0.097,0,NASDAQ,NASDAQ,,False,True,True
+BDSCX,BlackRock Advantage Small Cap Core Fund Investor C Shares,3435179766,Financial Services,Asset Management,1.04,17.88,0.034,0,NASDAQ,NASDAQ,US,False,True,True
+BDSKX,BlackRock Advantage Small Cap Core Fund,3435179765,Financial Services,Asset Management,1.04,18.66,0.124,0,NASDAQ,NASDAQ,US,False,True,True
+ARTYX,Artisan Developing World Fund - Investor Shares,3400822265,Financial Services,Asset Management,1.28,18.4,0.0,0,NASDAQ,NASDAQ,,False,True,True
+DFSPX,DFA International Sustainability Core 1 Portfolio,3393057524,,,1.09,12.9,0.31766,0,NASDAQ,NASDAQ,,False,True,True
+GVIRX,Goldman Sachs U.S. Equity Dividend and Premium Fund,3359450356,,,0.84,16.7,0.20959999999999998,0,Nasdaq,NASDAQ,,False,True,True
+PRFHX,T. Rowe Price Tax-Free High Yield Fd Inc.,3359271929,,,1.15,11.18,0.3400000000000001,0,NASDAQ,NASDAQ,,False,True,True
+VEMBX,Vanguard Emerging Markets Bond Fund Investor Shares,3325387517,Financial Services,Asset Management - Bonds,1.17,10.05,0.6030000000000001,0,NASDAQ,NASDAQ,,False,True,True
+BSCQ,Invesco BulletShares 2026 Corporate Bond ETF,3318266351,Financial Services,Asset Management,0.55,19.3,0.7391200000000001,797306,NASDAQ Global Market,NASDAQ,US,True,False,True
+ALVIX,Focused Large Cap Value Investor Class,3296523775,,,0.62,10.74,0.20400000000000001,0,NASDAQ,NASDAQ,,False,True,True
+PDIIX,PIMCO Diversified Income Fund Institutional Class,3284614397,Financial Services,Asset Management - Income,1.01,9.6,0.386,0,NASDAQ,NASDAQ,,False,True,True
+CMBT,Euronav NV,3283960850,,,-0.242,16.85,7.02,650660,New York Stock Exchange,NYSE,,False,False,True
+FATRX,Frost Total Return Bond Fund Investor Class Shares,3263512063,Financial Services,Asset Management - Bonds,0.57,9.84,0.371,0,NASDAQ,NASDAQ,,False,True,True
+AGBVX,American Century Global Bond Fd Inv Cl,3252858877,Financial Services,Asset Management - Bonds,0.83,8.64,0.26,0,NASDAQ,NASDAQ,,False,True,True
+EURN,Euronav NV,3251192446,Energy,Oil & Gas Midstream,-0.242,16.74,7.02,157488,New York Stock Exchange,NYSE,BE,False,False,True
+FUMBX,Fidelity Short-Term Treasury Bond Index Fund,3238824694,Financial Services,Asset Management - Bonds,0.38,10.19,0.16100000000000003,0,NASDAQ,NASDAQ,US,False,True,True
+MACFX,MFS Conservative Allocation Fund,3230559742,Financial Services,Asset Management,0.79,16.94,0.39837,0,NASDAQ,NASDAQ,,False,True,True
+SHMMX,Western Asset Managed Municipals Fund,3136653307,Financial Services,Asset Management,0.98,15.06,0.41799999999999987,0,NASDAQ,NASDAQ,US,False,True,True
+SMMCX,Western Asset Managed Municipals Fund Class C,3136653301,Financial Services,Asset Management,0.98,15.08,0.38168100000000005,0,NASDAQ,NASDAQ,US,False,True,True
+BEGRX,Franklin Mutual Beacon Fund,3122572789,Financial Services,Asset Management,0.89,16.86,0.0,0,NASDAQ,NASDAQ,,False,True,True
+RFVTX,American Funds 2065 Target Date Retirement Fund,3043656190,Financial Services,Asset Management,1.25,17.13,0.204,0,NASDAQ,NASDAQ,,False,True,True
+FAXTX,American Funds 2065 Target Date Retirement Fund Class F-1,3043656181,Financial Services,Asset Management,1.25,17.03,0.155,0,NASDAQ,NASDAQ,,False,True,True
+TECFX,American Funds Tax-Exempt Fund of CA Cl F-1 Shs,3013266422,Financial Services,Asset Management,1.01,16.76,0.381,0,NASDAQ,NASDAQ,,False,True,True
+VUSUX,Vanguard Long-Term Treasury Fd Admiral Shs,2998883832,,,2.05,8.29,0.263,0,NASDAQ,NASDAQ,,False,True,True
+VUSTX,Vanguard Long-Term Treasury Fund,2998883832,Financial Services,Asset Management,2.05,8.29,0.256,0,NASDAQ,NASDAQ,,False,True,True
+CBHAX,Victory Market Neutral Income Fund - Class A,2972385528,Financial Services,Asset Management - Income,0.05,8.37,0.198,0,NASDAQ,NASDAQ,,False,True,True
+PRUZX,PGIM Jennison Utility Fund Class Z,2940579314,Financial Services,Asset Management,0.76,14.56,0.29400000000000004,0,NASDAQ,NASDAQ,US,False,True,True
+PRUAX,PGIM Jennison Utility Fund Class A,2940579314,Financial Services,Asset Management,0.76,14.49,0.259,0,NASDAQ,NASDAQ,US,False,True,True
+FSRPX,Fidelity Select Retailing Portfolio,2940017661,,,1.12,19.29,0.064,0,NASDAQ,NASDAQ,US,False,True,True
+SSBYX,State Street Target Retirement 2030 Fund,2939118591,Financial Services,Asset Management,1.08,13.39,0.352,0,NASDAQ,NASDAQ,,False,True,True
+SMTRX,ALPS/Smith Total Return Bond Fund Investor Share,2926376447,Financial Services,Asset Management - Bonds,0.92,9.63,0.30400000000000005,0,NASDAQ,NASDAQ,,False,True,True
+LZIOX,Lazard International Equity Portfolio - Open Shares,2906159600,,,1.0,17.73,0.4,0,NASDAQ,NASDAQ,,False,True,True
+ATFSX,Invesco Limited Term Municipal Income R6,2892498422,,,0.44,10.99,0.3600000000000001,0,Nasdaq,NASDAQ,,False,True,True
+DODLX,Dodge & Cox Global Bond Fund,2882825977,Financial Services,Asset Management - Bonds,1.02,10.86,0.262,0,NASDAQ,NASDAQ,,False,True,True
+PAIAX,PIMCO Short Asset Investment Fund Class A,2864704511,Financial Services,Asset Management - Leveraged,0.01,9.94,0.36999999999999994,0,NASDAQ,NASDAQ,,False,True,True
+TWIEX,American Century International Growth Investor Class,2842581237,,,1.18,12.68,0.061,0,NASDAQ,NASDAQ,,False,True,True
+PISIX,PIMCO StocksPLUS International Fund (U.S. Dollar-Hedged) Class INSTL,2800892671,Financial Services,Asset Management,0.71,8.72,0.9929999999999999,0,NASDAQ,NASDAQ,,False,True,True
+PIPAX,PIMCO StocksPLUS International Fund (U.S. Dollar-Hedged) Class A,2800892669,Financial Services,Asset Management,0.72,7.93,0.9650000000000001,0,NASDAQ,NASDAQ,,False,True,True
+BMOIX,iShares US Aggregate Bond Index Instl,2786082557,Financial Services,Asset Management - Bonds,0.99,8.99,0.278322,0,Nasdaq,NASDAQ,,False,True,True
+BARDX,iShares Developed Real Estate Index Fund - Class A,2777972473,Real Estate,Real Estate - General,1.09,9.5,0.212,0,NASDAQ,NASDAQ,,False,True,True
+VMATX,Vanguard Massachusetts Tax-Exempt Fund,2756202750,Financial Services,Asset Management,1.16,10.18,0.273,0,NASDAQ,NASDAQ,,False,True,True
+SQQQ,ProShares UltraPro Short QQQ,2739581190,Financial Services,Asset Management,-3.52,9.1,0.9313400000000001,175859429,NASDAQ Global Market,NASDAQ,US,True,False,True
+PQTIX,PIMCO TRENDS Managed Futures Strategy Fund Institutional Cl,2710287613,Financial Services,Asset Management,-0.39,10.63,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+PQTAX,PIMCO TRENDS Managed Futures Strategy Fund Cl A,2710287608,Financial Services,Asset Management,-0.39,10.42,0.0,0,NASDAQ,NASDAQ,,False,True,True
+OAKEX,Oakmark International Small Cap Fund Investor Class,2707466481,Financial Services,Asset Management,1.28,19.89,0.357,0,NASDAQ,NASDAQ,,False,True,True
+SFNNX,Schwab Fundamental International Large Company Index Fund,2680004096,Financial Services,Asset Management,1.01,11.2,0.343,0,NASDAQ,NASDAQ,US,False,True,True
+OIFIX,Optimum Fixed Income Fund,2660807676,Financial Services,Asset Management - Income,1.05,8.28,0.265,0,NASDAQ,NASDAQ,,False,True,True
+GSHIX,Goldman Sachs High Yield Instl,2655811834,,,0.88,5.63,0.31937200000000004,0,Nasdaq,NASDAQ,,False,True,True
+FNSOX,Fidelity Short-Term Bond Index Fund,2654148599,Financial Services,Asset Management - Bonds,0.4,9.87,0.15400000000000003,0,NASDAQ,NASDAQ,US,False,True,True
+TSNAX,Touchstone Sands Capital Select Growth Fund Class A,2653658366,Financial Services,Asset Management,1.38,13.62,0.0,0,NASDAQ,NASDAQ,,False,True,True
+PTSGX,Touchstone Sands Capital Select Growth Fund Cl Z,2653658366,Financial Services,Asset Management,1.38,13.63,0.0,0,NASDAQ,NASDAQ,,False,True,True
+CFSIX,Touchstone Sands Capital Select Growth Y,2653658354,,,1.38,15.41,0.0,0,Nasdaq,NASDAQ,,False,True,True
+CISGX,Touchstone Sands Capital Select Growth Fund Institutional Class,2653658353,Financial Services,Asset Management,1.38,15.46,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+FCAMX,Franklin California High Yield Municipal Fund Class A1,2650420476,Financial Services,Asset Management,1.16,9.9,0.3390000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+NHFIX,Northern High Yield Fixed Income Fund,2639865086,Financial Services,Asset Management - Income,0.84,6.02,0.29826600000000003,0,NASDAQ,NASDAQ,,False,True,True
+SSCQX,State Street Target Retirement 2040 Fund,2636520704,Financial Services,Asset Management,1.22,14.58,0.323,0,NASDAQ,NASDAQ,,False,True,True
+CHCLX,"AB Discovery Growth Fund, Inc. - Class A",2633486070,Financial Services,Asset Management,1.18,10.88,0.0,0,NASDAQ,NASDAQ,,False,True,True
+GMDZX,GuideStone Funds Medium-Duration Bond Fund Investor Class,2631481085,Financial Services,Asset Management - Bonds,1.06,12.7,0.44310000000000005,0,NASDAQ,NASDAQ,US,False,True,True
+SPHIX,Fidelity High Income Fund,2630216957,Financial Services,Asset Management - Income,0.85,7.78,0.3670000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+FHASX,Fidelity Freedom Blend 2035 Fund,2624279290,Financial Services,Asset Management,1.18,11.8,0.20900000000000002,0,NASDAQ,NASDAQ,US,False,True,True
+FFFAX,Fidelity Freedom Income Fund,2621624566,Financial Services,Asset Management - Income,0.56,10.68,0.298,0,NASDAQ,NASDAQ,US,False,True,True
+MERFX,The Merger Fund - Class A,2621296378,Financial Services,Asset Management,0.03,17.48,0.444,0,NASDAQ,NASDAQ,,False,True,True
+TORTX,Tortoise MLP & Pipeline Fund Class A,2614349566,Financial Services,Asset Management,0.73,16.49,0.584,0,NASDAQ,NASDAQ,,False,True,True
+TORIX,Tortoise MLP & Pipeline Fund Institutional Class,2614349558,Financial Services,Asset Management,0.73,16.77,0.587,0,NASDAQ,NASDAQ,,False,True,True
+TAAAX,Thrivent Aggressive Allocation Fund Class A,2602104563,Financial Services,Asset Management,1.27,19.22,0.218,0,NASDAQ,NASDAQ,US,False,True,True
+TAAIX,Thrivent Aggressive Allocation Fund Class S,2602104559,Financial Services,Asset Management,1.27,19.47,0.247,0,NASDAQ,NASDAQ,US,False,True,True
+MTLFX,MFS Municipal Limited Maturity Fund A,2598715130,Financial Services,Asset Management,0.5,7.94,0.17300000000000004,0,NASDAQ,NASDAQ,,False,True,True
+JDFAX,Janus Henderson Flexible Bond Fund Class A,2597039100,Financial Services,Asset Management - Bonds,1.03,9.32,0.3400000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+JAFIX,Janus Henderson Flexible Bond Fund - T Shares,2597039100,Financial Services,Asset Management - Bonds,1.03,9.32,0.3430000000000001,0,NASDAQ,NASDAQ,,False,True,True
+JADFX,Janus Henderson Flexible Bond Fund,2597039097,Financial Services,Asset Management - Bonds,1.03,9.33,0.32400000000000007,0,NASDAQ,NASDAQ,,False,True,True
+FSTFX,Fidelity Limited Term Municipal Income Fund,2591851767,Financial Services,Asset Management - Income,0.47,10.36,0.16100000000000003,0,NASDAQ,NASDAQ,US,False,True,True
+FMSDX,Fidelity Advisor Multi-Asset Income Fund - Fidelity Multi-Asset Income Fund,2590223094,Financial Services,Asset Management - Income,0.78,13.91,0.45899999999999996,0,NASDAQ,NASDAQ,US,False,True,True
+ACITX,American Century Inflation Adjusted Bond Investor Class,2589029622,Financial Services,Asset Management - Bonds,0.86,10.53,0.372,0,NASDAQ,NASDAQ,US,False,True,True
+PSPAX,PIMCO Fds Stockplus Cl A,2582767866,,,1.03,11.09,0.616,0,NASDAQ,NASDAQ,,False,True,True
+PSTKX,PIMCO Funds StocksPlus Fund Institutional Shares,2582767861,Financial Services,Asset Management,1.03,12.91,0.651,0,NASDAQ,NASDAQ,,False,True,True
+PLIDX,Pacific Funds Core Income - Advisor Class,2553233916,Financial Services,Asset Management - Income,0.96,9.71,0.377,0,NASDAQ,NASDAQ,,False,True,True
+PLIIX,Pacific Funds Core Income - Class I,2553233913,Financial Services,Asset Management - Income,0.96,9.7,0.377,0,NASDAQ,NASDAQ,,False,True,True
+HSNYX,The Hartford Strategic Income Fund Class Y,2528253435,Financial Services,Asset Management - Income,0.87,7.79,0.347,0,NASDAQ,NASDAQ,,False,True,True
+HSNAX,The Hartford Strategic Income Fund Cl A,2528253435,Financial Services,Asset Management - Income,0.86,7.83,0.3660000000000001,0,NASDAQ,NASDAQ,,False,True,True
+FSRNX,Fidelity Real Estate Index Fund,2525602809,Real Estate,Real Estate - General,1.19,16.26,0.45,0,NASDAQ,NASDAQ,US,False,True,True
+TRPLX,T Rowe Price Retirement Funds Inc - T. Rowe Price Retirement I 2060 Fund,2525242870,,,1.26,17.27,0.0,0,Nasdaq,NASDAQ,,False,True,False
+FHARX,Fidelity Freedom Blend 2040 Fund,2498322170,Financial Services,Asset Management,1.29,12.33,0.189,0,NASDAQ,NASDAQ,US,False,True,True
+FCRDX,Fidelity Conservative Income Municipal Bond Fund,2489643260,Financial Services,Asset Management - Income,0.1,10.0,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+VNJTX,Vanguard New Jersey Long-Term Tax-Exempt Fund Investor Shares,2470476535,Financial Services,Asset Management,1.16,11.4,0.31800000000000006,0,NASDAQ,NASDAQ,,False,True,True
+CDSIX,Calvert Short Duration Income Fund,2459662847,Financial Services,Asset Management - Income,0.36,15.68,0.6695930000000001,0,NASDAQ,NASDAQ,US,False,True,True
+CDICX,Calvert Short Duration Income Fund Class C,2459662842,Financial Services,Asset Management - Income,0.36,15.51,0.5250459999999999,0,NASDAQ,NASDAQ,US,False,True,True
+CCFAX,American Funds College 2036 Fund,2448142328,Financial Services,Asset Management,1.1,12.75,0.205,0,NASDAQ,NASDAQ,,False,True,True
+JORAX,Janus Henderson Global Select Fund,2443919098,Financial Services,Asset Management - Global,1.01,19.44,0.16,0,NASDAQ,NASDAQ,,False,True,True
+JORNX,Janus Henderson Global Select Fund - T Shares,2431347440,Financial Services,Asset Management - Global,1.01,19.34,0.173,0,NASDAQ,NASDAQ,,False,True,True
+ARDT,"Ardent Health Partners, LLC",2430207809,Healthcare,Healthcare,,17.24,0.0,420004,New York Stock Exchange,NYSE,US,False,False,True
+JSLNX,Janus Henderson Global Select Fund N Shares,2430090222,Financial Services,Asset Management - Global,1.01,19.33,0.203,0,NASDAQ,NASDAQ,,False,True,True
+IPOAX,Delaware Ivy Emerging Markets Equity Fund Class A,2425696766,Financial Services,Asset Management,1.01,19.35,0.571,0,NASDAQ,NASDAQ,,False,True,True
+OZON,Ozon Holdings PLC,2422346997,Consumer Cyclical,Specialty Retail,0.372438,11.6,0.0,112254,NASDAQ Global Select,NASDAQ,CY,False,False,False
+DREVX,"BNY Mellon Large Cap Securities Fund, Inc.",2419336188,Financial Services,Asset Management,1.06,18.86,0.042,0,NASDAQ,NASDAQ,US,False,True,True
+JORRX,Janus Henderson Global Select Fund Class R,2389861103,Financial Services,Asset Management - Global,1.01,19.01,0.081,0,NASDAQ,NASDAQ,,False,True,True
+FHATX,Fidelity Freedom Blend 2030 Fund,2388702713,Financial Services,Asset Management,1.06,11.22,0.221,0,NASDAQ,NASDAQ,US,False,True,True
+FGOVX,Fidelity Government Income Fund,2382008316,Financial Services,Asset Management - Income,0.95,9.16,0.22399999999999998,0,NASDAQ,NASDAQ,US,False,True,True
+TCREX,TIAA-CREF Real Estate Securities Fund Retail Class,2363899376,Real Estate,Real Estate - General,1.15,17.62,0.222,0,NASDAQ,NASDAQ,,False,True,True
+EBNEX,American Funds Emerging Markets Bond Fund Class F-1,2338867708,Financial Services,Asset Management - Bonds,1.16,7.77,0.4399999999999999,0,NASDAQ,NASDAQ,,False,True,True
+FSHBX,Fidelity Short Term Bond Fund,2318517240,Financial Services,Asset Management - Bonds,0.26,8.42,0.259,0,NASDAQ,NASDAQ,US,False,True,True
+MGLAX,MFS Global Real Estate Fund Class A,2311487487,Real Estate,Real Estate - General,1.13,16.83,0.27,0,NASDAQ,NASDAQ,,False,True,True
+PFFD,Global X U.S. Preferred ETF,2310989366,Financial Services,Asset Management - Global,1.41,19.82,1.26,351070,New York Stock Exchange Arca,AMEX,US,True,False,True
+FORE,Foresight Acquisition Corp.,2309365768,Financial Services,Shell Companies,0.0,9.48,0.0,12796,NASDAQ Global Select,NASDAQ,US,False,False,False
+AMFAX,AlphaSimplex Managed Futures Strategy Fund Class A,2308547065,Financial Services,Asset Management,-0.47,9.31,0.027,0,NASDAQ,NASDAQ,,False,True,True
+FITFX,Fidelity Flex International Index Fund,2305542647,Financial Services,Asset Management,1.04,13.48,0.337,0,NASDAQ,NASDAQ,US,False,True,True
+PRTAX,T. Rowe Price Tax-Free Income Fd,2300011259,Financial Services,Asset Management - Income,1.03,9.47,0.252,0,NASDAQ,NASDAQ,,False,True,True
+TFILX,T. Rowe Price Tax Free Income Fund I Class,2300011257,Financial Services,Asset Management - Income,1.03,9.46,0.280854,0,NASDAQ,NASDAQ,,False,True,True
+JORCX,Janus Henderson Global Select Fund Class C,2294317055,Financial Services,Asset Management - Global,1.01,18.25,0.028,0,NASDAQ,NASDAQ,US,False,True,True
+MDXBX,Maryland Tax-Free Bond Fd,2280094969,Financial Services,Asset Management - Bonds,1.05,10.12,0.26999999999999996,0,NASDAQ,NASDAQ,,False,True,True
+EADOX,Eaton Vance Emerging Markets Debt Opportunities - Class A,2268520191,,,0.44,7.88,0.5485,0,NASDAQ,NASDAQ,,False,True,True
+BGHIX,BrandywineGLOBAL - High Yield Fund,2264138493,Financial Services,Asset Management - Global,0.78,10.22,0.6675279999999999,0,NASDAQ,NASDAQ,,False,True,True
+TRBUX,T. Rowe Price Ultra Short-Term Bond Fund,2261640960,Financial Services,Asset Management - Bonds,0.07,5.05,0.19699999999999995,0,NASDAQ,NASDAQ,,False,True,True
+CIXX,CI Financial Corp.,2254799094,Financial Services,Asset Management,0.0,11.42,0.8999999999999999,52562,New York Stock Exchange,NYSE,CA,False,False,False
+EVCM,EverCommerce Inc.,2247150420,Technology,Software - Infrastructure,1.109,12.14,0.0,181532,NASDAQ Global Select,NASDAQ,US,False,False,True
+FFANX,Fidelity Asset Manager 40%,2245088508,,,0.78,12.88,0.238,0,NASDAQ,NASDAQ,US,False,True,True
+FIBUX,Fidelity Flex U.S. Bond Index Fund,2234144506,Financial Services,Asset Management - Bonds,0.99,9.08,0.24599999999999997,0,NASDAQ,NASDAQ,US,False,True,True
+RTLR,Rattler Midstream LP,2226077170,Energy,Oil & Gas Midstream,0.0,15.22,0.0,4666784,NASDAQ Global Select,NASDAQ,US,False,False,False
+FHAQX,Fidelity Freedom Blend 2045 Fund,2225999356,Financial Services,Asset Management,1.31,12.45,0.184,0,NASDAQ,NASDAQ,US,False,True,True
+LION,Lionheart III Corp,2219956729,Financial Services,Shell Companies,0.0,7.69,0.0,97083,NASDAQ Global Market,NASDAQ,US,False,False,True
+CLMAX,Columbia Mortgage Opportunities Fund Class A,2217946366,Financial Services,Asset Management,1.13,8.02,0.33399999999999996,0,NASDAQ,NASDAQ,,False,True,True
+AHIVX,High Income Fund - Investor Class,2213365752,Financial Services,Asset Management - Income,0.9,8.61,0.4469999999999999,0,NASDAQ,NASDAQ,,False,True,True
+IDITX,Transamerica Bond Class A,2204602621,Financial Services,Asset Management - Bonds,0.93,8.03,0.111,0,NASDAQ,NASDAQ,,False,True,True
+PTY,PIMCO Corporate & Income Opportunity Fund,2180638731,Financial Services,Asset Management - Income,1.022,14.245,1.43,322296,New York Stock Exchange,NYSE,US,False,True,True
+TSEMX,Touchstone Sands Cptl Emerg Mkts Gr Y,2172312576,,,0.86,14.36,0.0,0,Nasdaq,NASDAQ,,False,True,True
+TRRIX,T. Rowe Price Retirement Balanced Fund,2162653435,Financial Services,Asset Management,0.72,13.35,0.36000000000000004,0,NASDAQ,NASDAQ,,False,True,True
+TRJWX,T. Rowe Price Retirement Balanced ClassI,2162653435,,,0.72,13.35,0.08623800000000001,0,Nasdaq,NASDAQ,,False,True,True
+NMVLX,Nuance Mid Cap Value Fund,2156545788,Financial Services,Asset Management,0.63,12.96,0.24680999999999997,0,NASDAQ,NASDAQ,US,False,True,True
+GMDFX,GMO Emerging Country Debt Fund Class IV,2155871225,Financial Services,Asset Management,1.12,19.99,1.737,0,NASDAQ,NASDAQ,US,False,True,True
+DIFGX,MFS Diversified Income Fund,2149744123,Financial Services,Asset Management - Income,0.82,12.22,0.38499999999999995,0,NASDAQ,NASDAQ,,False,True,True
+TVIIX,TIAA-CREF Lifecycle Index 2060 Instl,2148560896,,,1.28,19.39,0.356,0,Nasdaq,NASDAQ,,False,True,True
+TWVLX,American Century Value Investor Class,2146532989,,,0.75,8.39,0.17,0,NASDAQ,NASDAQ,,False,True,True
+BBHLX,BBH Partner Fund - International Equity Class Institutional,2124992886,Financial Services,Asset Management,1.26,16.7,0.137,0,NASDAQ,NASDAQ,US,False,True,True
+ICLN,iShares Global Clean Energy ETF,2123998774,Financial Services,Asset Management - Global,1.23,14.11,0.218628,1964669,NASDAQ Global Market,NASDAQ,US,True,False,True
+FRFZX,PGIM Floating Rate Income Fund- Class Z,2100715389,Financial Services,Asset Management - Income,0.26,9.09,0.6990000000000001,0,NASDAQ,NASDAQ,,False,True,True
+FLRU,Franklin FTSE Russia ETF,2097051502,,,1.54,9.1,0.0,0,New York Stock Exchange Arca,AMEX,US,True,False,False
+SIDVX,Hartford Schroders International Multi-Cap Value Fund (Class A),2091474296,Financial Services,Asset Management,0.97,10.29,0.13,0,NASDAQ,NASDAQ,,False,True,True
+FFIJX,Fidelity Freedom Index 2065 Fund Investor Class,2064333049,Financial Services,Asset Management,1.28,14.39,0.244,0,NASDAQ,NASDAQ,US,False,True,True
+WCPNX,Core Plus Income Fund Investor Class,2051324664,Financial Services,Asset Management - Income,0.78,9.65,0.46305499999999994,0,NASDAQ,NASDAQ,,False,True,True
+FLIFX,Fidelity Freedom Index 2015 Fund - Investor Class,2047787384,Financial Services,Asset Management,0.8,14.54,0.395,0,NASDAQ,NASDAQ,US,False,True,True
+GERIX,Goldman Sachs Em Mkts Eq Insghts Intl,2029321211,,,0.99,8.87,0.317,0,Nasdaq,NASDAQ,,False,True,True
+FGMNX,Fidelity GNMA Fund,2026795002,Financial Services,Asset Management,1.05,10.12,0.29500000000000004,0,NASDAQ,NASDAQ,US,False,True,True
+PRASX,T. Rowe Price New Asia Fund,2019360118,Financial Services,Asset Management,1.0,16.75,0.281,0,NASDAQ,NASDAQ,US,False,True,True
+FTANX,Fidelity Asset Manager 30%,2017758199,,,0.67,11.81,0.271,0,NASDAQ,NASDAQ,US,False,True,True
+VMVFX,Vanguard Global Minimum Volatility Fund Investor Cl,2015589630,Financial Services,Asset Management - Global,0.55,15.68,0.43,0,NASDAQ,NASDAQ,,False,True,True
+AIVFX,American Funds International Vantage Fund,2014039154,Financial Services,Asset Management,1.02,17.09,0.238,0,NASDAQ,NASDAQ,,False,True,True
+AIVEX,American Funds International Vantage Fund Class F-1,2014039153,Financial Services,Asset Management,1.02,17.04,0.186,0,NASDAQ,NASDAQ,,False,True,True
+SMVTX,Virtus Ceredex Mid-Cap Value Equity Fund I,2010367743,Financial Services,Asset Management,0.93,12.77,0.14300000000000002,0,NASDAQ,NASDAQ,,False,True,True
+FHAPX,Fidelity Freedom Blend 2050 Fund,1998753148,Financial Services,Asset Management,1.31,12.43,0.185,0,NASDAQ,NASDAQ,US,False,True,True
+BCITX,American Century California Intermediate-Term Tax-Free Bond Inv Cl,1996897661,Financial Services,Asset Management - Bonds,0.75,11.2,0.288921,0,NASDAQ,NASDAQ,,False,True,True
+TVPT,Travelport Worldwide Limited,1992737266,,,0.0,15.75,0.0,4774700,New York Stock Exchange,NYSE,,False,True,False
+FJRLX,Fidelity Limited Term Bond Fund,1980528765,Financial Services,Asset Management - Bonds,0.42,11.31,0.091,0,NASDAQ,NASDAQ,US,False,True,True
+PURZX,PGIM Global Real Estate Fund Class Z,1978057088,Real Estate,Real Estate - General,1.1,19.53,0.357,0,NASDAQ,NASDAQ,,False,True,True
+FLVEX,Fidelity Large Cap Value Enhanced Index Fund,1968507134,Financial Services,Asset Management,0.9,14.32,0.0,0,NASDAQ,NASDAQ,US,False,True,True
+PRSIX,T. Rowe Price Spectrum Conservative Allocation Fund,1956306557,Financial Services,Asset Management,0.7,19.68,0.48200000000000004,0,NASDAQ,NASDAQ,US,False,True,True
+PPIPX,T. Rowe Price Spectrum Conservative Allocation Fund I Class,1956306545,Financial Services,Asset Management,0.7,19.65,0.492,0,NASDAQ,NASDAQ,US,False,True,True
+TWMIX,American Century Emerging Markets Investor Class,1952512765,,,1.05,10.99,0.131,0,NASDAQ,NASDAQ,,False,True,True
+AMKIX,American Century Emerging Markets Fund - I Class,1952512764,Financial Services,Asset Management,1.05,11.29,0.151,0,NASDAQ,NASDAQ,,False,True,True
+AEDMX,American Century Emerging Markets Fund,1952512762,Financial Services,Asset Management,1.05,11.3,0.166,0,NASDAQ,NASDAQ,,False,True,True
+BRMKX,iShares Russell Mid-Cap Index Fund Class K,1949709048,Financial Services,Asset Management,1.04,14.82,0.176,0,NASDAQ,NASDAQ,,False,True,True
+BRMAX,iShares Russell Mid-Cap Index Fund - Class A,1949709043,Financial Services,Asset Management,1.04,14.72,0.14400000000000002,0,NASDAQ,NASDAQ,,False,True,True
+PTOAX,PIMCO StocksPLUS Absolute Return Fund Class A,1941873020,Financial Services,Asset Management,1.06,12.05,0.568,0,NASDAQ,NASDAQ,,False,True,True
+PSPTX,PIMCO StocksPLUS Absolute Return Fund Institutional Class,1941873013,Financial Services,Asset Management,1.06,12.5,0.608,0,NASDAQ,NASDAQ,,False,True,True
+BDOAX,iShares MSCI Total International Index Fund - Class A,1938327547,Financial Services,Asset Management,1.04,10.02,0.165,0,NASDAQ,NASDAQ,US,False,True,True
+MITFX,BMO Intermediate Tax Free Fund Class Y,1934664053,Financial Services,Asset Management,1.0,11.59,0.0,0,NASDAQ,NASDAQ,,False,True,False
+BSCR,Invesco BulletShares 2027 Corporate Bond ETF,1929030568,Financial Services,Asset Management - Bonds,0.71,19.38,0.79687,342180,NASDAQ Global Market,NASDAQ,US,True,False,True
+SCFFX,Shenkman Capital Short Duration High Income Fund,1925825278,Financial Services,Asset Management - Income,0.4,9.84,0.4539999999999999,0,NASDAQ,NASDAQ,,False,True,True
+ARYIX,American Century One Choice 2035 Portfolio Investor Class,1917468663,,,0.94,16.26,0.303,0,NASDAQ,NASDAQ,,False,True,True
+CABDX,AB Relative Value Fund - A,1907885948,Financial Services,Asset Management,0.81,6.85,0.083,0,NASDAQ,NASDAQ,,False,True,True
+ADAIX,AQR Diversified Arbitrage Fund,1904920951,Financial Services,Asset Management,0.11,12.19,0.326,0,NASDAQ,NASDAQ,,False,True,True
+PENNX,"Royce Pennsylvania Mutual Fd, Investment Class",1900793088,,,1.02,10.24,0.036,0,NASDAQ,NASDAQ,,False,True,True
+RYPFX,Royce Pennsylvania Mutual Fund,1900793079,Financial Services,Asset Management,1.02,10.16,0.011,0,NASDAQ,NASDAQ,,False,True,True
+QLENX,AQR Long-Short Equity N,1893846907,,,0.17,15.39,2.719,0,Nasdaq,NASDAQ,,False,True,True
+PPVFX,American Funds Preservation Portfolio Class F-1,1885727354,Financial Services,Asset Management,0.44,9.4,0.239,0,NASDAQ,NASDAQ,,False,True,True
+DWGFX,American Funds Developing World Growth and Income Fund - Class F-1,1883339768,Financial Services,Asset Management - Income,0.93,10.47,0.096,0,NASDAQ,NASDAQ,,False,True,True
+GSKY,"GreenSky, Inc.",1877626108,Technology,Software - Infrastructure,0.0,10.2,0.0,3714564,NASDAQ Global Select,NASDAQ,US,False,False,False
+SFSNX,Schwab Fundamental US Small Company Idx,1875660151,,,1.04,17.98,0.227,0,Nasdaq,NASDAQ,,False,True,True
+SIUSX,Guggenheim Core Bond Fund,1848702198,Financial Services,Asset Management - Bonds,1.04,16.19,0.5880000000000001,0,NASDAQ,NASDAQ,US,False,True,True
+SDICX,Guggenheim Core Bond Fund Class C,1848702195,Financial Services,Asset Management - Bonds,1.04,16.12,0.530826,0,NASDAQ,NASDAQ,US,False,True,True
+SIUPX,Guggenheim Core Bond Fund Class P,1848702194,Financial Services,Asset Management - Bonds,1.04,16.21,0.6443850000000001,0,NASDAQ,NASDAQ,US,False,True,True
+VMPYX,Allspring Strategic Municipal Bond Fund Admin Class,1843337083,Financial Services,Asset Management - Bonds,0.56,8.81,0.19780599999999998,0,NASDAQ,NASDAQ,,False,True,True
+VMPAX,Allspring Strategic Municipal Bond Fund Class A,1843337083,Financial Services,Asset Management - Bonds,0.54,8.81,0.17200000000000004,0,NASDAQ,NASDAQ,,False,True,True
+BFCFX,American Funds Corporate Bond Fund - Class F-1,1841864568,Financial Services,Asset Management - Bonds,1.22,9.44,0.29700000000000004,0,NASDAQ,NASDAQ,,False,True,True
+FSMSX,FS Multi-Strategy Alternatives Fund Class I,1840861692,Financial Services,Asset Management,0.09,11.37,0.389,0,NASDAQ,NASDAQ,,False,True,True
+MNR,Mach Natural Resources LP,1814500000,Energy,Oil & Gas Exploration & Production,0.704127,19.1,3.0,60811,New York Stock Exchange,NYSE,US,False,True,True
+TGMNX,TCW Total Return Bond Fund Class N,1808273786,Financial Services,Asset Management - Bonds,1.18,8.18,0.46579999999999994,0,NASDAQ,NASDAQ,,False,True,True
+FSTTX,American Funds Short-Term Tax-Exempt Bd Fd Cl F-1 Shs,1804441727,Financial Services,Asset Management - Leveraged,0.38,9.93,0.17800000000000005,0,NASDAQ,NASDAQ,,False,True,True
+OBDE,Blue Owl Capital Corporation III,1802649845,Financial Services,Asset Management,,14.64,0.76,177221,New York Stock Exchange,NYSE,,False,False,True
+AOMIX,American Century One Choice Portfolio: Moderate Investor Class,1798236534,,,1.0,15.09,0.219,0,NASDAQ,NASDAQ,,False,True,True
+POSAX,"Principal Fds, Inc. Global Real Estate Securities Fd Cl A",1788693374,Financial Services,Asset Management - Global,1.08,8.66,0.204,0,NASDAQ,NASDAQ,,False,True,True
+OILVX,Optimum Large Cap Value Fund Class I,1786539514,Financial Services,Asset Management,0.82,19.48,0.3,0,NASDAQ,NASDAQ,,False,True,True
+APOIX,American Century Short Duration Inflation Protection Bond Fund Investor Class,1766562173,Financial Services,Asset Management - Bonds,0.38,10.26,0.25,0,NASDAQ,NASDAQ,,False,True,True
+VWICX,Vanguard International Core Stock Fund Investor Shares,1763864564,Financial Services,Asset Management,0.97,13.11,0.254,0,NASDAQ,NASDAQ,,False,True,True
