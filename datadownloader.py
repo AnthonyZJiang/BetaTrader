@@ -7,7 +7,7 @@ fmp = FMP(cred['api_key'])
 
 
 # Scanner
-fmp.get_scanner(filename="scanner_result.json", priceMoreThan=1, priceLowerThan=20, limit=1000000, isActivelyTrading="true", isFund="false", isEtf="false")
+fmp.get_stock_screener(filename="scanner_result.json", priceMoreThan=1, priceLowerThan=20, limit=1000000, isActivelyTrading="true", isFund="false", isEtf="false")
 
 # Intraday
 symbol = "SLRX"
