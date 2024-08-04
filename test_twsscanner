@@ -1,0 +1,14 @@
+from threading import Thread
+from tws_scanner.scannervisuliser import TWSApp, ScannerVisualizer
+
+def main():
+    app = TWSApp() 
+    app.connect("127.0.0.1", 7496, clientId=0)
+    tws_trader = Thread(target=app.run)
+    tws_trader.start()
+    viz = ScannerVisualizer(app)
+    viz.run()
+    
+
+if __name__ == "__main__":
+    main()

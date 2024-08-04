@@ -1,4 +1,13 @@
+# environment
 .venv/
 .vscode/
+
+# generated
+.log/
 __pycache__/
+
+# credentials
 credential.json
+
+# macOS
+.DS_Store
