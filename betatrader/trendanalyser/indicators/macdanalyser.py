@@ -1,5 +1,5 @@
-from betatrader.maths import *
-from betatrader.trendanalyser.kline import KlineTick
+from betatrader.trendanalyser.common.maths import *
+from betatrader.trendanalyser.common.kline import KlineBar
 
 MACD_CROSS_TOLERANCE = 0.01
 
@@ -10,18 +10,18 @@ class MACDAnalyser:
         self.slow_period = slow_period
         self.signal_period = signal_period
 
-    def calculate(self, kline: list[KlineTick]):
-        tick = kline[-1]
-        prev_tick = kline[-2] if len(kline) > 1 else tick
-        tick.macd_fast_ema = ema(tick.close_price, prev_tick.macd_fast_ema, self.fast_period)
-        tick.macd_slow_ema = ema(tick.close_price, prev_tick.macd_slow_ema, self.slow_period)
-        tick.macd_curve = tick.macd_fast_ema - tick.macd_slow_ema
-        tick.macd_signal = ema(tick.macd_curve, prev_tick.macd_curve, self.signal_period)
-        tick.macd = tick.macd_curve - tick.macd_signal
-        if not tick.macd_good and tick.macd > - MACD_CROSS_TOLERANCE:
-            tick.macd_good = True
-            tick.macd_golden_cross = True
+    def calculate(self, kline: list[KlineBar]):
+        bar = kline[-1]
+        prev_tick = kline[-2] if len(kline) > 1 else bar
+        bar.macd_fast_ema = ema(bar.close_price, prev_tick.macd_fast_ema, self.fast_period)
+        bar.macd_slow_ema = ema(bar.close_price, prev_tick.macd_slow_ema, self.slow_period)
+        bar.macd_curve = bar.macd_fast_ema - bar.macd_slow_ema
+        bar.macd_signal = ema(bar.macd_curve, prev_tick.macd_curve, self.signal_period)
+        bar.macd = bar.macd_curve - bar.macd_signal
+        if not bar.macd_good and bar.macd > - MACD_CROSS_TOLERANCE:
+            bar.macd_good = True
+            bar.macd_golden_cross = True
             return
-        if tick.macd_good and tick.macd <= MACD_CROSS_TOLERANCE:
-            tick.macd_good = False
-            tick.macd_death_cross = True
+        if bar.macd_good and bar.macd <= MACD_CROSS_TOLERANCE:
+            bar.macd_good = False
+            bar.macd_death_cross = True

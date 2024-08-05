@@ -11,4 +11,4 @@ def get_intraday(symbol, interval, date_from, date_to, extended):
         json.dump(data, f, indent=4)
     print("Data saved")
         
-get_intraday('SLRX', '1min', '2024-07-23', '2024-07-23', True)
+get_intraday('AMZN', '1day', '2010-01-01', '2024-08-03', False)

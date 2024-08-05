@@ -1,20 +1,20 @@
-from betatrader.trendanalyser.kline import KlineTickGroup
+from betatrader.trendanalyser.common.kline import KlineBarGroup
 
 class MicroPullback:
-    def __init__(self, up_trend: KlineTickGroup) -> None:
+    def __init__(self, up_trend: KlineBarGroup) -> None:
         if up_trend.is_down:
             self.valid = False
             return
         self.valid = True
         self.up_trend = up_trend
     
-    def analyse(self, sub_group: KlineTickGroup):
+    def analyse(self, sub_group: KlineBarGroup):
         self._validate(sub_group)
         if not self.valid:
             return -1
         return self._is_pattern(sub_group)
         
-    def _is_pattern(self, sub_group: KlineTickGroup):
+    def _is_pattern(self, sub_group: KlineBarGroup):
         if sub_group.count > 3:
             return 0
         if sub_group.range/self.up_trend.range > 0.5:
@@ -23,7 +23,7 @@ class MicroPullback:
             return 0
         return 1
     
-    def is_pattern_break(self, sub_group: KlineTickGroup):
+    def is_pattern_break(self, sub_group: KlineBarGroup):
         if sub_group.count >= 4:
             return True
         elif sub_group.count == 3 and sub_group.directions == [-1, -1, 1]:

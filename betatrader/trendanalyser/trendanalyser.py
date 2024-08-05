@@ -1,5 +1,5 @@
-from betatrader.maths import *
-from .kline import KlineTick, KlineTickGroup
+from betatrader.trendanalyser.common.maths import *
+from .common.kline import KlineBar, KlineBarGroup
 from .indicators.macdanalyser import MACDAnalyser
 from .indicators.emaanalyser import EMAAnalyser
 from .patterns.klinepattern import KlinePatternAnalyser, KlinePatternType as ptype
@@ -18,8 +18,8 @@ THRESHOLD_REL_VOLUME = 4
 class TrendAnalyser:
     
     def __init__(self):
-        self.kline: list[KlineTick] = []
-        self.kline_group = KlineTickGroup()
+        self.kline: list[KlineBar] = []
+        self.kline_group = KlineBarGroup()
         self.pointer = -1
         self.is_ema9_20_gold_crossed = False
         self.is_ema9_20_death_crossed = True
@@ -32,11 +32,11 @@ class TrendAnalyser:
         self.prev_tick = None
         self._hot = False
         
-    def add_tick(self, tick_packet):
+    def add_bar(self, tick_packet):
         self.pointer += 1
-        self.this_tick = KlineTick(tick_packet, self.pointer)
+        self.this_tick = KlineBar(tick_packet, self.pointer)
         
-        # assume this tick follows the previous trend.
+        # assume this bar follows the previous trend.
         if self.pointer > 0:
             self.prev_tick = self.kline[self.pointer-1]
             self.this_tick.ema_good = self.prev_tick.ema_good
@@ -44,7 +44,7 @@ class TrendAnalyser:
         
         
         self.kline.append(self.this_tick)
-        self.kline_group.add_tick(self.this_tick)
+        self.kline_group.add_bar(self.this_tick)
         
         # calculate tech indicators
         self.macd_analyser.calculate(self.kline)
@@ -55,7 +55,7 @@ class TrendAnalyser:
             return
         if not self._is_hot():
             return
-        self.pattern_analyser.add_tick(self.this_tick)
+        self.pattern_analyser.add_bar(self.this_tick)
         self._analyse_signal()
         
     def _is_hot(self):
@@ -94,6 +94,6 @@ class TrendAnalyser:
         # ema gold cross while ema and macd are good
         if self.this_tick.ema_golden_cross and self.this_tick.ema_good and self.this_tick.macd_good:
             # TODO check for making a new high!
-            self.this_tick.entry_signal = self.this_tick.open_price
+            self.this_tick.entry_signal = self.this_tick.bar.open
             self.this_tick.reason = "goldencross"
             return

@@ -1,15 +1,15 @@
-from betatrader.trendanalyser.kline import KlineTick, KlineTickGroup
+from betatrader.trendanalyser.common.kline import KlineBar, KlineBarGroup
 
 class BullFlag:
-    def __init__(self, pole_trend: KlineTickGroup) -> None:
+    def __init__(self, pole_trend: KlineBarGroup) -> None:
         if pole_trend.is_down:
             self.valid = False
             return
         self.valid = True
         self.pole_trend = pole_trend
-        self.flag: KlineTickGroup = None
+        self.flag: KlineBarGroup = None
     
-    def analyse(self, flag: KlineTickGroup):
+    def analyse(self, flag: KlineBarGroup):
         if not self.valid:
             return 0
         

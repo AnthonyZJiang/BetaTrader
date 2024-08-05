@@ -1,5 +1,5 @@
 from enum import Enum
-from betatrader.trendanalyser.kline import KlineTick, KlineTickGroup
+from betatrader.trendanalyser.common.kline import KlineBar, KlineBarGroup
 from .micropullback import MicroPullback
 from .bullflag import BullFlag
 
@@ -12,12 +12,12 @@ class KlinePatternType(Enum):
     
 class KlinePattern:
     
-    def __init__(self, main_group: KlineTickGroup) -> None:
+    def __init__(self, main_group: KlineBarGroup) -> None:
         self.main_group = main_group
-        self.sub_group: KlineTickGroup = None
+        self.sub_group: KlineBarGroup = None
         self.type: KlinePatternType = KlinePatternType.Unknown
         
-    def update(self, sub_group: KlineTickGroup, type: KlinePatternType = None):
+    def update(self, sub_group: KlineBarGroup, type: KlinePatternType = None):
         self.sub_group = sub_group
         if type is not None:
             self.type = type
@@ -29,8 +29,8 @@ class KlinePattern:
 class KlinePatternAnalyser:
     
     def __init__(self) -> None:
-        self.up_trend_group = KlineTickGroup()
-        self.sub_group = KlineTickGroup()
+        self.up_trend_group = KlineBarGroup()
+        self.sub_group = KlineBarGroup()
         self.up_trend_complete = False
         self.micro_pullback: MicroPullback = None
         self.bull_flag: BullFlag = None
@@ -38,8 +38,8 @@ class KlinePatternAnalyser:
         self.patterns_end_indices = {}
     
     def reset(self):
-        self.up_trend_group = KlineTickGroup()
-        self.sub_group = KlineTickGroup()
+        self.up_trend_group = KlineBarGroup()
+        self.sub_group = KlineBarGroup()
         self.up_trend_complete = False
         self.micro_pullback = None
         self.bull_flag = None
@@ -49,17 +49,17 @@ class KlinePatternAnalyser:
             if pattern.is_in_pattern(index):
                 return pattern
     
-    def add_tick(self, tick: KlineTick):
+    def add_bar(self, bar: KlineBar):
         if not self.up_trend_complete:
-            if tick.is_green: 
-                self.up_trend_group.add_tick(tick)
+            if bar.is_green: 
+                self.up_trend_group.add_bar(bar)
                 return
-            if tick.is_red and self.up_trend_group.count == 0:
+            if bar.is_red and self.up_trend_group.count == 0:
                 return
             else:
                 self._complete_up_trend()
         
-        self.sub_group.add_tick(tick)    
+        self.sub_group.add_bar(bar)    
         self._analyse()
     
     def _complete_up_trend(self):

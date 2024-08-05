@@ -1,2 +1,2 @@
 from .fmp import FMP
-from .trendanalyser import TrendAnalyser
+# from .trendanalyser import TrendAnalyser

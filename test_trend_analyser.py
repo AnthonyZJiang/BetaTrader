@@ -13,21 +13,21 @@ df['date'] = pd.to_datetime(df['date'])
 df.set_index('date', inplace=True)
 
 ta = TrendAnalyser()
-for tick in data:
-    ta.add_tick(tick)
-    df.at[tick['date'], 'ema9'] = ta.this_tick.fast_ema
-    df.at[tick['date'], 'ema20'] = ta.this_tick.slow_ema
-    df.at[tick['date'], 'ema_good'] = ta.this_tick.ema_good
-    df.at[tick['date'], 'ema_death_cross'] = ta.this_tick.ema_death_cross
-    df.at[tick['date'], 'ema_golden_cross'] = ta.this_tick.ema_golden_cross
-    df.at[tick['date'], 'macd_signal'] = ta.this_tick.macd_signal
-    df.at[tick['date'], 'macd_curve'] = ta.this_tick.macd_curve
-    df.at[tick['date'], 'macd_good'] = ta.this_tick.macd_good
-    df.at[tick['date'], 'macd_golden_cross'] = ta.this_tick.macd_golden_cross
-    df.at[tick['date'], 'micro_pullback_likelihood'] = ta.this_tick.micro_pullback_likelihood
-    df.at[tick['date'], 'entry_signal'] = ta.this_tick.entry_signal
-    df.at[tick['date'], 'exit_signal'] = ta.this_tick.exit_signal
-    df.at[tick['date'], 'reason'] = ta.this_tick.reason
+for bar in data:
+    ta.add_bar(bar)
+    df.at[bar['date'], 'ema9'] = ta.this_tick.fast_ema
+    df.at[bar['date'], 'ema20'] = ta.this_tick.slow_ema
+    df.at[bar['date'], 'ema_good'] = ta.this_tick.ema_good
+    df.at[bar['date'], 'ema_death_cross'] = ta.this_tick.ema_death_cross
+    df.at[bar['date'], 'ema_golden_cross'] = ta.this_tick.ema_golden_cross
+    df.at[bar['date'], 'macd_signal'] = ta.this_tick.macd_signal
+    df.at[bar['date'], 'macd_curve'] = ta.this_tick.macd_curve
+    df.at[bar['date'], 'macd_good'] = ta.this_tick.macd_good
+    df.at[bar['date'], 'macd_golden_cross'] = ta.this_tick.macd_golden_cross
+    df.at[bar['date'], 'micro_pullback_likelihood'] = ta.this_tick.micro_pullback_likelihood
+    df.at[bar['date'], 'entry_signal'] = ta.this_tick.entry_signal
+    df.at[bar['date'], 'exit_signal'] = ta.this_tick.exit_signal
+    df.at[bar['date'], 'reason'] = ta.this_tick.reason
     
 df.to_csv('temp.csv')
     
