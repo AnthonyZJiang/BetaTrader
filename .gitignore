@@ -1,4 +1,7 @@
 .venv/
 .vscode/
+.log/
 __pycache__/
 credential.json
+
+.DS_Store
