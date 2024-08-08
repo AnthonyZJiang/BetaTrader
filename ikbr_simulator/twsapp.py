@@ -49,6 +49,9 @@ class TWSApp(EWrapper, EClient):
             self.tracked_symbol = symbol
         if symbol in self.req_id_lookup.values():
             return
+        if len(self.req_id_lookup) >= 5:
+            # can track only 5 symbols at a time
+            self.free_up_track_symbol()
         contract = Contract()
         contract.symbol = symbol
         contract.secType = "STK"
@@ -61,6 +64,13 @@ class TWSApp(EWrapper, EClient):
     def cancel_track_symbol(self, reqId):
         self.cancelTickByTickData(reqId)
         self.req_id_lookup.pop(reqId)
+        
+    def free_up_track_symbol(self):
+        for reqId, symbol in self.req_id_lookup.items():
+            if symbol != self.tracked_symbol and not self.any_order(symbol):
+                self.cancel_track_symbol(reqId)
+                self.logger.warn(f"Max number of symbol tracking reached. Untracking symbol: {symbol}...")
+                return
             
     def tickByTickBidAsk(self, reqId: int, time_: int, bidPrice: float, askPrice: float, bidSize: Decimal, askSize: Decimal, tickAttribBidAsk: TickAttribBidAsk):
         try:
@@ -78,13 +88,15 @@ class TWSApp(EWrapper, EClient):
         except queue.Empty:
             pass
         except Exception as e:
-            print(e)
+            self.logger.error(f"Error: {e}", exc_info=True)
         if reqId not in self.req_id_lookup:
             return
         sym = self.req_id_lookup[reqId]
+        self.portfolio.update_last(sym, askPrice)
         if not self.any_order(sym):
             if sym != self.tracked_symbol:
-                self.cancel_track_symbol(reqId)
+                if not sym in self.portfolio.entries:
+                    self.cancel_track_symbol(reqId)                  
             return
         for order in self.received_orders[sym]:
             if order.status == OrderStatus.CANCELLED or order.status == OrderStatus.PARTIAL:
@@ -136,12 +148,12 @@ class TWSApp(EWrapper, EClient):
         return 0
     
     def fill_sell_order(self, order: Order, bid_price, bid_size):
-        pos = self.portfolio.get_position(order.symbol)[0]
-        if pos <= 0:
+        pos = self.portfolio.get_position(order.symbol)
+        if pos.quantity <= 0:
             self.logger.info(f"Warning: Short selling not allowed.")
             self.cancel_order(order.id)
             return 0
-        max_fill = min(pos, int(bid_size*100))
+        max_fill = min(pos.quantity, int(bid_size*100))
         if order.order_type == OrderType.MARKET:
             return order.add_fill(bid_price, max_fill)
         elif order.order_type == OrderType.LIMIT:

@@ -142,10 +142,10 @@ class SimulatorCLI:
             
         elif args[0] == "close":
             pos = self.tws_app.portfolio.get_position(self.current_symbol)
-            if pos == 0:
+            if pos is None or pos.quantity <= 0:
                 print("No position to close")
                 return True
-            order = Order(self.current_symbol, OrderAction.SELL, pos[0])
+            order = Order(self.current_symbol, OrderAction.SELL, pos.quantity)
             self._place_order(order)
             
         elif args[0] == "c":
