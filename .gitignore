@@ -2,6 +2,8 @@
 .vscode/
 .log/
 __pycache__/
-credential.json
 
 .DS_Store
+
+*.csv
+credential.json

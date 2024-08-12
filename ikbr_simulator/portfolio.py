@@ -1,3 +1,5 @@
+from pathlib import Path
+
 from rich.table import Table
 from rich.console import Console
 
@@ -146,6 +148,45 @@ class Portfolio:
             table.add_section()
         console = Console()
         console.print(table)
+        
+    def export_trades(self, destination: str):
+        if Path(destination).exists():
+            with open(destination, "r") as f:
+                first_line = f.readline()
+            write_header = first_line == ""
+        else:
+            write_header = True
+        with open(destination, "a") as f:
+            if write_header:
+                f.write("Date,STK,Time,Action,OrderType,Price,Quantity,Value,Position,Profit,Fee\n")
+            for e in self.entries.values():
+                current_avg_price = 0
+                current_position = 0
+                current_value = 0
+                for order in e.orders:
+                    if order.status == OrderStatus.CANCELLED:
+                        continue
+                    if order.action == OrderAction.BUY:
+                        current_position += order.filled
+                        current_value += order.value
+                        current_avg_price = current_value/current_position
+                        profit = 0
+                    else:
+                        current_position -= order.filled
+                        current_value = current_position * current_avg_price
+                        profit = order.avg_price * order.filled - current_avg_price * order.filled
+                    f.write("%s,%s,%s,%s,%s,%.3f,%d,%.3f,%d,%.3f,%.3f\n" % (
+                            order.date_time.strftime('%Y-%m-%d'),
+                            order.symbol,
+                            order.date_time.strftime('%H:%M:%S'),
+                            order.action,
+                            order.order_type,
+                            order.avg_price,
+                            order.filled,
+                            order.value,
+                            current_position,
+                            profit,
+                            order.fee))
         
     @staticmethod
     def to_green_red_str(value):

@@ -63,6 +63,13 @@ class SimulatorCLI:
         print("Tracking symbol:", self.current_symbol)
         val = input("")
         if val == "exit":
+            ans = input("Do you want to export the trades? (y/n)")
+            if ans == "y":
+                ans = input("Enter the file name: (default: trades.csv)")
+                if ans == "":
+                    ans = "trades.csv"
+                self.tws_app.portfolio.export_trades(ans)
+                print("Trades exported to ", ans)
             print("Exiting")
             self.tws_app.disconnect()
             return False
@@ -154,6 +161,9 @@ class SimulatorCLI:
                 return True
             order_id = int(args[1])
             self.tws_app.cancel_order(order_id)
+            
+        elif args[0] == "export":
+            self.tws_app.portfolio.export_trades()
             
         else:
             print("Invalid command")

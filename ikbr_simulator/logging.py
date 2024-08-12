@@ -96,7 +96,7 @@ def setup_logger(name: str = 'simulator',
         f_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=10)
         f_handler.setLevel(file_level)
         if name == "trade":
-            f_format = logging.Formatter('%(asctime)s,%(message)s')
+            f_format = logging.Formatter('%(message)s')
         else:
             f_format = logging.Formatter('%(asctime)s %(name)s::%(module)s::%(levelname)-8s: %(message)s')
         f_handler.setFormatter(f_format)

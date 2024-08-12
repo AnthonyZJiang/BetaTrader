@@ -15,7 +15,7 @@ class TWSApp(EWrapper, EClient):
     def __init__(self):
         EClient.__init__(self, self)
         self.trade_logger = setup_logger('trade', None, logging.INFO)
-        self.logger = setup_logger('sim_twsapp', logging.INFO, logging.DEBUG, 'sim.log')
+        self.logger = setup_logger('sim_twsapp', logging.INFO, logging.DEBUG, 'sim.log.csv')
         self.portfolio = Portfolio()
         
         self.tracked_symbol = None
