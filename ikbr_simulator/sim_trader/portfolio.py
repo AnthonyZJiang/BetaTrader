@@ -81,7 +81,6 @@ class Portfolio:
         table = Table(title="Portfolio")
         table.add_column("Symbol")
         table.add_column("Quantity")
-        table.add_column("Last")
         table.add_column("Avg Price")
         table.add_column("Last")
         table.add_column("Change")

@@ -3,9 +3,9 @@ from rich.table import Table
 from threading import Thread
 import logging
 
-from .twsapp import TWSApp
-from .logging import setup_logger
-from .order import Order, OrderAction, OrderStatus
+from .tws_app import TWSApp
+from .util.logging import setup_logger
+from .sim_trader.order import Order, OrderAction, OrderStatus
 
 
 DEFAULT_ORDER_SIZE = 100
@@ -16,17 +16,21 @@ class SimulatorCLI:
         self.logger = setup_logger('sim_cli', None, logging.DEBUG, 'sim.log')
         self.tws_app = None
         self.app_thread = None
-        self.current_symbol = None
         self.order = None
         self.default_quantity = DEFAULT_ORDER_SIZE
         self.quantity_multiplier = 100
         
     def run(self):
         self.tws_app = TWSApp()
+        self.tws_app.tws_common.gui_update_callback_tracked_symbol = self._gui_update_callback_tracked_symbol
         self.tws_app.connect("127.0.0.1", 7496, clientId=1)
         self.app_thread = Thread(target=self.tws_app.run)
         self.app_thread.start()
+        while not self.tws_app.tws_common.is_ready:
+            pass
+        self.tws_app.link_display_group(1)
         exit_flag = False
+        self.print_tracking_symbol = False
         while not exit_flag:
             try:
                 exit_flag = not self._process_command()
@@ -59,9 +63,14 @@ class SimulatorCLI:
                 table.add_row(order.id, order.symbol, action, order.quantity, order.limit, status)
         console = Console()
         console.print(table)
+        
+    def _gui_update_callback_tracked_symbol(self, symbol):
+        print(f"Tracking symbol: {symbol}")
     
     def _process_command(self):
-        print("Tracking symbol:", self.current_symbol)
+        if self.print_tracking_symbol:
+            print("Tracking symbol:", self.tws_app.tws_common.current_symbol)
+        self.print_tracking_symbol = True
         val = input("")
         if val == "exit":
             ans = input("Do you want to export the trades? (y/n)")
@@ -69,7 +78,7 @@ class SimulatorCLI:
                 ans = input("Enter the file name: (default: trades.csv)")
                 if ans == "":
                     ans = "trades.csv"
-                self.tws_app.portfolio.export_trades(ans)
+                self.tws_app.tws_common.portfolio.export_trades(ans)
                 print("Trades exported to ", ans)
             print("Exiting")
             self.tws_app.disconnect()
@@ -97,9 +106,9 @@ class SimulatorCLI:
             return True
         if args[0] == "ls":
             if narg == 1:
-                self.tws_app.portfolio.print_all_trades()
+                self.tws_app.tws_common.portfolio.print_all_trades()
             elif args[1] == "pos":
-                self.tws_app.portfolio.print_positions()
+                self.tws_app.tws_common.portfolio.print_positions()
             return True
                       
         if args[0] == "set":
@@ -127,9 +136,17 @@ class SimulatorCLI:
             if narg == 1:
                 print("No value provided")
                 return True
+            self.print_tracking_symbol = False
             symbol = args[1].upper()
-            self.current_symbol = symbol
-            self.tws_app.track_symbol(symbol)
+            self.tws_app.update_linked_group_by_symbol(symbol)
+            
+        elif args[0] == "link":
+            if narg == 1:
+                print("No value provided")
+                return True
+            self.print_tracking_symbol = False
+            id = int(args[1])
+            self.tws_app.link_display_group(id)
 
         elif args[0] == "b":
             for arg in args[1:]:
@@ -139,7 +156,7 @@ class SimulatorCLI:
                     stop = float(arg[2:])
                 else:
                     limit = float(arg)
-            order = Order(self.current_symbol, OrderAction.BUY, quantity, limit, stop)
+            order = Order(self.tws_app.tws_common.current_symbol, OrderAction.BUY, quantity, limit, stop)
             self._place_order(order)
         
         elif args[0] == "s":
@@ -150,15 +167,15 @@ class SimulatorCLI:
                     stop = float(arg[2:])
                 else:
                     limit = float(arg)
-            order = Order(self.current_symbol, OrderAction.SELL, quantity, limit, stop)
+            order = Order(self.tws_app.tws_common.current_symbol, OrderAction.SELL, quantity, limit, stop)
             self._place_order(order)
             
         elif args[0] == "close":
-            pos = self.tws_app.portfolio.get_position(self.current_symbol)
+            pos = self.tws_app.tws_common.portfolio.get_position(self.tws_app.tws_common.current_symbol)
             if pos is None or pos.quantity <= 0:
                 print("No position to close")
                 return True
-            order = Order(self.current_symbol, OrderAction.SELL, pos.quantity)
+            order = Order(self.tws_app.tws_common.current_symbol, OrderAction.SELL, pos.quantity)
             self._place_order(order)
             
         elif args[0] == "c":
@@ -173,7 +190,7 @@ class SimulatorCLI:
                 dest = "trades.csv"
             else:
                 dest = args[1]
-            self.tws_app.portfolio.export_trades(dest)
+            self.tws_app.tws_common.portfolio.export_trades(dest)
             
         else:
             print("Invalid command")
