@@ -19,6 +19,7 @@ class SimulatorCLI:
         self.current_symbol = None
         self.order = None
         self.default_quantity = DEFAULT_ORDER_SIZE
+        self.quantity_multiplier = 100
         
     def run(self):
         self.tws_app = TWSApp()
@@ -114,6 +115,11 @@ class SimulatorCLI:
                     print("No value provided")
                     return True
                 self.allow_short = True if args[2] == "1" else False
+            elif args[1] == "quantity_multiplier":
+                if narg == 2:
+                    print("No value provided")
+                    return True
+                self.quantity_multiplier = int(args[2])
             self.default_quantity = int(args[1])
             return True
             
@@ -128,7 +134,7 @@ class SimulatorCLI:
         elif args[0] == "b":
             for arg in args[1:]:
                 if arg.startswith("q"):
-                    quantity = int(arg[1:])
+                    quantity = int(arg[1:])*self.quantity_multiplier
                 elif arg.startswith("st"):
                     stop = float(arg[2:])
                 else:
@@ -139,7 +145,7 @@ class SimulatorCLI:
         elif args[0] == "s":
             for arg in args[1:]:
                 if arg.startswith("q"):
-                    quantity = int(arg[1:])
+                    quantity = int(arg[1:])*self.quantity_multiplier
                 elif arg.startswith("st"):
                     stop = float(arg[2:])
                 else:
@@ -163,7 +169,11 @@ class SimulatorCLI:
             self.tws_app.cancel_order(order_id)
             
         elif args[0] == "export":
-            self.tws_app.portfolio.export_trades()
+            if narg == 1:
+                dest = "trades.csv"
+            else:
+                dest = args[1]
+            self.tws_app.portfolio.export_trades(dest)
             
         else:
             print("Invalid command")
