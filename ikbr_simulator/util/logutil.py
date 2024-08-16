@@ -1,6 +1,6 @@
 from datetime import datetime
-from ikbr_simulator.order import Order
-from ikbr_simulator.portfolio import Portfolio
+from ikbr_simulator.sim_trader.order import Order
+from ikbr_simulator.sim_trader.portfolio import Portfolio
 
 def export_trade_from_log(log_file: str, desitnation: str, today_only: bool = False):
     today = datetime.now().date()

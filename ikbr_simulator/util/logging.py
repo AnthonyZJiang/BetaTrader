@@ -93,7 +93,7 @@ def setup_logger(name: str = 'simulator',
             log_file = os.path.join('.log', log_file)
         if not os.path.exists(os.path.dirname(log_file)):
             os.makedirs(os.path.dirname(log_file))
-        f_handler = RotatingFileHandler(log_file, maxBytes=5*1024*1024, backupCount=10)
+        f_handler = RotatingFileHandler(log_file, maxBytes=10*1024*1024, backupCount=10)
         f_handler.setLevel(file_level)
         if name == "trade":
             f_format = logging.Formatter('%(message)s')
