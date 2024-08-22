@@ -34,35 +34,14 @@ class SimulatorCLI:
         while not exit_flag:
             try:
                 exit_flag = not self._take_command()
-            except Exception as e:
+            except ValueError as e:
                 print("Invalid argument")
                 self.logger.error(e)
+            except Exception as e:
+                print("An unknown error occurred, check log for details.")
+                self.logger.error(e, exc_info=True)
         self.tws_app.disconnect()
         self.app_thread.join()
-        
-    def _print_all_orders(self):
-        table = Table(title="Orders")
-        table.add_column("Order ID")
-        table.add_column("Symbol")
-        table.add_column("Action")
-        table.add_column("Quantity")
-        table.add_column("Limit")
-        table.add_column("Status")
-        for orders in self.tws_app.received_orders.values():
-            for order in orders:
-                if order.status == OrderStatus.FILLED:
-                    status = "[green]FILLED"
-                elif order.status == OrderStatus.CANCELLED:
-                    status = "[red]CANCELLED"
-                else:
-                    status = "[yellow]OPEN"
-                if order.action == OrderAction.BUY:
-                    action = "[green]BUY"
-                else:
-                    action = "[red]SELL"
-                table.add_row(order.id, order.symbol, action, order.quantity, order.limit, status)
-        console = Console()
-        console.print(table)
         
     def _gui_update_callback_tracked_symbol(self, symbol):
         print(f"Tracking symbol: {symbol}")
@@ -88,12 +67,12 @@ class SimulatorCLI:
             print("Exiting")
             self.tws_app.disconnect()
             return False
-        return self._process_command(val.split())
+        return self._process_command(val.lower().split())
         
     def _process_command(self, args: dict[str]):
         nargs = len(args)
 
-        match args[0].lower():
+        match args[0]:
             case "help":
                 self._print_help()
             case "set":
@@ -145,6 +124,30 @@ class SimulatorCLI:
                 else:
                     print("Invalid command")
         return True
+        
+    def _print_all_orders(self):
+        table = Table(title="Orders")
+        table.add_column("Order ID")
+        table.add_column("Symbol")
+        table.add_column("Action")
+        table.add_column("Quantity")
+        table.add_column("Limit")
+        table.add_column("Status")
+        for orders in self.tws_app.received_orders.values():
+            for order in orders:
+                if order.status == OrderStatus.FILLED:
+                    status = "[green]FILLED"
+                elif order.status == OrderStatus.CANCELLED:
+                    status = "[red]CANCELLED"
+                else:
+                    status = "[yellow]OPEN"
+                if order.action == OrderAction.BUY:
+                    action = "[green]BUY"
+                else:
+                    action = "[red]SELL"
+                table.add_row(order.id, order.symbol, action, order.quantity, order.limit, status)
+        console = Console()
+        console.print(table)
     
     def _set_track(self, *args):
         if len(args) == 0:
@@ -165,8 +168,20 @@ class SimulatorCLI:
             elif args[i] == "st":
                 stop = float(args[i+1])
                 i += 2
+            elif args
+            elif args[i].startswith("l"):
+                limit = int(args[i][1:])
+                i += 1
+            elif args[i].startswith("st"):
+                stop = float(args[i][2:])
+                i += 1
+            elif i == 0:
+                quantity = float(args[i])*self.quantity_multiplier
+                i += 1
+            elif i == 1:
+                limit = float(args[i])
+                i += 1
             else:
-                quantity = int(args[i])*self.quantity_multiplier
                 i += 1
         return Order(self.tws_app.tws_common.current_symbol, action, quantity, limit, stop)
 
