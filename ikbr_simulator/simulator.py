@@ -120,7 +120,7 @@ class SimulatorCLI:
                 self.tws_app.tws_common.portfolio.export_trades(dest)
             case _:
                 if args[0].startswith("s") or args[0].startswith("b"):
-                    return self._process_command([args[0][0], args[0][1:]] + args[1:])
+                    return self._process_command([args[0][0], f"q{args[0][1:]}"] + args[1:])
                 else:
                     print("Invalid command")
         return True
@@ -160,29 +160,15 @@ class SimulatorCLI:
         quantity = self.default_quantity
         limit = None
         stop = None
-        i = 0
-        while i < len(args):
-            if args[i] == "l":
-                limit = float(args[i+1])
-                i += 2
-            elif args[i] == "st":
-                stop = float(args[i+1])
-                i += 2
-            elif args
-            elif args[i].startswith("l"):
-                limit = int(args[i][1:])
-                i += 1
-            elif args[i].startswith("st"):
-                stop = float(args[i][2:])
-                i += 1
-            elif i == 0:
-                quantity = float(args[i])*self.quantity_multiplier
-                i += 1
-            elif i == 1:
-                limit = float(args[i])
-                i += 1
+        for arg in args:
+            if arg.startswith("q"):
+                quantity = int(int(arg[1:]) * self.quantity_multiplier)
+            elif arg.startswith("l"):
+                limit = float(arg[1:])
+            elif arg.startswith("st"):
+                stop = float(arg[2:])
             else:
-                i += 1
+                limit = float(arg)
         return Order(self.tws_app.tws_common.current_symbol, action, quantity, limit, stop)
 
     def _set_parameters(self, *args):

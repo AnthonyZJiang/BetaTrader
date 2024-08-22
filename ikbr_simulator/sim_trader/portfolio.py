@@ -4,6 +4,7 @@ from rich.table import Table
 from rich.console import Console
 
 from .order import Order, OrderAction, OrderStatus, OrderType
+from ikbr_simulator.util.logging import setup_logger
 
 
 class Position:
@@ -50,6 +51,7 @@ class PortfolioEntry:
 class Portfolio:
     def __init__(self):
         self.entries: dict[str, PortfolioEntry] = {} # symbol: PortfolioEntry
+        self.logger = setup_logger("Portfolio")
         
     def update_last(self, symbol: str, last: float):
         if not symbol in self.entries:
@@ -168,6 +170,10 @@ class Portfolio:
                     if order.action == OrderAction.BUY:
                         current_position += order.filled
                         current_value += order.value
+                        if current_position == 0:
+                            self.logger.error(f"Zero position for {order.symbol} after buying. Check log for details. Skipped line.")
+                            self.logger.debug(f"Position after order: {current_position}, Order: {order}")
+                            raise ZeroDivisionError("Zero position after buying when shorting is not allowed.")
                         current_avg_price = current_value/current_position
                         profit = 0
                     else:
