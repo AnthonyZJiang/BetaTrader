@@ -23,5 +23,7 @@ class TWSCommon:
         self.req_id_callback_map: dict[int, callable] = {}
         
         self.current_symbol = None
+        self.current_bid = 0
+        self.current_ask = 0
         
         self.gui_update_callback_tracked_symbol = None

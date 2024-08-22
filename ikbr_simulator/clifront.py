@@ -10,7 +10,7 @@ from .sim_trader.order import Order, OrderAction, OrderStatus
 
 DEFAULT_ORDER_SIZE = 100
 
-class SimulatorCLI:
+class CLIFront:
     
     def __init__(self):
         self.logger = setup_logger('sim_cli', None, logging.DEBUG, 'sim.log')
@@ -19,6 +19,7 @@ class SimulatorCLI:
         self.order = None
         self.default_quantity = DEFAULT_ORDER_SIZE
         self.quantity_multiplier = 100
+        self.console = Console()
         
     def run(self):
         self.tws_app = TWSApp()
@@ -49,7 +50,30 @@ class SimulatorCLI:
     def _place_order(self, order: Order):
         if order.symbol is None:
             return
+        if not self._confirm_order_instant_exe(order):
+            return
         self.tws_app.place_order(order)
+
+    def _confirm_order_instant_exe(self, order: Order):
+        if order.action == OrderAction.BUY:
+            if order.limit is not None and order.limit > self.tws_app.tws_common.current_ask:
+                self.console.print("[yellow]Instant execution because limit price is higher than the ask price! Proceed? [y/n]")
+                if input().lower() != "y":
+                    return False
+            if order.stop is not None and order.stop < self.tws_app.tws_common.current_ask:
+                self.console.print("[yellow]Instant execution because stop price is lower than the ask price! Proceed? [y/n]")
+                if input().lower() != "y":
+                    return False
+        elif order.action == OrderAction.SELL:
+            if order.limit is not None and order.limit < self.tws_app.tws_common.current_bid:
+                self.console.print("[yellow]Instant execution because limit price is lower than the bid price! Proceed? [y/n]")
+                if input().lower() != "y":
+                    return False
+            if order.stop is not None and order.stop > self.tws_app.tws_common.current_bid:
+                self.console.print("[yellow]Instant execution because stop price is lower than the bid price! Proceed? [y/n]")
+                if input().lower() != "y":
+                    return False
+        return True
 
     def _take_command(self):
         if self.print_tracking_symbol:
@@ -79,9 +103,11 @@ class SimulatorCLI:
                 self._set_parameters(*args[1:])
             case "ls":
                 if nargs == 1:
-                    self.tws_app.tws_common.portfolio.print_all_trades()
+                    self.tws_app.tws_common.portfolio.print_all_trades(self.console)
+                elif args[1] == 'u':
+                    self.tws_app.tws_common.portfolio.print_all_trades_unsorted(self.console)
                 elif args[1] == "pos":
-                    self.tws_app.tws_common.portfolio.print_positions()
+                    self.tws_app.tws_common.portfolio.print_positions(self.console)
             case "track":
                 self._set_track(*args[1:])
             case "t":
@@ -108,7 +134,10 @@ class SimulatorCLI:
                 self._place_order(order)
             case "c":
                 if nargs == 1:
-                    print("No value provided")
+                    self.tws_app.cancel_last_order()
+                    return True
+                if args[1] == 'a':
+                    self.tws_app.cancel_all_orders()
                     return True
                 order_id = int(args[1])
                 self.tws_app.cancel_order(order_id)
@@ -124,30 +153,6 @@ class SimulatorCLI:
                 else:
                     print("Invalid command")
         return True
-        
-    def _print_all_orders(self):
-        table = Table(title="Orders")
-        table.add_column("Order ID")
-        table.add_column("Symbol")
-        table.add_column("Action")
-        table.add_column("Quantity")
-        table.add_column("Limit")
-        table.add_column("Status")
-        for orders in self.tws_app.received_orders.values():
-            for order in orders:
-                if order.status == OrderStatus.FILLED:
-                    status = "[green]FILLED"
-                elif order.status == OrderStatus.CANCELLED:
-                    status = "[red]CANCELLED"
-                else:
-                    status = "[yellow]OPEN"
-                if order.action == OrderAction.BUY:
-                    action = "[green]BUY"
-                else:
-                    action = "[red]SELL"
-                table.add_row(order.id, order.symbol, action, order.quantity, order.limit, status)
-        console = Console()
-        console.print(table)
     
     def _set_track(self, *args):
         if len(args) == 0:
@@ -199,16 +204,15 @@ class SimulatorCLI:
         self.default_quantity = int(args[1])
 
     def _print_help(self):
-        console = Console()
-        console.rule("Commands")
-        console.print("ls [green]Print all orders")
-        console.print("ls pos [green]Print all orders or positions")
-        console.print("set <default_quantity <quantity>> [green]Set the default quantity, default is 100")
-        console.print("set <allow_short <1|0>> [green]Set 1 to allow short selling")
-        console.print("track <symbol> [green]Track a symbol")
-        console.print("b <q<quantity>> <l<limit>> [green]Buy the tracked symbol")
-        console.print("s <q<quantity>> <l<limit>> [green]Sell the tracked symbol")
-        console.print("st <q<quantity>> <l<limit>> [green]Set stop loss for the tracked symbol")
-        console.print("cl [green]Close the current position for the tracked symbol")
-        console.print("c <order_id> [green]Cancel an order")
-        console.print("exit [green]Exit the program")
+        self.console.rule("Commands")
+        self.console.print("ls [green]Print all orders")
+        self.console.print("ls pos [green]Print all orders or positions")
+        self.console.print("set <default_quantity <quantity>> [green]Set the default quantity, default is 100")
+        self.console.print("set <allow_short <1|0>> [green]Set 1 to allow short selling")
+        self.console.print("track <symbol> [green]Track a symbol")
+        self.console.print("b <q<quantity>> <l<limit>> [green]Buy the tracked symbol")
+        self.console.print("s <q<quantity>> <l<limit>> [green]Sell the tracked symbol")
+        self.console.print("st <q<quantity>> <l<limit>> [green]Set stop loss for the tracked symbol")
+        self.console.print("cl [green]Close the current position for the tracked symbol")
+        self.console.print("c <order_id> [green]Cancel an order")
+        self.console.print("exit [green]Exit the program")

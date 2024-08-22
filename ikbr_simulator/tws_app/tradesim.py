@@ -30,6 +30,16 @@ class TWSTradeSim():
             order.cancel()
             self.log_order(order)
             self.order_id_lookup.pop(order_id)
+            self.received_orders[order.symbol].remove(order)
+
+    def cancel_all_orders(self):
+        for id in list(self.order_id_lookup.keys()):
+            self.cancel_order(id)
+
+    def cancel_last_order(self):
+        if len(self.order_id_lookup) > 0:
+            order_id = list(self.order_id_lookup.keys())[-1]
+            self.cancel_order(order_id)
             
     def process_bid_ask_tick(self, reqId: int, time_: int, bidPrice: float, askPrice: float, bidSize: Decimal, askSize: Decimal, attrib: TickAttribBidAsk):
         try:
@@ -51,7 +61,10 @@ class TWSTradeSim():
         if reqId not in self.tws_common.tick_req_id_symbol_map:
             return
         sym = self.tws_common.tick_req_id_symbol_map[reqId]
-        self.tws_common.portfolio.update_last(sym, askPrice)
+        self.tws_common.portfolio.update_last(sym, askPrice, bidPrice)
+        if sym == self.tws_common.current_symbol:
+            self.tws_common.current_ask = askPrice
+            self.tws_common.current_bid = bidPrice
         if not self.any_order(sym):
             if sym != self.tws_common.current_symbol:
                 if not sym in self.tws_common.portfolio.entries:
@@ -69,6 +82,7 @@ class TWSTradeSim():
                 self.log_order(order)
             if order.status == OrderStatus.FILLED:
                 self.received_orders[sym].remove(order)
+                self.order_id_lookup.pop(order.id)
                 
     def any_order(self, symbol):
         return symbol in self.received_orders and len(self.received_orders[symbol]) > 0

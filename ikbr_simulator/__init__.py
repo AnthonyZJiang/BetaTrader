@@ -1,1 +1,1 @@
-from .simulator import SimulatorCLI
+from .clifront import CLIFront

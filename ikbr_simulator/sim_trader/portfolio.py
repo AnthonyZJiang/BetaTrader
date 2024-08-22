@@ -20,6 +20,8 @@ class PortfolioEntry:
     def __init__(self, symbol: str):
         self.symbol = symbol
         self.last = 0
+        self.last_ask = 0
+        self.last_bid = 0
         self.orders: list[Order] = []
         
     def add_order(self, order:Order):
@@ -51,18 +53,32 @@ class PortfolioEntry:
 class Portfolio:
     def __init__(self):
         self.entries: dict[str, PortfolioEntry] = {} # symbol: PortfolioEntry
+        self.orders: list[Order] = []
         self.logger = setup_logger("Portfolio")
         
-    def update_last(self, symbol: str, last: float):
+    def update_last(self, symbol: str, last_ask: float, last_bid):
         if not symbol in self.entries:
             return
-        self.entries[symbol].last = last
+        self.entries[symbol].last_ask = last_ask
+        self.entries[symbol].last_bid = last_bid
+        self.entries[symbol].last = (last_ask + last_bid) / 2
+
+    def get_last_ask(self, symbol: str) -> float:
+        if not symbol in self.entries:
+            return 0
+        return self.entries[symbol].last_ask
+
+    def get_last_bid(self, symbol: str) -> float:
+        if not symbol in self.entries:
+            return 0
+        return self.entries[symbol].last_bid
         
     def add_order(self, order: Order):
         if not order.symbol in self.entries:
             self.entries[order.symbol] = PortfolioEntry.from_order(order)
         elif not order in self.entries[order.symbol].orders:
             self.entries[order.symbol].add_order(order)
+        self.orders.append(order)
     
     def get_all_positions(self) -> dict[str, Position]:
         positions = {
@@ -78,7 +94,7 @@ class Portfolio:
             return None
         return self.entries[symbol].evaluate()
         
-    def print_positions(self):
+    def print_positions(self, console: Console):
         positions = self.get_all_positions()
         table = Table(title="Portfolio")
         table.add_column("Symbol")
@@ -116,10 +132,9 @@ class Portfolio:
         table.add_row(f"TOTAL", "", "", "", "", "",
                       Portfolio.to_green_red_str(total_value), 
                       Portfolio.to_green_red_str(total_change))
-        console = Console()
         console.print(table)
         
-    def print_all_trades(self):
+    def print_all_trades(self, console: Console):
         table = Table(title="Trades")
         table.add_column("ID")
         table.add_column("Symbol")
@@ -134,20 +149,45 @@ class Portfolio:
         table.add_column("Status")
         for e in self.entries.values():
             for order in e.orders:
-                change = e.last - order.avg_price
                 table.add_row(str(order.id), 
                               order.symbol, 
                               order.date_time.strftime("%H:%M:%S"), 
                               "[green]BUY" if order.action == OrderAction.BUY else "[red]SELL", 
                               "MKT" if order.order_type == OrderType.MARKET else "LMT" if order.order_type == OrderType.LIMIT else "STP" if order.order_type == OrderType.STOP else "STP_LMT",
                               f"{order.filled}/{order.quantity}",
-                              "N/A" if order.limit is None else "%.2f" % order.limit, 
                               "N/A" if order.stop is None else "%.2f" % order.stop,
+                              "N/A" if order.limit is None else "%.2f" % order.limit, 
                               str(order.avg_price),
                               "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                               )
             table.add_section()
-        console = Console()
+        console.print(table)
+
+    def print_all_trades_unsorted(self, console: Console):
+        table = Table(title="Trades")
+        table.add_column("ID")
+        table.add_column("Symbol")
+        table.add_column("Datetime")
+        table.add_column("Action")
+        table.add_column("Type")
+        table.add_column("Quantity")
+        table.add_column("Stop price")
+        table.add_column("Limit")
+        table.add_column("Avg price")
+        table.add_column("Value")
+        table.add_column("Status")
+        for order in self.orders:
+            table.add_row(str(order.id), 
+                            order.symbol, 
+                            order.date_time.strftime("%H:%M:%S"), 
+                            "[green]BUY" if order.action == OrderAction.BUY else "[red]SELL", 
+                            "MKT" if order.order_type == OrderType.MARKET else "LMT" if order.order_type == OrderType.LIMIT else "STP" if order.order_type == OrderType.STOP else "STP_LMT",
+                            f"{order.filled}/{order.quantity}",
+                            "N/A" if order.stop is None else "%.2f" % order.stop,
+                            "N/A" if order.limit is None else "%.2f" % order.limit, 
+                            str(order.avg_price),
+                            "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
+                            )
         console.print(table)
         
     def export_trades(self, destination: str):
