@@ -12,9 +12,15 @@ class Position:
         self.symbol = symbol
         self.value = 0
         self.quantity = 0
-        self.avg_price = 0
         self.cashflow = 0
+        self.buy_value = 0
+        self.buy_quantity = 0
+        self.avg_price = 0
         
+    def reset_buy_stats(self):
+        self.buy_value = 0
+        self.buy_quantity = 0
+        self.avg_price = 0
 
 class PortfolioEntry:
     def __init__(self, symbol: str):
@@ -30,16 +36,21 @@ class PortfolioEntry:
     def evaluate(self):
         p = Position(self.symbol)
         for order in self.orders:
-            if order.action == OrderAction.BUY:
+            if order.status == OrderStatus.CANCELLED:
+                continue
+            if order.action == OrderAction.BUY and order.filled > 0:
                 p.quantity += order.filled
                 p.value += order.value
                 p.cashflow -= order.fee + order.value
+                p.buy_quantity += order.filled
+                p.buy_value += order.value
+                p.avg_price = p.buy_value / p.buy_quantity
             elif order.action == OrderAction.SELL:
                 p.quantity -= order.filled
-                p.value -= order.value
+                p.value -= order.filled * p.avg_price
                 p.cashflow += order.value - order.fee
-            if p.quantity > 0:
-                p.avg_price = p.value / p.quantity
+            if p.quantity == 0:
+                p.reset_buy_stats()
         return p
     
     @staticmethod
@@ -102,7 +113,7 @@ class Portfolio:
         table.add_column("Avg Price")
         table.add_column("Last")
         table.add_column("Change")
-        table.add_column("Order Value")
+        table.add_column("Pos Value")
         table.add_column("Last Value")
         table.add_column("Change")
         total_value = 0
@@ -207,7 +218,7 @@ class Portfolio:
                 for order in e.orders:
                     if order.status == OrderStatus.CANCELLED:
                         continue
-                    if order.action == OrderAction.BUY:
+                    if order.action == OrderAction.BUY and order.filled > 0:
                         current_position += order.filled
                         current_value += order.value
                         if current_position == 0:
@@ -221,9 +232,9 @@ class Portfolio:
                         current_value = current_position * current_avg_price
                         profit = order.avg_price * order.filled - current_avg_price * order.filled
                     f.write("%s,%s,%s,%s,%s,%.3f,%d,%.3f,%d,%.3f,%.3f\n" % (
-                            order.date_time.strftime('%Y-%m-%d'),
+                            order.date_time_last_update.strftime('%Y-%m-%d'),
                             order.symbol,
-                            order.date_time.strftime('%H:%M:%S'),
+                            order.date_time_last_update.strftime('%H:%M:%S'),
                             order.action,
                             order.order_type,
                             order.avg_price,
