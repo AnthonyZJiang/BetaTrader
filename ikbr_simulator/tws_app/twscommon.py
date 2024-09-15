@@ -2,6 +2,7 @@ import logging
 
 from ikbr_simulator.util.logging import setup_logger
 from ikbr_simulator.sim_trader.portfolio import Portfolio
+from ikbr_simulator.tws_app.datastore.fundamentals import StockFundamentals
 
 DEF_TICK_REQ_ID = 2000
 DEF_CONTRACT_DETAIL_REQ_ID = 19000
@@ -16,7 +17,9 @@ class TWSCommon:
         
         self.is_ready = False
         self.tick_req_id: int = DEF_TICK_REQ_ID
+        self.mrk_data_req_id: int = 0
         self.tick_req_id_symbol_map: dict[int, str] = {}
+        self.fundamentals: dict[str, StockFundamentals] = {}
         
         self.contract_detail_req_id: int = DEF_CONTRACT_DETAIL_REQ_ID
         self.subscribed_group_id: int = DEF_SUB_GROUP_ID

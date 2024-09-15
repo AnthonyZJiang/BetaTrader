@@ -2,10 +2,12 @@ from rich.console import Console
 from rich.table import Table
 from threading import Thread
 import logging
+import yfinance as yf
 
 from .tws_app import TWSApp
 from .util.logging import setup_logger
 from .sim_trader.order import Order, OrderAction, OrderStatus
+from .tws_app.datastore.fundamentals import StockFundamentals
 
 
 DEFAULT_ORDER_SIZE = 100
@@ -147,6 +149,24 @@ class CLIFront:
                 else:
                     dest = args[1]
                 self.tws_app.tws_common.portfolio.export_trades(dest)
+            case "get":
+                if nargs == 1:
+                    print("No value provided")
+                    return True
+                _sym = self.tws_app.tws_common.current_symbol
+                if not _sym in self.tws_app.tws_common.fundamentals:
+                    info = yf.Ticker(_sym).info
+                    self.tws_app.tws_common.fundamentals[_sym] = StockFundamentals.from_yf(info)
+                if args[1] == "f":
+                    print("==========Fundamentals for", _sym)
+                    self.tws_app.tws_common.fundamentals[_sym].print()
+                    print("==========")
+                elif args[1] == "ask":
+                    print("Current ask:", self.tws_app.tws_common.current_ask)
+                elif args[1] == "bid":
+                    print("Current bid:", self.tws_app.tws_common.current_bid)
+                elif args[1] == "symbol":
+                    print("Current symbol:", self.tws_app.tws_common.current_symbol)
             case _:
                 if args[0].startswith("s") or args[0].startswith("b"):
                     return self._process_command([args[0][0], f"q{args[0][1:]}"] + args[1:])
