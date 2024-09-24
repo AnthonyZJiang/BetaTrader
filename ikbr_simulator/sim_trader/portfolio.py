@@ -1,10 +1,11 @@
 from pathlib import Path
+import json
 
 from rich.table import Table
 from rich.console import Console
 
 from .order import Order, OrderAction, OrderStatus, OrderType
-from ikbr_simulator.util.logging import setup_logger
+from ikbr_simulator.util.twslogging import setup_logger
 
 
 class Position:
@@ -66,6 +67,10 @@ class Portfolio:
         self.entries: dict[str, PortfolioEntry] = {} # symbol: PortfolioEntry
         self.orders: list[Order] = []
         self.logger = setup_logger("Portfolio")
+        self.cash = 0
+           
+    def update_cash(self, value):
+        self.cash += value
         
     def update_last(self, symbol: str, last_ask: float, last_bid):
         if not symbol in self.entries:
@@ -90,6 +95,9 @@ class Portfolio:
         elif not order in self.entries[order.symbol].orders:
             self.entries[order.symbol].add_order(order)
         self.orders.append(order)
+        
+    def check_buy_power(self, value) -> bool:
+        return self.cash >= value
     
     def get_all_positions(self) -> dict[str, Position]:
         positions = {
@@ -119,8 +127,8 @@ class Portfolio:
         total_value = 0
         total_change = 0
         
-        table.add_row("CASH", "", "", "", "", "",
-                    Portfolio.to_green_red_str(positions['_cash_'].value), "")
+        table.add_row("CASH", "", "", "", "", "", Portfolio.to_green_red_str(self.cash),
+                    Portfolio.to_green_red_str(positions['_cash_'].value))
         table.add_section()
         for symbol, pos in positions.items():
             if symbol == "_cash_":
@@ -141,7 +149,7 @@ class Portfolio:
             total_change += value_change
         table.add_section()
         table.add_row(f"TOTAL", "", "", "", "", "",
-                      Portfolio.to_green_red_str(total_value), 
+                      Portfolio.to_green_red_str(total_value+self.cash), 
                       Portfolio.to_green_red_str(total_change))
         console.print(table)
         
@@ -168,7 +176,7 @@ class Portfolio:
                               f"{order.filled}/{order.quantity}",
                               "N/A" if order.stop is None else "%.2f" % order.stop,
                               "N/A" if order.limit is None else "%.2f" % order.limit, 
-                              str(order.avg_price),
+                              "%.2f", order.avg_price,
                               "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                               )
             table.add_section()
@@ -196,7 +204,7 @@ class Portfolio:
                             f"{order.filled}/{order.quantity}",
                             "N/A" if order.stop is None else "%.2f" % order.stop,
                             "N/A" if order.limit is None else "%.2f" % order.limit, 
-                            str(order.avg_price),
+                            "%.2f" % order.avg_price,
                             "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                             )
         console.print(table)
@@ -243,6 +251,8 @@ class Portfolio:
                             current_position,
                             profit,
                             order.fee))
+        with open('portfolio.json', 'w') as f:
+            f.write(json.dumps({'cash': self.cash}))
         
     @staticmethod
     def to_green_red_str(value):

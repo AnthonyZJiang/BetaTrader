@@ -3,9 +3,10 @@ from rich.table import Table
 from threading import Thread
 import logging
 import yfinance as yf
+import json
 
 from .tws_app import TWSApp
-from .util.logging import setup_logger
+from .util.twslogging import setup_logger
 from .sim_trader.order import Order, OrderAction, OrderStatus
 from .tws_app.datastore.fundamentals import StockFundamentals
 
@@ -132,7 +133,7 @@ class CLIFront:
                 if pos is None or pos.quantity <= 0:
                     print("No position to close")
                     return True
-                order = Order(self.tws_app.tws_common.current_symbol, OrderAction.SELL, pos.quantity)
+                order = Order(self.tws_app.tws_common.portfolio, self.tws_app.tws_common.current_symbol, OrderAction.SELL, pos.quantity)
                 self._place_order(order)
             case "c":
                 if nargs == 1:
@@ -153,11 +154,14 @@ class CLIFront:
                 if nargs == 1:
                     print("No value provided")
                     return True
-                _sym = self.tws_app.tws_common.current_symbol
-                if not _sym in self.tws_app.tws_common.fundamentals:
-                    info = yf.Ticker(_sym).info
-                    self.tws_app.tws_common.fundamentals[_sym] = StockFundamentals.from_yf(info)
                 if args[1] == "f":
+                    if nargs > 2:
+                        _sym = args[2]
+                    else:   
+                        _sym = self.tws_app.tws_common.current_symbol
+                    if not _sym in self.tws_app.tws_common.fundamentals:
+                        info = yf.Ticker(_sym).info
+                        self.tws_app.tws_common.fundamentals[_sym] = StockFundamentals.from_yf(info)
                     print("==========Fundamentals for", _sym)
                     self.tws_app.tws_common.fundamentals[_sym].print()
                     print("==========")
@@ -169,7 +173,7 @@ class CLIFront:
                     print("Current symbol:", self.tws_app.tws_common.current_symbol)
             case _:
                 if args[0].startswith("s") or args[0].startswith("b"):
-                    return self._process_command([args[0][0], f"q{args[0][1:]}"] + args[1:])
+                    return self._process_command([args[0][0], f"qm{args[0][1:]}"] + args[1:])
                 else:
                     print("Invalid command")
         return True
@@ -186,15 +190,17 @@ class CLIFront:
         limit = None
         stop = None
         for arg in args:
-            if arg.startswith("q"):
-                quantity = int(int(arg[1:]) * self.quantity_multiplier)
+            if arg.startswith("qm"):
+                quantity = int(float(arg[2:]) * self.quantity_multiplier)
+            elif arg.startswith("q"):
+                quantity = int(float(arg[1:]))
             elif arg.startswith("l"):
                 limit = float(arg[1:])
             elif arg.startswith("st"):
                 stop = float(arg[2:])
             else:
                 limit = float(arg)
-        return Order(self.tws_app.tws_common.current_symbol, action, quantity, limit, stop)
+        return Order(self.tws_app.tws_common.portfolio, self.tws_app.tws_common.current_symbol, action, quantity, limit, stop)
 
     def _set_parameters(self, *args):
         nargs = len(args)
@@ -236,3 +242,4 @@ class CLIFront:
         self.console.print("cl [green]Close the current position for the tracked symbol")
         self.console.print("c <order_id> [green]Cancel an order")
         self.console.print("exit [green]Exit the program")
+

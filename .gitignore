@@ -7,3 +7,4 @@ __pycache__/
 
 *.csv
 credential.json
+portfolio.json

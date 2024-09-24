@@ -1,6 +1,7 @@
 import logging
+import json
 
-from ikbr_simulator.util.logging import setup_logger
+from ikbr_simulator.util.twslogging import setup_logger
 from ikbr_simulator.sim_trader.portfolio import Portfolio
 from ikbr_simulator.tws_app.datastore.fundamentals import StockFundamentals
 
@@ -30,3 +31,7 @@ class TWSCommon:
         self.current_ask = 0
         
         self.gui_update_callback_tracked_symbol = None
+        
+        with open('portfolio.json', 'r') as f:
+            cash = json.load(f)
+            self.portfolio.cash = cash['cash']

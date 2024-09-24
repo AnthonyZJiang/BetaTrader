@@ -106,6 +106,9 @@ class TWSTradeSim():
                    return order.add_fill(ask_price, int(ask_size*100))
                     
     def fill_buy_order(self, order: Order, ask_price, ask_size):
+        if not self.tws_common.portfolio.check_buy_power(ask_price*order.quantity):
+            order.cancel()
+            self.tws_common.logger.info(f"Warning: Not enough cash to buy {order.quantity} shares of {order.symbol}.")
         if order.order_type == OrderType.MARKET:
             return order.add_fill(ask_price, int(ask_size*100))
         elif order.order_type == OrderType.LIMIT:

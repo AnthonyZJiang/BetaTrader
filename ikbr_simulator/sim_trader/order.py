@@ -33,7 +33,7 @@ class OrderStatus(Enum):
 
 class Order:
     id = 0
-    def __init__(self, symbol:str | None, action:OrderAction, quantity:int, limit:float=None, stop:float=None):
+    def __init__(self, portfolio, symbol:str | None, action:OrderAction, quantity:int, limit:float=None, stop:float=None):
         if symbol is None:
             # return an empty order for user to fill in.
             return
@@ -64,6 +64,8 @@ class Order:
         self.filled = 0
         self.unfilled = quantity
         self.status = OrderStatus.OPEN
+        
+        self.portfolio = portfolio
     
     def add_fill(self, price: float, quantity: int):
         if self.status != OrderStatus.OPEN:
@@ -78,6 +80,7 @@ class Order:
             self.status = OrderStatus.FILLED
             self.fee = max(0.0035*self.filled, 0.35)
         self.date_time_last_update = datetime.datetime.now()
+        self.portfolio.update_cash(price * quantity * (-1 if self.action == OrderAction.BUY else 1) - self.fee)
         return quantity
     
     def cancel(self):
@@ -87,6 +90,7 @@ class Order:
         else:
             self.status = OrderStatus.CANCELLED
         self.date_time_last_update = datetime.datetime.now()
+        self.portfolio.update_cash(-self.fee)
         return self.quantity - self.filled
     
     def __str__(self):
@@ -141,6 +145,6 @@ class Order:
         
     @staticmethod
     def from_csv(csv: str):
-        order = Order(None, None, None)
+        order = Order(None, None, None, None)
         order._from_csv(csv)
         return order
