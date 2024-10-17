@@ -1,6 +1,6 @@
 import json
 import time
-from betatrader.maths import *
+from betatrader.trendanalyser.common.maths import *
 import matplotlib.pyplot as plt
 
 
