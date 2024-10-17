@@ -1,9 +1,7 @@
 from rich.console import Console
-from rich.table import Table
 from threading import Thread
 import logging
 import yfinance as yf
-import json
 
 from .tws_app import TWSApp
 from .util.twslogging import setup_logger
@@ -95,7 +93,7 @@ class CLIFront:
             self.tws_app.disconnect()
             return False
         return self._process_command(val.lower().split())
-        
+    
     def _process_command(self, args: dict[str]):
         nargs = len(args)
 
@@ -122,7 +120,7 @@ class CLIFront:
                 self.print_tracking_symbol = False
                 id = int(args[1])
                 self.tws_app.link_display_group(id)
-            case "b":
+            case "x":
                 order = self._get_order(OrderAction.BUY, *args[1:])
                 self._place_order(order)
             case "s":
@@ -172,7 +170,7 @@ class CLIFront:
                 elif args[1] == "symbol":
                     print("Current symbol:", self.tws_app.tws_common.current_symbol)
             case _:
-                if args[0].startswith("s") or args[0].startswith("b"):
+                if args[0].startswith("s") or args[0].startswith("x"):
                     return self._process_command([args[0][0], f"qm{args[0][1:]}"] + args[1:])
                 else:
                     print("Invalid command")
