@@ -81,7 +81,7 @@ def setup_logger(name: str = 'simulator',
     if screen_level is not None:
         s_handler = logging.StreamHandler()
         s_handler.setLevel(screen_level)
-        s_format = logging.Formatter('%(name)s::%(module)s::%(levelname)-8s: %(message)s')
+        s_format = logging.Formatter('%(asctime)s.%(msecs)03d %(name)s::%(module)s::%(levelname)-8s: %(message)s', '%H:%M:%S')
         s_handler.setFormatter(s_format)
         logger.addHandler(s_handler)
 

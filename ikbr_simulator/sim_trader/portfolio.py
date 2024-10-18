@@ -54,6 +54,10 @@ class PortfolioEntry:
                 p.reset_buy_stats()
         return p
     
+    @property
+    def is_closed(self) -> bool:
+        return not any([order.status == OrderStatus.OPEN for order in self.orders])
+    
     @staticmethod
     def from_order(order: Order):
         pe = PortfolioEntry(order.symbol)
@@ -176,7 +180,7 @@ class Portfolio:
                               f"{order.filled}/{order.quantity}",
                               "N/A" if order.stop is None else "%.2f" % order.stop,
                               "N/A" if order.limit is None else "%.2f" % order.limit, 
-                              "%.2f", order.avg_price,
+                              "%.2f" % order.avg_price,
                               "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                               )
             table.add_section()
@@ -250,6 +254,48 @@ class Portfolio:
                             order.value,
                             current_position,
                             profit,
+                            order.fee))
+        with open('portfolio.json', 'w') as f:
+            f.write(json.dumps({'cash': self.cash}))
+            
+    
+    def export_tradesviz_style(self, destination: str):
+        if Path(destination).exists():
+            with open(destination, "r") as f:
+                first_line = f.readline()
+            write_header = first_line == ""
+        else:
+            write_header = True
+        with open(destination, "a") as f:
+            if write_header:
+                f.write("date,time,symbol,asset_type,price,currency,quantity,commission,tags,notes\n")
+            for e in self.entries.values():
+                current_avg_price = 0
+                current_position = 0
+                current_value = 0
+                for order in e.orders:
+                    if order.status == OrderStatus.CANCELLED:
+                        continue
+                    if order.action == OrderAction.BUY and order.filled > 0:
+                        current_position += order.filled
+                        current_value += order.value
+                        if current_position == 0:
+                            self.logger.error(f"Zero position for {order.symbol} after buying. Check log for details. Skipped line.")
+                            self.logger.debug(f"Position after order: {current_position}, Order: {order}")
+                            raise ZeroDivisionError("Zero position after buying when shorting is not allowed.")
+                        current_avg_price = current_value/current_position
+                        profit = 0
+                    else:
+                        current_position -= order.filled
+                        current_value = current_position * current_avg_price
+                        profit = order.avg_price * order.filled - current_avg_price * order.filled
+                        # date,time,symbol,asset_type,price,currency,quantity,commission,tags,notes
+                    f.write("%s,%s,%s,stock,%.3f,USD,%d,%.3f,DayTrading,\n" % (
+                            order.date_time_last_update.strftime('%Y%m%d'),
+                            order.date_time_last_update.strftime('%H:%M:%S'),
+                            order.symbol,
+                            order.avg_price,
+                            order.filled if order.action == OrderAction.BUY else -order.filled,
                             order.fee))
         with open('portfolio.json', 'w') as f:
             f.write(json.dumps({'cash': self.cash}))

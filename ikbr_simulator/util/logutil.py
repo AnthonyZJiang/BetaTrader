@@ -14,9 +14,9 @@ def export_trade_from_log(log_file: str, desitnation: str, today_only: bool = Fa
             if date is None:
                 date = order.date_time.date()
             elif date != order.date_time.date():
-                pf.export_trades(desitnation)
+                pf.export_tradesviz_style(desitnation)
                 pf = Portfolio()
                 date = order.date_time.date()
             pf.add_order(order)
         
-        pf.export_trades(desitnation)
+        pf.export_tradesviz_style(desitnation)

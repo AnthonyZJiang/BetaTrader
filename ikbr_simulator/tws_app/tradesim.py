@@ -67,17 +67,18 @@ class TWSTradeSim():
             self.tws_common.current_bid = bidPrice
         if not self.any_order(sym):
             if sym != self.tws_common.current_symbol:
-                if not sym in self.tws_common.portfolio.entries:
+                if not sym in self.tws_common.portfolio.entries or self.tws_common.portfolio.entries[sym].is_closed:
                     TWSTickBidAsk.cancel_tick_bid_ask(self, reqId)                  
             return
         for order in self.received_orders[sym]:
             if order.status == OrderStatus.CANCELLED or order.status == OrderStatus.PARTIAL:
                 continue
             if order.status == OrderStatus.OPEN:
+                midPrice = (askPrice + bidPrice) / 2
                 if order.action == OrderAction.BUY:
-                    filled = self.fill_buy_order(order, askPrice, askSize)
+                    filled = self.fill_buy_order(order, askPrice, askSize, midPrice)
                 if order.action == OrderAction.SELL:
-                    filled = self.fill_sell_order(order, bidPrice, bidSize)
+                    filled = self.fill_sell_order(order, bidPrice, bidSize, midPrice)
             if filled > 0:
                 self.log_order(order)
             if order.status == OrderStatus.FILLED:
@@ -97,33 +98,33 @@ class TWSTradeSim():
         else:
             self.tws_common.logger.info(f"Order updated   : {order}")
             
-    def fill_order(self, order: Order, ask_price, ask_size):
+    def fill_order(self, order: Order, ask_price, ask_size, midPrice):
         if order.action == OrderAction.BUY:
             if order.order_type == OrderType.MARKET:
                 return order.add_fill(ask_price, int(ask_size*100))
             if order.order_type == OrderType.LIMIT:
-                if order.limit >= ask_price:
-                   return order.add_fill(ask_price, int(ask_size*100))
+                if order.limit >= midPrice:
+                   return order.add_fill(midPrice, int(ask_size*100))
                     
-    def fill_buy_order(self, order: Order, ask_price, ask_size):
+    def fill_buy_order(self, order: Order, ask_price, ask_size, midPrice):
         if not self.tws_common.portfolio.check_buy_power(ask_price*order.quantity):
             order.cancel()
             self.tws_common.logger.info(f"Warning: Not enough cash to buy {order.quantity} shares of {order.symbol}.")
         if order.order_type == OrderType.MARKET:
             return order.add_fill(ask_price, int(ask_size*100))
         elif order.order_type == OrderType.LIMIT:
-            if order.limit >= ask_price:
-                return order.add_fill(ask_price, int(ask_size*100))
+            if order.limit >= midPrice:
+                return order.add_fill(midPrice, int(ask_size*100))
         elif order.order_type == OrderType.STOP:
-            if order.stop <= ask_price:
-                return order.add_fill(ask_price, int(ask_size*100))
+            if order.stop <= midPrice:
+                return order.add_fill(midPrice, int(ask_size*100))
         elif order.order_type == OrderType.STOP_LIMIT:
             if order.stop <= ask_price:
                 if order.limit >= ask_price:
                     return order.add_fill(ask_price, int(ask_size*100))
         return 0
     
-    def fill_sell_order(self, order: Order, bid_price, bid_size):
+    def fill_sell_order(self, order: Order, bid_price, bid_size, midPrice):
         pos = self.tws_common.portfolio.get_position(order.symbol)
         if pos.quantity <= 0:
             self.tws_common.logger.info(f"Warning: Short selling not allowed.")
@@ -133,8 +134,8 @@ class TWSTradeSim():
         if order.order_type == OrderType.MARKET:
             return order.add_fill(bid_price, max_fill)
         elif order.order_type == OrderType.LIMIT:
-            if order.limit <= bid_price:
-                return order.add_fill(bid_price, max_fill)
+            if order.limit <= midPrice:
+                return order.add_fill(midPrice, max_fill)
         elif order.order_type == OrderType.STOP:
             if order.stop >= bid_price:
                 return order.add_fill(bid_price, max_fill)
