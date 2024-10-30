@@ -30,7 +30,10 @@ class TWSTickBidAsk():
 
     def cancel_tick_bid_ask(self, reqId):
         EClient.cancelTickByTickData(self, reqId)
-        self.tws_common.tick_req_id_symbol_map.pop(reqId)
+        try:
+            self.tws_common.tick_req_id_symbol_map.pop(reqId)
+        except KeyError:
+            pass
 
     def free_up_track_symbol(self):
         for reqId, symbol in self.tws_common.tick_req_id_symbol_map.items():

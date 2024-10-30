@@ -42,6 +42,7 @@ class CLIFront:
             except Exception as e:
                 print("An unknown error occurred, check log for details.")
                 self.logger.error(e, exc_info=True)
+        self.tws_app.tws_common.exit_flag = True
         self.tws_app.disconnect()
         self.app_thread.join()
         

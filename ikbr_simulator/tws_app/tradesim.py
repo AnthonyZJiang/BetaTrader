@@ -1,6 +1,9 @@
 import queue
 from queue import Queue
 from decimal import Decimal
+from threading import Thread
+import time
+import copy
 
 from ibapi.wrapper import *
 
@@ -18,6 +21,8 @@ class TWSTradeSim():
         self.received_orders: dict[str, list[Order]] = {} # symbol: [Order]
         self.order_id_lookup: dict[int, Order] = {} # order_id: Order
         self.allow_short = False
+        self.housekeeping_thread = Thread(target=self.housekeeping_thread_run)
+        self.housekeeping_thread.start()
         
     def place_order(self, order: Order):
         self.new_orders.put(order)
@@ -42,33 +47,15 @@ class TWSTradeSim():
             self.cancel_order(order_id)
             
     def process_bid_ask_tick(self, reqId: int, time_: int, bidPrice: float, askPrice: float, bidSize: Decimal, askSize: Decimal, attrib: TickAttribBidAsk):
-        try:
-            while True:
-                order = self.new_orders.get_nowait()
-                if order.status != OrderStatus.OPEN:
-                    continue
-                if order.symbol in self.received_orders:
-                    self.received_orders[order.symbol].append(order)
-                else:
-                    self.received_orders[order.symbol] = [order]
-                
-                self.tws_common.portfolio.add_order(order)
-                self.tws_common.logger.info(f"Order received  : {order}")
-        except queue.Empty:
-            pass
-        except Exception as e:
-            self.tws_common.logger.error(f"Error: {e}", exc_info=True)
+        self.process_new_orders()
         if reqId not in self.tws_common.tick_req_id_symbol_map:
-            return
+            TWSTickBidAsk.cancel_tick_bid_ask(self, reqId)
         sym = self.tws_common.tick_req_id_symbol_map[reqId]
         self.tws_common.portfolio.update_last(sym, askPrice, bidPrice)
         if sym == self.tws_common.current_symbol:
             self.tws_common.current_ask = askPrice
             self.tws_common.current_bid = bidPrice
         if not self.any_order(sym):
-            if sym != self.tws_common.current_symbol:
-                if not sym in self.tws_common.portfolio.entries or self.tws_common.portfolio.entries[sym].is_closed:
-                    TWSTickBidAsk.cancel_tick_bid_ask(self, reqId)                  
             return
         for order in self.received_orders[sym]:
             if order.status == OrderStatus.CANCELLED or order.status == OrderStatus.PARTIAL:
@@ -113,11 +100,11 @@ class TWSTradeSim():
         if order.order_type == OrderType.MARKET:
             return order.add_fill(ask_price, int(ask_size*100))
         elif order.order_type == OrderType.LIMIT:
-            if order.limit >= midPrice:
-                return order.add_fill(midPrice, int(ask_size*100))
+            if order.limit >= ask_price:
+                return order.add_fill(ask_price, int(ask_size*100))
         elif order.order_type == OrderType.STOP:
-            if order.stop <= midPrice:
-                return order.add_fill(midPrice, int(ask_size*100))
+            if order.stop <= ask_price:
+                return order.add_fill(ask_price, int(ask_size*100))
         elif order.order_type == OrderType.STOP_LIMIT:
             if order.stop <= ask_price:
                 if order.limit >= ask_price:
@@ -134,8 +121,8 @@ class TWSTradeSim():
         if order.order_type == OrderType.MARKET:
             return order.add_fill(bid_price, max_fill)
         elif order.order_type == OrderType.LIMIT:
-            if order.limit <= midPrice:
-                return order.add_fill(midPrice, max_fill)
+            if order.limit <= bid_price:
+                return order.add_fill(bid_price, max_fill)
         elif order.order_type == OrderType.STOP:
             if order.stop >= bid_price:
                 return order.add_fill(bid_price, max_fill)
@@ -144,3 +131,37 @@ class TWSTradeSim():
                 if order.limit <= bid_price:
                     return order.add_fill(bid_price, max_fill)
         return 0
+
+    def process_new_orders(self):
+        try:
+            while True:
+                order = self.new_orders.get_nowait()
+                if order.status != OrderStatus.OPEN:
+                    continue
+                if order.symbol in self.received_orders:
+                    self.received_orders[order.symbol].append(order)
+                else:
+                    self.received_orders[order.symbol] = [order]
+                
+                self.tws_common.portfolio.add_order(order)
+                self.tws_common.logger.info(f"Order received  : {order}")
+        except queue.Empty:
+            pass
+        except Exception as e:
+            self.tws_common.logger.error(f"Error: {e}", exc_info=True)
+            
+    def clear_unused_tick_req(self):
+        sym_map = copy.deepcopy(self.tws_common.tick_req_id_symbol_map)
+        for req_id, sym in sym_map.items():
+            if not self.any_order(sym):
+                if sym != self.tws_common.current_symbol:
+                    if not sym in self.tws_common.portfolio.entries or self.tws_common.portfolio.entries[sym].is_closed:
+                        TWSTickBidAsk.cancel_tick_bid_ask(self, req_id)
+
+    def housekeeping_thread_run(self):
+        while not self.tws_common.exit_flag:
+            if not self.tws_common.is_ready:
+                continue
+            self.process_new_orders()
+            self.clear_unused_tick_req()
+            time.sleep(0.01)

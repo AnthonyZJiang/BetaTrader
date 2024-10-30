@@ -14,8 +14,8 @@ class TWSCommon:
     def __init__(self):
         self.trade_logger = setup_logger('trade', None, logging.INFO, 'trade.log.csv')
         self.logger = setup_logger('sim_twsapp', logging.INFO, logging.DEBUG, 'sim.log')
-        self.portfolio = Portfolio()
         
+        self.exit_flag = False
         self.is_ready = False
         self.tick_req_id: int = DEF_TICK_REQ_ID
         self.mrk_data_req_id: int = 0
