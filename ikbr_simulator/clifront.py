@@ -2,6 +2,7 @@ from rich.console import Console
 from threading import Thread
 import logging
 import yfinance as yf
+import json
 
 from .tws_app import TWSApp
 from .util.twslogging import setup_logger
@@ -47,7 +48,7 @@ class CLIFront:
         self.app_thread.join()
         
     def _gui_update_callback_tracked_symbol(self, symbol):
-        print(f"Tracking symbol: {symbol}")
+        print(f"Portfolio: {self.tws_app.tws_common.portfolio.name} | Tracking: {symbol}")
 
     def _place_order(self, order: Order):
         if order.symbol is None:
@@ -57,38 +58,41 @@ class CLIFront:
         self.tws_app.place_order(order)
 
     def _confirm_order_instant_exe(self, order: Order):
-        if order.action == OrderAction.BUY:
-            if order.limit is not None and order.limit > self.tws_app.tws_common.current_ask:
-                self.console.print("[yellow]Instant execution because limit price is higher than the ask price! Proceed? [y/n]")
-                if input().lower() != "y":
-                    return False
-            if order.stop is not None and order.stop < self.tws_app.tws_common.current_ask:
-                self.console.print("[yellow]Instant execution because stop price is lower than the ask price! Proceed? [y/n]")
-                if input().lower() != "y":
-                    return False
-        elif order.action == OrderAction.SELL:
-            if order.limit is not None and order.limit < self.tws_app.tws_common.current_bid:
-                self.console.print("[yellow]Instant execution because limit price is lower than the bid price! Proceed? [y/n]")
-                if input().lower() != "y":
-                    return False
-            if order.stop is not None and order.stop > self.tws_app.tws_common.current_bid:
-                self.console.print("[yellow]Instant execution because stop price is lower than the bid price! Proceed? [y/n]")
-                if input().lower() != "y":
-                    return False
+        # if order.action == OrderAction.BUY:
+        #     if order.limit is not None and order.limit > self.tws_app.tws_common.current_ask:
+        #         self.console.print("[yellow]Instant execution because limit price is higher than the ask price! Proceed? [y/n]")
+        #         if input().lower() != "y":
+        #             return False
+        #     if order.stop is not None and order.stop < self.tws_app.tws_common.current_ask:
+        #         self.console.print("[yellow]Instant execution because stop price is lower than the ask price! Proceed? [y/n]")
+        #         if input().lower() != "y":
+        #             return False
+        # elif order.action == OrderAction.SELL:
+        #     if order.limit is not None and order.limit < self.tws_app.tws_common.current_bid:
+        #         self.console.print("[yellow]Instant execution because limit price is lower than the bid price! Proceed? [y/n]")
+        #         if input().lower() != "y":
+        #             return False
+        #     if order.stop is not None and order.stop > self.tws_app.tws_common.current_bid:
+        #         self.console.print("[yellow]Instant execution because stop price is lower than the bid price! Proceed? [y/n]")
+        #         if input().lower() != "y":
+        #             return False
         return True
 
     def _take_command(self):
         if self.print_tracking_symbol:
-            print("Tracking symbol:", self.tws_app.tws_common.current_symbol)
+            print(f"Portfolio: {self.tws_app.tws_common.portfolio.name} | Tracking: {self.tws_app.tws_common.current_symbol}")
         self.print_tracking_symbol = True
         val = input("")
         if val == "exit":
             ans = input("Do you want to export the trades? (y/n)")
             if ans == "y":
-                ans = input("Enter the file name: (default: trades.csv)")
+                ans = input("Enter the file name: (default: tradesviz.csv)")
                 if ans == "":
-                    ans = "trades.csv"
-                self.tws_app.tws_common.portfolio.export_trades(ans)
+                    ans = "tradesviz.csv"
+                for p in self.tws_app.tws_common.portfolios.values():
+                    p.export_tradesviz_style(ans)
+                with open('portfolio.json', 'w') as f:
+                    json.dump([{'name': p.name, 'cash': p.cash} for p in self.tws_app.tws_common.portfolios.values()], f)
                 print("Trades exported to ", ans)
             print("Exiting")
             self.tws_app.disconnect()
@@ -145,10 +149,10 @@ class CLIFront:
                 self.tws_app.cancel_order(order_id)
             case "export":
                 if nargs == 1:
-                    dest = "trades.csv"
+                    dest = "tradesviz.csv"
                 else:
                     dest = args[1]
-                self.tws_app.tws_common.portfolio.export_trades(dest)
+                self.tws_app.tws_common.portfolio.export_tradesviz_style(dest)
             case "get":
                 if nargs == 1:
                     print("No value provided")
@@ -170,6 +174,15 @@ class CLIFront:
                     print("Current bid:", self.tws_app.tws_common.current_bid)
                 elif args[1] == "symbol":
                     print("Current symbol:", self.tws_app.tws_common.current_symbol)
+            case "p":
+                if nargs == 1:
+                    print(f"Available portfolios: {', '.join(self.tws_app.tws_common.portfolios.keys())}")
+                    return True
+                for p in self.tws_app.tws_common.portfolios.values():
+                    if p.name.startswith(args[1]):
+                        self.tws_app.tws_common.portfolio = p
+                        print("Portfolio set to", p.name)
+                        return True
             case _:
                 if args[0].startswith("s") or args[0].startswith("x"):
                     return self._process_command([args[0][0], f"qm{args[0][1:]}"] + args[1:])
@@ -186,7 +199,10 @@ class CLIFront:
 
     def _get_order(self, action: OrderAction, *args):
         quantity = self.default_quantity
-        limit = None
+        if action == OrderAction.SELL:
+            limit = self.tws_app.tws_common.current_bid * 0.98
+        else:
+            limit = self.tws_app.tws_common.current_ask * 1.01
         stop = None
         for arg in args:
             if arg.startswith("qm"):

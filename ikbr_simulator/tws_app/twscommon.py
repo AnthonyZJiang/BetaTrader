@@ -32,6 +32,12 @@ class TWSCommon:
         
         self.gui_update_callback_tracked_symbol = None
         
+        self.portfolios: dict[str, Portfolio] = {}
         with open('portfolio.json', 'r') as f:
-            cash = json.load(f)
-            self.portfolio.cash = cash['cash']
+            portfolio_json = json.load(f)
+            for p in portfolio_json:
+                name = p['name']
+                cash = p['cash']
+                self.portfolios[name] = Portfolio(name)
+                self.portfolios[name].cash = cash
+        self.portfolio = self.portfolios['realistic']

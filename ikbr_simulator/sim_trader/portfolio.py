@@ -67,7 +67,8 @@ class PortfolioEntry:
 
 
 class Portfolio:
-    def __init__(self):
+    def __init__(self, name: str) -> None:
+        self.name = name
         self.entries: dict[str, PortfolioEntry] = {} # symbol: PortfolioEntry
         self.orders: list[Order] = []
         self.logger = setup_logger("Portfolio")
@@ -181,7 +182,8 @@ class Portfolio:
                               "N/A" if order.stop is None else "%.2f" % order.stop,
                               "N/A" if order.limit is None else "%.2f" % order.limit, 
                               "%.2f" % order.avg_price,
-                              "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
+                              "%.2f" % order.value if order.action == OrderAction.BUY else -order.value,
+                              "[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                               )
             table.add_section()
         console.print(table)
@@ -209,7 +211,8 @@ class Portfolio:
                             "N/A" if order.stop is None else "%.2f" % order.stop,
                             "N/A" if order.limit is None else "%.2f" % order.limit, 
                             "%.2f" % order.avg_price,
-                            "%.2f" % order.value,"[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
+                            "%.2f" % order.value if order.action == OrderAction.BUY else -order.value,
+                            "[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                             )
         console.print(table)
         
@@ -290,15 +293,14 @@ class Portfolio:
                         current_value = current_position * current_avg_price
                         profit = order.avg_price * order.filled - current_avg_price * order.filled
                         # date,time,symbol,asset_type,price,currency,quantity,commission,tags,notes
-                    f.write("%s,%s,%s,stock,%.3f,USD,%d,%.3f,DayTrading,\n" % (
+                    f.write("%s,%s,%s,stock,%.3f,USD,%d,%.3f,%s,\n" % (
                             order.date_time_last_update.strftime('%Y%m%d'),
                             order.date_time_last_update.strftime('%H:%M:%S'),
                             order.symbol,
                             order.avg_price,
                             order.filled if order.action == OrderAction.BUY else -order.filled,
-                            order.fee))
-        with open('portfolio.json', 'w') as f:
-            f.write(json.dumps({'cash': self.cash}))
+                            order.fee,
+                            self.name))
         
     @staticmethod
     def to_green_red_str(value):
