@@ -15,23 +15,26 @@ class StockFundamentals():
     
     @staticmethod
     def from_yf(ticker_info):
+        def get_key_value(key, dict, default=None):
+            return dict[key] if key in dict else default
         f = StockFundamentals(ticker_info["symbol"])
         f.symbol != ticker_info["symbol"]
-        f.mark_cap = ticker_info["marketCap"]
-        f.float = ticker_info["floatShares"]
-        f.shortable_shares = ticker_info["sharesShort"]
-        f.country = ticker_info["country"]
-        f.exchange = ticker_info["exchange"]
-        f.short_name = ticker_info["shortName"]
-        f.sector = ticker_info["sector"]
+        f.mark_cap = get_key_value("marketCap", ticker_info, -1)
+        f.float = get_key_value("floatShares", ticker_info, -1)
+        f.shortable_shares = get_key_value("shortableShares", ticker_info, -1)
+        f.country = get_key_value("country", ticker_info, "Unknown")
+        f.exchange = get_key_value("exchange", ticker_info, "Unknown")
+        f.short_name = get_key_value("shortName", ticker_info, "Unknown")
+        f.sector = get_key_value("sector", ticker_info, "Unknown")
         ceo_found = False
-        for officer in ticker_info["companyOfficers"]:
-            if 'ceo' in officer["title"]:
-                f.ceo = officer["name"]
+        for officer in get_key_value("companyOfficers", ticker_info, []):
+            title = get_key_value("title", officer, "").lower()
+            if title and 'ceo' in title:
+                f.ceo = get_key_value("name", officer, "Unknown")
                 ceo_found = True
                 break
-        if not ceo_found:
-            f.ceo = ticker_info["companyOfficers"][0]["name"]
+        if not ceo_found and "companyOfficers" in ticker_info and len(ticker_info["companyOfficers"]) > 0:
+            f.ceo = get_key_value("name", ticker_info["companyOfficers"][0], "Unknown")
         return f
         
     def print(self) -> None:

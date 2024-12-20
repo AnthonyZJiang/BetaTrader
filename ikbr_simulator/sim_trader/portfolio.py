@@ -165,11 +165,11 @@ class Portfolio:
         table.add_column("Datetime")
         table.add_column("Action")
         table.add_column("Type")
-        table.add_column("Quantity")
-        table.add_column("Stop price")
-        table.add_column("Limit")
-        table.add_column("Avg price")
-        table.add_column("Value")
+        table.add_column("Quantity", justify="right")
+        table.add_column("Stop price", justify="right")
+        table.add_column("Limit", justify="right")
+        table.add_column("Avg price", justify="right")
+        table.add_column("Value", justify="right")
         table.add_column("Status")
         for e in self.entries.values():
             for order in e.orders:
@@ -182,7 +182,7 @@ class Portfolio:
                               "N/A" if order.stop is None else "%.2f" % order.stop,
                               "N/A" if order.limit is None else "%.2f" % order.limit, 
                               "%.2f" % order.avg_price,
-                              "%.2f" % order.value if order.action == OrderAction.BUY else -order.value,
+                              "%.2f" % (order.value if order.action == OrderAction.BUY else -order.value),
                               "[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                               )
             table.add_section()
@@ -190,16 +190,16 @@ class Portfolio:
 
     def print_all_trades_unsorted(self, console: Console):
         table = Table(title="Trades")
-        table.add_column("ID")
+        table.add_column("ID", justify="right")
         table.add_column("Symbol")
         table.add_column("Datetime")
         table.add_column("Action")
         table.add_column("Type")
-        table.add_column("Quantity")
-        table.add_column("Stop price")
-        table.add_column("Limit")
-        table.add_column("Avg price")
-        table.add_column("Value")
+        table.add_column("Quantity", justify="right")
+        table.add_column("Stop price", justify="right")
+        table.add_column("Limit", justify="right")
+        table.add_column("Avg price", justify="right")
+        table.add_column("Value", justify="right")
         table.add_column("Status")
         for order in self.orders:
             table.add_row(str(order.id), 
@@ -211,7 +211,7 @@ class Portfolio:
                             "N/A" if order.stop is None else "%.2f" % order.stop,
                             "N/A" if order.limit is None else "%.2f" % order.limit, 
                             "%.2f" % order.avg_price,
-                            "%.2f" % order.value if order.action == OrderAction.BUY else -order.value,
+                            "%.2f" % (order.value if order.action == OrderAction.BUY else -order.value),
                             "[green]FILLED" if order.status == OrderStatus.FILLED else "[red]CANCELLED" if order.status == OrderStatus.CANCELLED else "[yellow]OPEN" if order.status == OrderStatus.OPEN else "[purple]PARTIAL"
                             )
         console.print(table)

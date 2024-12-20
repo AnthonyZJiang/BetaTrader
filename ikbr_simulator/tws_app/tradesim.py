@@ -50,6 +50,7 @@ class TWSTradeSim():
         self.process_new_orders()
         if reqId not in self.tws_common.tick_req_id_symbol_map:
             TWSTickBidAsk.cancel_tick_bid_ask(self, reqId)
+            return
         sym = self.tws_common.tick_req_id_symbol_map[reqId]
         self.tws_common.portfolio.update_last(sym, askPrice, bidPrice)
         if sym == self.tws_common.current_symbol:

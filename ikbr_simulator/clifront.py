@@ -3,6 +3,7 @@ from threading import Thread
 import logging
 import yfinance as yf
 import json
+import time
 
 from .tws_app import TWSApp
 from .util.twslogging import setup_logger
@@ -15,7 +16,8 @@ DEFAULT_ORDER_SIZE = 100
 class CLIFront:
     
     def __init__(self):
-        self.logger = setup_logger('sim_cli', None, logging.DEBUG, 'sim.log')
+        self.logger = setup_logger('sim_cli', logging.INFO, logging.DEBUG, 'sim.log')
+        self.logger.info("Simulator initialising...")
         self.tws_app = None
         self.app_thread = None
         self.order = None
@@ -29,8 +31,10 @@ class CLIFront:
         self.tws_app.connect("127.0.0.1", 7496, clientId=1)
         self.app_thread = Thread(target=self.tws_app.run)
         self.app_thread.start()
+        self.logger.info("Waiting for TWSApp...")
         while not self.tws_app.tws_common.is_ready:
-            pass
+            time.sleep(0.1)
+        self.logger.info("TWSApp ready.")
         self.tws_app.link_display_group(1)
         exit_flag = False
         self.print_tracking_symbol = False
