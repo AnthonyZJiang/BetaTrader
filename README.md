@@ -17,4 +17,7 @@ pip install -r requirements.txt
 ```
 ./run_sim.py
 ```
-
+To see a list of commands (check ibkr_simulator/clifront.py for a complete list)
+```
+help
+```
